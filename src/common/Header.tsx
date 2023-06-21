@@ -1,25 +1,25 @@
 import React from 'react';
+import AnimatedLink from './AnimatedLink';
 
 const Header = () => {
-    const currentPage = window.location.pathname;
+    const [activeTab, setActiveTab] = React.useState(window.location.pathname);
+
+    const homeClass = 'tab' + (activeTab === '/' ? ' active-tab' : '');
+    const recipesClass =
+        'tab' + (activeTab === '/recipes' ? ' active-tab' : '');
 
     return (
         <div className="header flex border-b-[1px] border-gray-500 text-xl px-8 flex-initial w-full">
             <ul className="flex gap-10">
-                <li
-                    className={
-                        'tab' + (currentPage === '/' ? ' active-tab' : '')
-                    }
-                >
-                    <a href="/">Home</a>
+                <li className={homeClass}>
+                    <AnimatedLink to="/" onClick={setActiveTab}>
+                        Home
+                    </AnimatedLink>
                 </li>
-                <li
-                    className={
-                        'tab' +
-                        (currentPage === '/recipes' ? ' active-tab' : '')
-                    }
-                >
-                    <a href="/recipes">Recipes</a>
+                <li className={recipesClass}>
+                    <AnimatedLink to="/recipes" onClick={setActiveTab}>
+                        Recipes
+                    </AnimatedLink>
                 </li>
             </ul>
         </div>

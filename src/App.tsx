@@ -12,8 +12,8 @@ function App() {
 
     return (
         <div className="h-full flex flex-col">
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Routes>
                     <Route path="/" element={<h1>Home</h1>}></Route>
                     <Route
