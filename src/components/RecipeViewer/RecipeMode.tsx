@@ -1,12 +1,13 @@
 import React from 'react';
 import { getItem } from '../../common/CalculatorUtils';
-import { Item, IOItem } from '../../common/types/types';
+import { Item, IOItem, AssemblerType } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
 interface Props {
     inputItems: IOItem[];
     outputItems: IOItem[];
     items: Item[];
+    assemblerType: AssemblerType;
     depth?: number;
 }
 
@@ -14,12 +15,13 @@ interface SingleProps {
     item: Item;
     inputItems: IOItem[];
     items: Item[];
+    assemblerType: AssemblerType;
     quantity: number;
     depth?: number;
 }
 
 const RecipeMode = (props: Props) => {
-    const { inputItems, outputItems, items, depth } = props;
+    const { inputItems, outputItems, items, depth, assemblerType } = props;
 
     const inputItemsCopy: IOItem[] = JSON.parse(JSON.stringify(inputItems));
 
@@ -48,17 +50,23 @@ const RecipeMode = (props: Props) => {
                     <CalculatedRecipe
                         key={`${item.id}-${depth ?? 0}`}
                         item={item}
+                        items={items}
+                        assemblerType={assemblerType}
                         amount={realAmount}
                         depth={depth ? depth + 1 : 0}
                     >
                         {realAmount > 0 &&
                             ingredients.map((ingredient) => (
                                 <RecipeModeSingle
-                                    key={`${ingredient.id}-${depth ?? 0}-sub`}
+                                    key={ingredient.id}
                                     item={getItem(ingredient.id, items)!}
                                     inputItems={inputItemsCopy}
                                     items={items}
-                                    quantity={realAmount * ingredient.amount}
+                                    assemblerType={assemblerType}
+                                    quantity={
+                                        (realAmount * ingredient.amount) /
+                                        (item.recipe.yield ?? 1)
+                                    }
                                     depth={(depth ?? 0) + 1}
                                 />
                             ))}
@@ -70,7 +78,7 @@ const RecipeMode = (props: Props) => {
 };
 
 const RecipeModeSingle = (props: SingleProps) => {
-    const { item, quantity, items, depth, inputItems } = props;
+    const { item, quantity, items, depth, inputItems, assemblerType } = props;
     const { recipe } = item;
     const { ingredients } = recipe;
 
@@ -91,6 +99,8 @@ const RecipeModeSingle = (props: SingleProps) => {
     return (
         <CalculatedRecipe
             item={item}
+            items={items}
+            assemblerType={assemblerType}
             amount={quantity}
             depth={depth ? depth + 1 : 0}
         >
@@ -101,7 +111,11 @@ const RecipeModeSingle = (props: SingleProps) => {
                         item={getItem(ingredient.id, items)!}
                         inputItems={inputItems}
                         items={items}
-                        quantity={realAmount * ingredient.amount}
+                        assemblerType={assemblerType}
+                        quantity={
+                            (realAmount * ingredient.amount) /
+                            (item.recipe.yield ?? 1)
+                        }
                         depth={(depth ?? 0) + 1}
                     />
                 ))}

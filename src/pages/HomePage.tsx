@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../common/types/types';
+import { Item, IOItem, AssemblerType } from '../common/types/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';
@@ -18,6 +18,9 @@ const HomePage = (props: Props) => {
     const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
         'item'
     );
+    const [assemblerType, setAssemblerType] = React.useState<AssemblerType>(
+        'assembling-machine-3'
+    );
 
     return (
         <main className="breakdown-container">
@@ -32,6 +35,7 @@ const HomePage = (props: Props) => {
                 inputItems={inputItems}
                 outputItems={outputItems}
                 mode={recipeMode}
+                assemblerType={assemblerType}
             />
             <Options
                 {...{
@@ -39,9 +43,11 @@ const HomePage = (props: Props) => {
                     recipeMode,
                     inputItems,
                     outputItems,
+                    assemblerType,
                     setRecipeMode,
                     setInputItems,
-                    setOutputItems
+                    setOutputItems,
+                    setAssemblerType
                 }}
             />
         </main>

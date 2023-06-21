@@ -24,3 +24,7 @@ export interface IOItem {
 }
 
 export type OptionTabType = 'input' | 'output';
+export type AssemblerType =
+    | 'assembling-machine-1'
+    | 'assembling-machine-2'
+    | 'assembling-machine-3';

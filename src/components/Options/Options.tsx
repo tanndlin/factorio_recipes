@@ -1,17 +1,25 @@
 import React from 'react';
 import Toggle from '../../common/Toggle';
-import { OptionTabType, IOItem, Item } from '../../common/types/types';
+import {
+    OptionTabType,
+    IOItem,
+    Item,
+    AssemblerType
+} from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
+import AssemblerChooser from './AssemblerChooser';
 
 interface Props {
     items: Item[];
     recipeMode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
+    assemblerType: AssemblerType;
     setRecipeMode: React.Dispatch<React.SetStateAction<'item' | 'recipe'>>;
     setInputItems: (items: IOItem[]) => void;
     setOutputItems: (items: IOItem[]) => void;
+    setAssemblerType: React.Dispatch<React.SetStateAction<AssemblerType>>;
 }
 
 const Options = (props: Props) => {
@@ -20,9 +28,11 @@ const Options = (props: Props) => {
         recipeMode,
         inputItems,
         outputItems,
+        assemblerType,
         setRecipeMode,
         setInputItems,
-        setOutputItems
+        setOutputItems,
+        setAssemblerType
     } = props;
     const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
@@ -33,21 +43,27 @@ const Options = (props: Props) => {
 
     return (
         <div className="optionsContainer">
-            <Toggle
-                value={recipeMode === 'recipe'}
-                setValue={(value) => {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    (document as any).startViewTransition(() => {
-                        setCurrentTab('output');
-                        setRecipeMode(value ? 'recipe' : 'item');
-                    });
-                }}
-                name="Recipe Mode"
-                optionNames={{
-                    0: 'Item',
-                    1: 'Recipe'
-                }}
-            />
+            <div className="topOptionsContainer">
+                <Toggle
+                    value={recipeMode === 'recipe'}
+                    setValue={(value) => {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (document as any).startViewTransition(() => {
+                            setCurrentTab('output');
+                            setRecipeMode(value ? 'recipe' : 'item');
+                        });
+                    }}
+                    name="Recipe Mode"
+                    optionNames={{
+                        0: 'Item',
+                        1: 'Recipe'
+                    }}
+                />
+                <AssemblerChooser
+                    assemblerType={assemblerType}
+                    setAssemblerType={setAssemblerType}
+                />
+            </div>
 
             <div>
                 <TabContainer className="justify-center">

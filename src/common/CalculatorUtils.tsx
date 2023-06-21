@@ -1,4 +1,4 @@
-import { Item, IOItem } from './types/types';
+import { Item, IOItem, AssemblerType } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -108,3 +108,28 @@ export function removeDuplicates(items: IOItem[]) {
             index
     );
 }
+
+const getAssemblerModifier = (assemblerType: AssemblerType) => {
+    switch (assemblerType) {
+        case 'assembling-machine-1':
+            return 0.5;
+        case 'assembling-machine-2':
+            return 0.75;
+        case 'assembling-machine-3':
+            return 1.25;
+    }
+    return 1;
+};
+export const getAssemblerCount = (
+    item: Item,
+    amount: number,
+    assemblerType: AssemblerType
+) => {
+    const time = item.recipe.time ?? 0;
+    const yieldAmt = item.recipe.yield ?? 1;
+
+    const unrounded =
+        (time * (amount / yieldAmt)) / getAssemblerModifier(assemblerType);
+
+    return Math.ceil(unrounded * 100) / 100;
+};

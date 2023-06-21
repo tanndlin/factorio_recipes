@@ -1,20 +1,23 @@
 import React from 'react';
-import { Item } from '../../common/types/types';
+import { AssemblerType, Item } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
+import { getAssemblerCount, getItem } from '../../common/CalculatorUtils';
 
 interface Props {
     item: Item;
+    items: Item[];
     amount: number;
     depth: number;
+    assemblerType: AssemblerType;
     children?: React.ReactNode;
 }
 
 const CalculatedRecipe = (props: Props) => {
-    const { item, depth, children, amount } = props;
+    const { items, item, depth, children, amount, assemblerType } = props;
 
     let correctedAmount = amount;
     if (depth === 0) {
-        correctedAmount = amount * (item.recipe.yield ?? 1);
+        correctedAmount = amount;
     }
 
     return (
@@ -31,6 +34,13 @@ const CalculatedRecipe = (props: Props) => {
                     >
                         {item.name}
                     </a>
+                </span>
+                <span className="ml-4 my-auto flex">
+                    <ItemImage
+                        className="h-6 w-6"
+                        item={getItem(assemblerType, items)!}
+                    />
+                    x{getAssemblerCount(item, amount, assemblerType)}
                 </span>
             </div>
             {React.Children.toArray(children).length > 0 && <>{children}</>}

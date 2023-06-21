@@ -382,3 +382,19 @@ input {
   gap: 16px;
   overflow-x: auto;
 }
+
+.topOptionsContainer {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.assembler-chooser {
+  & span {
+    display: flex;
+    gap: 4px;
+  }
+}

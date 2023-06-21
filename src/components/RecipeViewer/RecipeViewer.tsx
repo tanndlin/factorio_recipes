@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../../common/types/types';
+import { Item, IOItem, AssemblerType } from '../../common/types/types';
 import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
 import { SingleRecipeView } from './SingleRecipeView';
 
@@ -8,10 +8,11 @@ interface Props {
     mode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
+    assemblerType: AssemblerType;
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, mode, inputItems, outputItems } = props;
+    const { items, mode, inputItems, outputItems, assemblerType } = props;
     const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
 
     const collapsedItems = React.useMemo(() => {
@@ -65,6 +66,7 @@ const RecipeViewer = (props: Props) => {
                                 inputItems={[]}
                                 outputItems={[{ item, amount }]}
                                 headerName={item.name}
+                                assemblerType={assemblerType}
                             />
                         );
                     })}
@@ -84,6 +86,7 @@ const RecipeViewer = (props: Props) => {
                                 inputItems={[]}
                                 outputItems={[{ item, amount }]}
                                 headerName={item.name}
+                                assemblerType={assemblerType}
                             />
                         );
                     })}
@@ -96,6 +99,7 @@ const RecipeViewer = (props: Props) => {
                     inputItems={inputItems}
                     outputItems={outputItems}
                     headerName="Total"
+                    assemblerType={assemblerType}
                 />
             </div>
         </div>

@@ -4,7 +4,7 @@ import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
-import HomePage from './pages/BreakdownPage';
+import HomePage from './pages/HomePage';
 import { removeDuplicates } from './common/CalculatorUtils';
 
 function App() {

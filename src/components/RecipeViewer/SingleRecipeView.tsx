@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../../common/types/types';
+import { Item, IOItem, AssemblerType } from '../../common/types/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 
@@ -9,10 +9,12 @@ export interface SingleRecipeViewProps {
     inputItems: IOItem[];
     outputItems: IOItem[];
     headerName: string;
+    assemblerType: AssemblerType;
 }
 
 export const SingleRecipeView = (props: SingleRecipeViewProps) => {
-    const { items, mode, inputItems, outputItems, headerName } = props;
+    const { items, mode, inputItems, outputItems, headerName, assemblerType } =
+        props;
 
     return (
         <div className="h-full overflow-auto min-w-max pr-4">
@@ -27,6 +29,7 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
                             inputItems={inputItems}
                             outputItems={outputItems}
                             items={items}
+                            assemblerType={assemblerType}
                             depth={0}
                         />
                     )}
@@ -35,6 +38,7 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
                             inputItems={inputItems}
                             outputItems={outputItems}
                             items={items}
+                            assemblerType={assemblerType}
                         />
                     )}
                 </div>
