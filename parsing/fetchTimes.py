@@ -1,17 +1,10 @@
 import json
 import bs4
-import requests
-from lxml.cssselect import CSSSelector
+import aiohttp
+import asyncio
 
-file = 'recipes.json'
 
-recipes = []
-
-def getTime(friendlyName):
-    print(friendlyName)
-    url = f'https://wiki.factorio.com/{friendlyName}'
-    soup = bs4.BeautifulSoup(requests.get(url).text, 'html.parser')
-
+def getTime(soup):
     divs = soup.find_all("div", {"class": "factorio-icon"})
     
     
@@ -23,17 +16,27 @@ def getTime(friendlyName):
         if children[0]['title'] == 'Time':
             return float(children[1].text)
 
+recipes = []
+async def main():
+    async with aiohttp.ClientSession() as session:
+        with open('recipes.json', 'r') as f:
+            oldRecipes = json.load(f)
 
-with open(file, 'r') as f:
-    oldRecipes = json.load(f)
+            for recipe in oldRecipes:
+                if 'time' in recipe['recipe']:
+                    recipes.append(recipe)
+                    continue
 
-    for recipe in oldRecipes:
-        if 'time' not in recipe['recipe']:
-            recipe['recipe']['time'] = getTime(recipe['name'].replace(' ', '_'))
+                friendlyName = recipe['name'].replace(' ', '_')
+                print(friendlyName)
+                url = f'https://wiki.factorio.com/{friendlyName}'
+                async with session.get(url) as response:
+                    soup = bs4.BeautifulSoup(await response.text(), 'html.parser')  
+                    recipe['recipe']['time'] = getTime(soup)
+                    recipes.append(recipe)
 
-        recipes.append(recipe)
-
-with open(file, 'w') as f:
+asyncio.run(main())
+with open('recipes.json', 'w') as f:
     json.dump(recipes, f, indent=4)
 
 
