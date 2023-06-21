@@ -45,28 +45,11 @@ export function getRecipeSum(
 
     // BFS to get the main ingredients first
     ingredients.forEach((ingredient) => {
-        let reducedAmount = 0;
         const realNeed = quantity * ingredient.amount;
-        const foundInput = inputItems.find(
-            (inputItem) => inputItem.item.id === ingredient.id
-        );
-        if (foundInput) {
-            if (foundInput.amount >= realNeed) {
-                inputItems[inputItems.indexOf(foundInput)].amount -= realNeed;
-                return;
-            } else {
-                reducedAmount = foundInput.amount;
-                inputItems.splice(inputItems.indexOf(foundInput), 1);
-            }
-        }
-        totals[ingredient.id] =
-            (totals[ingredient.id] ?? 0) + realNeed - reducedAmount;
-    });
+        totals[ingredient.id] = (totals[ingredient.id] ?? 0) + realNeed;
 
-    // Iterate again to get the ingredients of the ingredients
-    ingredients.forEach((ingredient) => {
+        // Iterate again to get the ingredients of the ingredients
         let reducedAmount = 0;
-        const realNeed = quantity * ingredient.amount;
         const foundInput = inputItems.find(
             (inputItem) => inputItem.item.id === ingredient.id
         );
@@ -93,7 +76,6 @@ export function getRecipeSum(
             }
         });
     });
-
     return totals;
 }
 
