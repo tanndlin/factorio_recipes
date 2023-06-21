@@ -19,8 +19,13 @@ const HomePage = (props: Props) => {
         'item'
     );
     const [assemblerType, setAssemblerType] = React.useState<AssemblerType>(
-        'assembling-machine-3'
+        (localStorage.getItem('assemblerType') as AssemblerType) ??
+            'assembling-machine-3'
     );
+
+    React.useEffect(() => {
+        localStorage.setItem('assemblerType', assemblerType);
+    }, [assemblerType]);
 
     return (
         <main className="breakdown-container">
