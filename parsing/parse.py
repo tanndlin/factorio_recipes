@@ -92,9 +92,21 @@ def getNormal(recipe):
         return ret
     return recipe
 
+blacklist = [
+    'electric-energy-interface',
+    'loader',
+    'fast-loader',
+    'express-loader',
+    'heavy-oil-cracking',
+    'light-oil-cracking',
+]
+
 with open(path, "r") as f:
     data = json.load(f)
     for recipe in data:
+        if any([x == recipe['name'] for x in blacklist]):
+            continue
+
         converted = convert(getNormal(recipe))
         if converted is not None:
             recipes.append(converted)

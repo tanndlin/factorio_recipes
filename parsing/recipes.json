@@ -284,42 +284,6 @@
         }
     },
     {
-        "id": "heavy-oil-cracking",
-        "name": "Heavy oil cracking to light oil",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "water",
-                    "amount": 30
-                },
-                {
-                    "id": "heavy-oil",
-                    "amount": 40
-                }
-            ],
-            "time": 2,
-            "yield": 1
-        }
-    },
-    {
-        "id": "light-oil-cracking",
-        "name": "Light oil cracking to petroleum gas",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "water",
-                    "amount": 30
-                },
-                {
-                    "id": "light-oil",
-                    "amount": 30
-                }
-            ],
-            "time": 2,
-            "yield": 1
-        }
-    },
-    {
         "id": "sulfuric-acid",
         "name": "Sulfuric acid",
         "recipe": {
@@ -1497,36 +1461,6 @@
             ],
             "time": 1,
             "yield": 2
-        }
-    },
-    {
-        "id": "loader",
-        "name": "Loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "inserter",
-                    "amount": 5
-                },
-                {
-                    "id": "electronic-circuit",
-                    "amount": 5
-                },
-                {
-                    "id": "iron-gear-wheel",
-                    "amount": 5
-                },
-                {
-                    "id": "iron-plate",
-                    "amount": 5
-                },
-                {
-                    "id": "transport-belt",
-                    "amount": 5
-                }
-            ],
-            "time": 1,
-            "yield": 1
         }
     },
     {
@@ -3094,42 +3028,6 @@
         }
     },
     {
-        "id": "fast-loader",
-        "name": "Fast loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "fast-transport-belt",
-                    "amount": 5
-                },
-                {
-                    "id": "loader",
-                    "amount": 1
-                }
-            ],
-            "time": 3,
-            "yield": 1
-        }
-    },
-    {
-        "id": "express-loader",
-        "name": "Express loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "express-transport-belt",
-                    "amount": 5
-                },
-                {
-                    "id": "fast-loader",
-                    "amount": 1
-                }
-            ],
-            "time": 10,
-            "yield": 1
-        }
-    },
-    {
         "id": "express-splitter",
         "name": "Express splitter",
         "recipe": {
@@ -3810,24 +3708,6 @@
                 }
             ],
             "time": 5,
-            "yield": 1
-        }
-    },
-    {
-        "id": "electric-energy-interface",
-        "name": "Electric energy interface",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "iron-plate",
-                    "amount": 2
-                },
-                {
-                    "id": "electronic-circuit",
-                    "amount": 5
-                }
-            ],
-            "time": 0.5,
             "yield": 1
         }
     },
