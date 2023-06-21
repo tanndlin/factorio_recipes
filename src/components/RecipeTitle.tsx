@@ -15,7 +15,7 @@ const RecipeTitle = (props: props) => {
         <span className="w-full flex gap-4">
             <img
                 className="w-8 h-8"
-                src={`https://wiki.factorio.com/images/thumb/${friendlyName}.png/32px-${friendlyName}.png`}
+                src={`../images/32px-${friendlyName}.png`}
                 alt={name}
             />
             <h1
