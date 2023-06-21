@@ -98,7 +98,13 @@ export function getRecipeSum(
 }
 
 export function getItem(id: string, items: Item[]) {
-    return items.find((item) => item.id === id);
+    const ret = items.find((item) => item.id === id);
+    if (!ret) {
+        // eslint-disable-next-line no-console
+        console.error(`Could not find item with id ${id}`);
+    }
+
+    return ret;
 }
 
 export function removeDuplicates(items: IOItem[]) {

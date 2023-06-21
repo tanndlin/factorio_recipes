@@ -1,0 +1,206 @@
+[
+    {
+        "id": "coal",
+        "name": "Coal",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Coal",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "copper-ore",
+        "name": "Copper ore",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Copper_ore",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "crude-oil",
+        "name": "Crude oil",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Crude_oil",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "heavy-oil",
+        "name": "Heavy oil",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Heavy_oil",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "iron-ore",
+        "name": "Iron ore",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Iron_ore",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "light-oil",
+        "name": "Light oil",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Light_oil",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "petroleum-gas",
+        "name": "Petroleum gas",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Petroleum_gas",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "raw-fish",
+        "name": "Raw fish",
+        "type": "Item",
+        "wiki_link": "https://wiki.factorio.com/Raw_fish",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "wood",
+        "name": "Wood",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Wood",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "solid-fuel",
+        "name": "Solid fuel",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Solid_fuel",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "steam",
+        "name": "Steam",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Steam",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "stone",
+        "name": "Stone",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Stone",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "uranium-ore",
+        "name": "Uranium ore",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Uranium_ore",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "uranium-235",
+        "name": "Uranium-235",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Uranium-235",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "uranium-238",
+        "name": "Uranium-238",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Uranium-238",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "used-up-uranium-fuel-cell",
+        "name": "Used up uranium fuel cell",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Used_up_uranium_fuel_cell",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
+        "id": "water",
+        "name": "Water",
+        "type": "Liquid",
+        "wiki_link": "https://wiki.factorio.com/Water",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    }
+]

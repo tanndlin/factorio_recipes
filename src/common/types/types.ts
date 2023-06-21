@@ -2,7 +2,6 @@ export interface Item {
     id: string;
     name: string;
     type?: string;
-    wiki_link: string;
     category?: string;
     recipe: Recipe;
 }
