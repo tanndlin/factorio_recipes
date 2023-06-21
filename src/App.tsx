@@ -11,10 +11,20 @@ function App() {
     const [items, _] = React.useState<Item[]>(
         recipes.sort((a, b) => a.name.localeCompare(b.name)) as Item[]
     );
-    const [inputItems, setInputItems] = React.useState<IOItem[]>([]);
-    const [outputItems, setOutputItems] = React.useState<IOItem[]>([
-        { item: items[0], amount: 1 }
-    ]);
+    const [inputItems, setInputItems] = React.useState<IOItem[]>(
+        JSON.parse(localStorage.getItem('inputItems') || '[]')
+    );
+    const [outputItems, setOutputItems] = React.useState<IOItem[]>(
+        JSON.parse(localStorage.getItem('outputItems') || '[]')
+    );
+
+    React.useEffect(() => {
+        localStorage.setItem('inputItems', JSON.stringify(inputItems));
+    }, [inputItems]);
+
+    React.useEffect(() => {
+        localStorage.setItem('outputItems', JSON.stringify(outputItems));
+    }, [outputItems]);
 
     return (
         <div className="h-full flex flex-col">
