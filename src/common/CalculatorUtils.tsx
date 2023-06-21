@@ -37,14 +37,13 @@ export function getRecipeSum(
 
     ingredients.forEach((ingredient) => {
         let reducedAmount = 0;
-
+        const realNeed = quantity * ingredient.amount;
         const foundInput = inputItems.find(
             (inputItem) => inputItem.item.id === ingredient.id
         );
         if (foundInput) {
-            if (foundInput.amount >= ingredient.amount) {
-                inputItems[inputItems.indexOf(foundInput)].amount -=
-                    ingredient.amount;
+            if (foundInput.amount >= realNeed) {
+                inputItems[inputItems.indexOf(foundInput)].amount -= realNeed;
                 return;
             } else {
                 reducedAmount = foundInput.amount;
@@ -52,15 +51,13 @@ export function getRecipeSum(
             }
         }
         totals[ingredient.id] =
-            (totals[ingredient.id] ?? 0) +
-            quantity * ingredient.amount -
-            reducedAmount;
+            (totals[ingredient.id] ?? 0) + realNeed - reducedAmount;
 
         const ingredientItem = getItem(ingredient.id, items)!;
         const sum = getRecipeSum(
             ingredientItem,
             items,
-            quantity * ingredient.amount - reducedAmount,
+            realNeed - reducedAmount,
             inputItems
         );
 
