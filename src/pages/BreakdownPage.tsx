@@ -12,7 +12,7 @@ interface Props {
     items: Item[];
 }
 
-const BreakdownPage = (props: Props) => {
+const HomePage = (props: Props) => {
     const { inputItems, outputItems, setInputItems, setOutputItems, items } =
         props;
     const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
@@ -48,4 +48,4 @@ const BreakdownPage = (props: Props) => {
     );
 };
 
-export default BreakdownPage;
+export default HomePage;

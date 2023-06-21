@@ -4,7 +4,7 @@ import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
-import BreakdownPage from './pages/BreakdownPage';
+import HomePage from './pages/BreakdownPage';
 import { removeDuplicates } from './common/CalculatorUtils';
 
 function App() {
@@ -32,21 +32,9 @@ function App() {
                 <Header />
                 <Routes>
                     <Route
-                        path="/recipes"
+                        path="/"
                         element={
-                            <RecipesPage
-                                items={items}
-                                outputItems={outputItems}
-                                setOutputItems={(items: IOItem[]) => {
-                                    setOutputItems(removeDuplicates(items));
-                                }}
-                            ></RecipesPage>
-                        }
-                    ></Route>
-                    <Route
-                        path="/breakdown"
-                        element={
-                            <BreakdownPage
+                            <HomePage
                                 inputItems={inputItems}
                                 outputItems={outputItems}
                                 setInputItems={(items: IOItem[]) => {
@@ -57,6 +45,18 @@ function App() {
                                 }}
                                 items={items}
                             />
+                        }
+                    ></Route>
+                    <Route
+                        path="/recipes"
+                        element={
+                            <RecipesPage
+                                items={items}
+                                outputItems={outputItems}
+                                setOutputItems={(items: IOItem[]) => {
+                                    setOutputItems(removeDuplicates(items));
+                                }}
+                            ></RecipesPage>
                         }
                     ></Route>
                 </Routes>

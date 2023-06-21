@@ -35,7 +35,7 @@ const RecipesPage = (props: Props) => {
                                     amount: 1
                                 }
                             ]);
-                            navigate('/breakdown');
+                            navigate('/');
                         });
                     }
                 }}
