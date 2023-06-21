@@ -3,7 +3,7 @@ import { Item, IOItem } from '../../common/types/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 
-interface Props {
+export interface SingleRecipeViewProps {
     items: Item[];
     mode: 'item' | 'recipe';
     inputItems: IOItem[];
@@ -11,11 +11,11 @@ interface Props {
     headerName: string;
 }
 
-const SingleRecipeView = (props: Props) => {
+export const SingleRecipeView = (props: SingleRecipeViewProps) => {
     const { items, mode, inputItems, outputItems, headerName } = props;
 
     return (
-        <div className="h-full overflow-auto">
+        <div className="h-full overflow-auto min-w-max">
             <div>
                 <header className="mb-4">
                     <h1 className="text-4xl">{headerName}</h1>
@@ -42,5 +42,3 @@ const SingleRecipeView = (props: Props) => {
         </div>
     );
 };
-
-export default SingleRecipeView;

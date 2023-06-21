@@ -1,28 +1,56 @@
 import React from 'react';
 import { Item } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
+import Tippable from '../../common/Tippable';
+import { getItem } from '../../common/CalculatorUtils';
 
 interface Props {
     item: Item;
+    items: Item[];
     onClick: React.Dispatch<React.SetStateAction<Item>>;
 }
 
 const RecipeCard = (props: Props) => {
-    const { item, onClick } = props;
+    const { item, items, onClick } = props;
     const { name } = item;
 
     return (
-        <div className="rounded-md p-2 recipeCard" id={item.id}>
+        <Tippable
+            className="rounded-md p-2 recipeCard tippable cursor-pointer"
+            id={item.id}
+            tooltip={
+                <div>
+                    <div className="text-sm flex whitespace-nowrap min-w-max border-b-[1px] border-gray-500 pb-1 mb-2">
+                        <ItemImage item={item} className="mr-2 h-6 w-6" />
+                        {name} x{item.recipe.yield ?? 1}
+                    </div>
+                    {item.recipe.ingredients.map((ingredient, index) => {
+                        const ingredientItem = getItem(ingredient.id, items)!;
+
+                        return (
+                            <div
+                                key={index}
+                                className="text-sm flex whitespace-nowrap min-w-max"
+                            >
+                                <ItemImage
+                                    item={ingredientItem}
+                                    className="mr-2 h-6 w-6"
+                                />
+                                {ingredientItem.name} x{ingredient.amount}
+                            </div>
+                        );
+                    })}
+                </div>
+            }
+        >
             <div
                 className="relative recipeCard-content"
                 onClick={() => onClick(item)}
             >
                 <ItemImage item={item} className="mx-auto" />
-                <p className="text-lg mb-4 cursor-pointer text-center">
-                    {name}
-                </p>
+                <p className="text-lg mb-4 text-center">{name}</p>
             </div>
-        </div>
+        </Tippable>
     );
 };
 

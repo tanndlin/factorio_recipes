@@ -31,6 +31,7 @@ const RecipeExplorer = (props: Props) => {
                             <RecipeCard
                                 key={index}
                                 item={item}
+                                items={items}
                                 onClick={() => {
                                     onClick(item);
                                 }}

@@ -329,3 +329,55 @@ input {
     height: 24px;
   }
 }
+
+
+.tippable {
+  position: relative;
+}
+
+.tooltip-content {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transition: .5s;
+  background: #533655;
+  z-index: 100;
+  padding: 8px;
+  border-radius: .375rem;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wrapper {
+  & header {
+    cursor: pointer;
+  }
+}
+
+.wrapper-expanded {}
+
+.wrapper-collapsed {
+  & *:not(:has(header), header, h1) {
+    display: none;
+  }
+
+  & header>h1 {
+    font-size: x-large;
+  }
+}
+
+.collapsed-wrappers {
+  display: block;
+  border-right: 1px solid rgb(107 114 128);
+  height: 100%;
+  padding-right: 16px;
+}
+
+.expanded-wrappers {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}

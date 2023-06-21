@@ -451,10 +451,6 @@
                 {
                     "id": "crude-oil",
                     "amount": 100
-                },
-                {
-                    "id": "fluidbox_index",
-                    "amount": 2
                 }
             ],
             "time": 5,
@@ -2995,7 +2991,7 @@
                     "amount": 4
                 },
                 {
-                    "id": "fusion-reactor",
+                    "id": "portable-fusion-reactor",
                     "amount": 2
                 },
                 {
