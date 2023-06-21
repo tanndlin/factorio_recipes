@@ -2,7 +2,7 @@ import React from 'react';
 import RecipesPage from './pages/RecipesPage';
 import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Item } from './common/types';
+import { InputItem, Item, OutputItem } from './common/types';
 import recipes from './assets/recipes.json';
 import HomePage from './pages/HomePage';
 import BreakdownPage from './pages/BreakdownPage';
@@ -11,7 +11,10 @@ function App() {
     const [items, _] = React.useState<Item[]>(
         recipes.sort((a, b) => a.name.localeCompare(b.name)) as Item[]
     );
-    const [currentItem, setCurrentItem] = React.useState<Item>(items[0]);
+    const [inputItems, setInputItems] = React.useState<InputItem[]>([]);
+    const [outputItems, setOutputItems] = React.useState<OutputItem[]>([
+        { item: items[0], amount: 1 }
+    ]);
 
     return (
         <div className="h-full flex flex-col">
@@ -26,7 +29,8 @@ function App() {
                                 {...{
                                     items,
                                     recipes,
-                                    setCurrentItem
+                                    outputItems,
+                                    setOutputItems
                                 }}
                             ></RecipesPage>
                         }
@@ -34,7 +38,13 @@ function App() {
                     <Route
                         path="/breakdown"
                         element={
-                            <BreakdownPage item={currentItem} items={items} />
+                            <BreakdownPage
+                                inputItems={inputItems}
+                                outputItems={outputItems}
+                                setInputItems={setInputItems}
+                                setOutputItems={setOutputItems}
+                                items={items}
+                            />
                         }
                     ></Route>
                 </Routes>

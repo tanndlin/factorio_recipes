@@ -5,17 +5,16 @@ import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';
 
 interface Props {
-    item: Item;
+    inputItems: InputItem[];
+    outputItems: OutputItem[];
+    setInputItems: React.Dispatch<React.SetStateAction<InputItem[]>>;
+    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
     items: Item[];
 }
 
 const BreakdownPage = (props: Props) => {
-    const { item, items } = props;
-    const [inputItems, setInputItems] = React.useState<InputItem[]>([]);
-    const [outputItems, setOutputItems] = React.useState<OutputItem[]>([
-        { item, amount: 1 },
-        { item: items[1], amount: 1 }
-    ]);
+    const { inputItems, outputItems, setInputItems, setOutputItems, items } =
+        props;
     const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
         'item'
     );

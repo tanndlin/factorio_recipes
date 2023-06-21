@@ -2,18 +2,15 @@ import React from 'react';
 import RecipeCard from './RecipeCard';
 import { Item } from '../../common/types';
 import DisappearingSearchBar from '../../common/DisappearingSearchBar';
-import { useNavigate } from 'react-router-dom';
 
 interface Props {
     items: Item[];
-    searchTerm: string;
-    setCurrentItem: React.Dispatch<React.SetStateAction<Item>>;
-    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+    onClick: (item: Item) => void;
 }
 
 const RecipeExplorer = (props: Props) => {
-    const { items, searchTerm, setCurrentItem, setSearchTerm } = props;
-    const navigate = useNavigate();
+    const { items, onClick } = props;
+    const [searchTerm, setSearchTerm] = React.useState('');
 
     return (
         <div className="flex flex-col gap-2 h-full recipesContainer p-10">
@@ -34,13 +31,9 @@ const RecipeExplorer = (props: Props) => {
                             <RecipeCard
                                 key={index}
                                 item={item}
-                                setCurrentItem={() => {
-                                    (document as any).startViewTransition(
-                                        () => {
-                                            setCurrentItem(item);
-                                            navigate('/breakdown');
-                                        }
-                                    );
+                                onClick={() => {
+                                    console.log(item);
+                                    onClick(item);
                                 }}
                             ></RecipeCard>
                         );

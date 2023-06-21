@@ -1,16 +1,18 @@
 import React from 'react';
 import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
-import { Item } from '../common/types';
+import { Item, OutputItem } from '../common/types';
 import stars from '../assets/stars.png';
+import { useNavigate } from 'react-router';
 
 interface Props {
+    outputItems: OutputItem[];
+    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
     items: Item[];
-    setCurrentItem: React.Dispatch<React.SetStateAction<Item>>;
 }
 
 const RecipesPage = (props: Props) => {
-    const { items, setCurrentItem } = props;
-    const [searchTerm, setSearchTerm] = React.useState('');
+    const { outputItems, setOutputItems, items } = props;
+    const navigate = useNavigate();
 
     return (
         <div className="relative grid grid-flow-row flex-auto">
@@ -23,9 +25,18 @@ const RecipesPage = (props: Props) => {
             <RecipeExplorer
                 {...{
                     items,
-                    setCurrentItem,
-                    searchTerm,
-                    setSearchTerm
+                    onClick: (item: Item) => {
+                        (document as any).startViewTransition(() => {
+                            setOutputItems([
+                                ...outputItems,
+                                {
+                                    item,
+                                    amount: 1
+                                }
+                            ]);
+                            navigate('/breakdown');
+                        });
+                    }
                 }}
             />
         </div>
