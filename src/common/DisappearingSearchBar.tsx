@@ -18,6 +18,9 @@ const DisappearingSearchBar = (props: props) => {
                 className="border-2 bg-[#44474a] border-tertiary px-2 rounded-lg text-white"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onMouseOver={(e) => {
+                    e.currentTarget.focus();
+                }}
             />
         </div>
     );
