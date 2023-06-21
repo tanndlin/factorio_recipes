@@ -1,38 +1,4 @@
-import React from 'react';
-import CalculatedRecipe from '../components/RecipeViewer/CalculatedRecipe';
 import { Item } from './types';
-
-export function getRecipeRecurse(
-    setSearchTerm: (searchTerm: string) => void,
-    item: Item,
-    items: Item[],
-    amount: number,
-    depth?: number
-): React.ReactNode {
-    const { recipe } = item;
-    const { ingredients } = recipe;
-
-    console.log(item.name, depth);
-
-    return (
-        <CalculatedRecipe
-            item={item}
-            amount={amount}
-            depth={depth ? depth + 1 : 0}
-            setSearchTerm={setSearchTerm}
-        >
-            {ingredients.map((ingredient) => {
-                return getRecipeRecurse(
-                    setSearchTerm,
-                    getItem(ingredient.id, items)!,
-                    items,
-                    amount * ingredient.amount,
-                    (depth ?? 0) + 1
-                );
-            })}
-        </CalculatedRecipe>
-    );
-}
 
 export function getRecipeSum(item: Item, items: Item[], quantity: number) {
     const { recipe } = item;

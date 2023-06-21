@@ -34,6 +34,7 @@ const RecipeViewer = (props: Props) => {
                     item={item}
                     items={items}
                     quantity={quantity / (item.recipe.yield ?? 1)}
+                    depth={0}
                     setSearchTerm={setSearchTerm}
                 />
             )}
