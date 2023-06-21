@@ -20,6 +20,8 @@ interface Props {
     items: Item[];
 }
 
+// TODO: MOVE OPTIONS TO ITS OWN PAGE OR MODAL
+
 const HomePage = (props: Props) => {
     const { inputItems, outputItems, setInputItems, setOutputItems, items } =
         props;
@@ -34,7 +36,7 @@ const HomePage = (props: Props) => {
         (localStorage.getItem('furnaceType') as FurnaceType) ?? 'stone-furnace'
     );
 
-    const [timeUnit, setTimeUnit] = React.useState<TimeUnit>('s');
+    const [timeUnit, setTimeUnit] = React.useState<TimeUnit>('sec');
 
     React.useEffect(() => {
         localStorage.setItem('assemblerType', assemblerType);

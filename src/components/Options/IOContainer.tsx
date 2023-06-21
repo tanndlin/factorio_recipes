@@ -1,5 +1,5 @@
 import React from 'react';
-import { IOItem, Item } from '../../common/types/types';
+import { IOItem, Item, OptionProps } from '../../common/types/types';
 import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
 import CloseButton from '../../common/CancelButton';
 import IOItemViewer from './IOItemViewer';
@@ -9,10 +9,11 @@ interface Props {
     ioItems: IOItem[];
     allItems: Item[];
     setIOItems: (items: IOItem[]) => void;
+    options: OptionProps;
 }
 
 const IOContainer = (props: Props) => {
-    const { mode, ioItems, allItems, setIOItems } = props;
+    const { mode, ioItems, allItems, setIOItems, options } = props;
     const showModal = () => {
         const modal = document.getElementById('recipeExplorerModal');
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,6 +49,7 @@ const IOContainer = (props: Props) => {
                         index={index}
                         ioItems={ioItems}
                         setIOItems={setIOItems}
+                        options={options}
                     />
                 ))}
             </ul>

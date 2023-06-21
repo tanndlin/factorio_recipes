@@ -136,11 +136,11 @@ export const calculateTimeRatio = (before: TimeUnit, after: TimeUnit) => {
 
 export const timeUnitToRatio = (timeUnit: TimeUnit) => {
     switch (timeUnit) {
-        case 's':
+        case 'sec':
             return 1;
-        case 'm':
+        case 'min':
             return 60;
-        case 'h':
+        case 'hr':
             return 3600;
     }
 };

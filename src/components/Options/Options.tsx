@@ -112,7 +112,7 @@ const Options = (props: Props) => {
                 <Chooser<TimeUnit>
                     value={timeUnit}
                     callback={handleTimeUnitChange}
-                    options={['s', 'm', 'h']}
+                    options={['sec', 'min', 'hr']}
                     name="Time Unit"
                     images={false}
                 />
@@ -149,6 +149,7 @@ const Options = (props: Props) => {
                     ioItems={ioContainerItems}
                     allItems={items}
                     setIOItems={setIoContainerItems}
+                    options={optionProps}
                 />
             </div>
         </div>

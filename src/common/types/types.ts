@@ -38,7 +38,7 @@ export interface ManufacturingTypes {
     furnaceType: FurnaceType;
 }
 
-export type TimeUnit = 's' | 'm' | 'h';
+export type TimeUnit = 'sec' | 'min' | 'hr';
 export enum RecipeMode {
     Item = 'item',
     Recipe = 'recipe'
