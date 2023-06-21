@@ -7,7 +7,7 @@ export interface Item {
 }
 
 export interface Recipe {
-    time?: number;
+    time: number;
     yield?: number;
     ingredients: Ingredient[];
 }

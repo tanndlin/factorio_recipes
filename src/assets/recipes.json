@@ -207,7 +207,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -224,7 +225,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -655,7 +657,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -816,7 +819,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -851,7 +855,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -864,7 +869,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -877,7 +883,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -894,7 +901,8 @@
                     "amount": 4
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -915,7 +923,8 @@
                     "amount": 10
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -928,7 +937,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -945,7 +955,8 @@
                     "amount": 3
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -962,7 +973,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -1027,7 +1039,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1048,7 +1061,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1065,7 +1079,8 @@
                     "amount": 4
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1086,7 +1101,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1103,7 +1119,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1116,7 +1133,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1137,7 +1155,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1150,7 +1169,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -1167,7 +1187,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -1256,7 +1277,8 @@
                     "amount": 10
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1277,7 +1299,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1294,7 +1317,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -1315,7 +1339,8 @@
                     "amount": 9
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1332,7 +1357,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1403,7 +1429,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1428,7 +1455,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1555,7 +1583,8 @@
                     "amount": 8
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1576,7 +1605,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1597,7 +1627,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1720,7 +1751,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1751,7 +1783,8 @@
                     "amount": 8
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1898,7 +1931,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -1941,7 +1975,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 2
+            "yield": 2,
+            "time": 0.5
         }
     },
     {
@@ -2002,7 +2037,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2019,7 +2055,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2044,7 +2081,8 @@
                     "amount": 3
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2117,7 +2155,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2134,7 +2173,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2151,7 +2191,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2216,7 +2257,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2233,7 +2275,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2622,7 +2665,8 @@
                     "amount": 20
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2639,7 +2683,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -2724,7 +2769,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3167,7 +3213,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3184,7 +3231,8 @@
                     "amount": 2
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3205,7 +3253,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3226,7 +3275,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3247,7 +3297,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3268,7 +3319,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3289,7 +3341,8 @@
                     "amount": 1
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
@@ -3362,7 +3415,8 @@
                     "amount": 5
                 }
             ],
-            "yield": 1
+            "yield": 1,
+            "time": 0.5
         }
     },
     {
