@@ -193,6 +193,7 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   overflow: auto;
+  height: 100%
 }
 
 .ingredientsList {
