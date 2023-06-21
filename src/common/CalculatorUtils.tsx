@@ -62,6 +62,7 @@ export function getRecipeSum(
                 inputItems.splice(inputItems.indexOf(foundInput), 1);
             }
         }
+
         const ingredientItem = getItem(ingredient.id, items)!;
         const sum = getRecipeSum(
             ingredientItem,
