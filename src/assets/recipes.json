@@ -322,9 +322,9 @@
         }
     },
     {
-        "id": "efficiency -module",
-        "name": "Efficiency  module",
-        "wiki_link": "https://wiki.factorio.com/Efficiency _module",
+        "id": "efficiency module",
+        "name": "Efficiency module",
+        "wiki_link": "https://wiki.factorio.com/Efficiency_module",
         "recipe": {
             "ingredients": [
                 {
@@ -666,9 +666,9 @@
         }
     },
     {
-        "id": "night-vision",
-        "name": "Night vision",
-        "wiki_link": "https://wiki.factorio.com/night_vision",
+        "id": "nightvision",
+        "name": "Nightvision",
+        "wiki_link": "https://wiki.factorio.com/nightvision",
         "recipe": {
             "ingredients": [
                 {
@@ -811,9 +811,9 @@
         }
     },
     {
-        "id": "fusion-reactor",
-        "name": "Fusion reactor",
-        "wiki_link": "https://wiki.factorio.com/fusion_reactor",
+        "id": "portable-fusion-reactor",
+        "name": "Portable fusion reactor",
+        "wiki_link": "https://wiki.factorio.com/Portable_fusion_reactor",
         "recipe": {
             "ingredients": [
                 {
@@ -1322,8 +1322,8 @@
     },
     {
         "id": "long-handed-inserter",
-        "name": "Long handed inserter",
-        "wiki_link": "https://wiki.factorio.com/long_handed_inserter",
+        "name": "Long-handed inserter",
+        "wiki_link": "https://wiki.factorio.com/Long-handed_inserter",
         "recipe": {
             "ingredients": [
                 {
@@ -1523,9 +1523,9 @@
         }
     },
     {
-        "id": "small-lamp",
-        "name": "Small lamp",
-        "wiki_link": "https://wiki.factorio.com/small_lamp",
+        "id": "lamp",
+        "name": "Lamp",
+        "wiki_link": "https://wiki.factorio.com/Lamp",
         "recipe": {
             "ingredients": [
                 {
@@ -1664,9 +1664,9 @@
         }
     },
     {
-        "id": "stone-wall",
-        "name": "Stone wall",
-        "wiki_link": "https://wiki.factorio.com/stone_wall",
+        "id": "wall",
+        "name": "Wall",
+        "wiki_link": "https://wiki.factorio.com/Wall",
         "recipe": {
             "ingredients": [
                 {
@@ -1743,37 +1743,6 @@
             ],
             "time": 1,
             "yield": 2
-        }
-    },
-    {
-        "id": "loader",
-        "name": "Loader",
-        "wiki_link": "https://wiki.factorio.com/loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "inserter",
-                    "amount": 5
-                },
-                {
-                    "id": "electronic-circuit",
-                    "amount": 5
-                },
-                {
-                    "id": "iron-gear-wheel",
-                    "amount": 5
-                },
-                {
-                    "id": "iron-plate",
-                    "amount": 5
-                },
-                {
-                    "id": "transport-belt",
-                    "amount": 5
-                }
-            ],
-            "time": 1,
-            "yield": 1
         }
     },
     {
@@ -1908,9 +1877,9 @@
         }
     },
     {
-        "id": "shotgun-shell",
-        "name": "Shotgun shell",
-        "wiki_link": "https://wiki.factorio.com/shotgun_shell",
+        "id": "shotgun-shells",
+        "name": "Shotgun shells",
+        "wiki_link": "https://wiki.factorio.com/shotgun_shells",
         "recipe": {
             "ingredients": [
                 {
@@ -1994,7 +1963,7 @@
         "recipe": {
             "ingredients": [
                 {
-                    "id": "stone-wall",
+                    "id": "wall",
                     "amount": 1
                 },
                 {
@@ -2221,8 +2190,8 @@
         }
     },
     {
-        "id": "rail",
-        "name": "Rail",
+        "id": "straight-rail",
+        "name": "Straight rail",
         "wiki_link": "https://wiki.factorio.com/rail",
         "recipe": {
             "ingredients": [
@@ -2788,13 +2757,13 @@
         }
     },
     {
-        "id": "piercing-shotgun-shell",
-        "name": "Piercing shotgun shell",
-        "wiki_link": "https://wiki.factorio.com/piercing_shotgun_shell",
+        "id": "piercing-shotgun-shells",
+        "name": "Piercing shotgun shells",
+        "wiki_link": "https://wiki.factorio.com/piercing_shotgun_shells",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "shotgun-shell",
+                    "id": "shotgun-shells",
                     "amount": 2
                 },
                 {
@@ -3321,7 +3290,7 @@
                     "amount": 1
                 },
                 {
-                    "id": "stone-wall",
+                    "id": "wall",
                     "amount": 2
                 }
             ],
@@ -3344,7 +3313,7 @@
                     "amount": 1
                 },
                 {
-                    "id": "rail",
+                    "id": "straight-rail",
                     "amount": 30
                 }
             ],
@@ -3396,44 +3365,6 @@
             ],
             "time": 2,
             "yield": 2
-        }
-    },
-    {
-        "id": "fast-loader",
-        "name": "Fast loader",
-        "wiki_link": "https://wiki.factorio.com/fast_loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "fast-transport-belt",
-                    "amount": 5
-                },
-                {
-                    "id": "loader",
-                    "amount": 1
-                }
-            ],
-            "time": 3,
-            "yield": 1
-        }
-    },
-    {
-        "id": "express-loader",
-        "name": "Express loader",
-        "wiki_link": "https://wiki.factorio.com/express_loader",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "express-transport-belt",
-                    "amount": 5
-                },
-                {
-                    "id": "fast-loader",
-                    "amount": 1
-                }
-            ],
-            "time": 10,
-            "yield": 1
         }
     },
     {
@@ -3546,9 +3477,9 @@
         }
     },
     {
-        "id": "logistic-chest-passive-provider",
-        "name": "Logistic chest passive provider",
-        "wiki_link": "https://wiki.factorio.com/logistic_chest_passive_provider",
+        "id": "passive-provider-chest",
+        "name": "Passive provider chest",
+        "wiki_link": "https://wiki.factorio.com/passive_provider_chest",
         "recipe": {
             "ingredients": [
                 {
@@ -3568,9 +3499,9 @@
         }
     },
     {
-        "id": "logistic-chest-active-provider",
-        "name": "Logistic chest active provider",
-        "wiki_link": "https://wiki.factorio.com/logistic_chest_active_provider",
+        "id": "active-provider-chest",
+        "name": "Active provider chest",
+        "wiki_link": "https://wiki.factorio.com/active_provider_chest",
         "recipe": {
             "ingredients": [
                 {
@@ -3590,9 +3521,9 @@
         }
     },
     {
-        "id": "logistic-chest-storage",
-        "name": "Logistic chest storage",
-        "wiki_link": "https://wiki.factorio.com/logistic_chest_storage",
+        "id": "storage-chest",
+        "name": "Storage chest",
+        "wiki_link": "https://wiki.factorio.com/Storage_chest",
         "recipe": {
             "ingredients": [
                 {
@@ -3612,9 +3543,9 @@
         }
     },
     {
-        "id": "logistic-chest-buffer",
-        "name": "Logistic chest buffer",
-        "wiki_link": "https://wiki.factorio.com/logistic_chest_buffer",
+        "id": "buffer-chest",
+        "name": "Buffer chest",
+        "wiki_link": "https://wiki.factorio.com/buffer_chest",
         "recipe": {
             "ingredients": [
                 {
@@ -3634,9 +3565,9 @@
         }
     },
     {
-        "id": "logistic-chest-requester",
-        "name": "Logistic chest requester",
-        "wiki_link": "https://wiki.factorio.com/logistic_chest_requester",
+        "id": "requester-chest",
+        "name": "Requester chest",
+        "wiki_link": "https://wiki.factorio.com/requester_chest",
         "recipe": {
             "ingredients": [
                 {
