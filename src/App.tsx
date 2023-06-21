@@ -6,10 +6,9 @@ import { Item } from './common/types';
 import recipes from './assets/recipes.json';
 
 function App() {
-    const [items, _] = React.useState<Item[]>(recipes as Item[]);
-    React.useEffect(() => {
-        localStorage.setItem('recipes', JSON.stringify(recipes));
-    }, [recipes]);
+    const [items, _] = React.useState<Item[]>(
+        recipes.sort((a, b) => a.name.localeCompare(b.name)) as Item[]
+    );
 
     return (
         <>
