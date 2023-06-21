@@ -7,10 +7,11 @@ interface Props {
     items: Item[];
     item: Item;
     mode: 'item' | 'recipe';
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, item, mode } = props;
+    const { items, item, mode, setSearchTerm } = props;
     const [quantity, setQuantity] = React.useState(1);
 
     return (
@@ -33,6 +34,7 @@ const RecipeViewer = (props: Props) => {
                     item={item}
                     items={items}
                     quantity={quantity / (item.recipe.yield ?? 1)}
+                    setSearchTerm={setSearchTerm}
                 />
             )}
             {mode === 'item' && (
@@ -40,6 +42,7 @@ const RecipeViewer = (props: Props) => {
                     item={item}
                     items={items}
                     quantity={quantity / (item.recipe.yield ?? 1)}
+                    setSearchTerm={setSearchTerm}
                 />
             )}
         </div>

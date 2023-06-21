@@ -6,11 +6,12 @@ import DisappearingSearchBar from '../../common/DisappearingSearchBar';
 interface Props {
     items: Item[];
     setCurrentItem: React.Dispatch<React.SetStateAction<Item | null>>;
+    searchTerm: string;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const RecipeExplorer = (props: Props) => {
-    const { items, setCurrentItem } = props;
-    const [searchTerm, setSearchTerm] = React.useState('');
+    const { items, setCurrentItem, searchTerm, setSearchTerm } = props;
 
     return (
         <div className="flex flex-col gap-2">

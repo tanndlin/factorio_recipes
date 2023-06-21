@@ -3,6 +3,7 @@ import CalculatedRecipe from '../components/RecipeViewer/CalculatedRecipe';
 import { Item } from './types';
 
 export function getRecipeRecurse(
+    setSearchTerm: (searchTerm: string) => void,
     item: Item,
     items: Item[],
     amount: number,
@@ -18,9 +19,11 @@ export function getRecipeRecurse(
             item={item}
             amount={amount}
             depth={depth ? depth + 1 : 0}
+            setSearchTerm={setSearchTerm}
         >
             {ingredients.map((ingredient) => {
                 return getRecipeRecurse(
+                    setSearchTerm,
                     getItem(ingredient.id, items)!,
                     items,
                     amount * ingredient.amount,

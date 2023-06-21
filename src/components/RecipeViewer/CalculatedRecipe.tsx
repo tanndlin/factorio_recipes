@@ -6,10 +6,11 @@ interface Props {
     amount: number;
     depth: number;
     children: React.ReactNode;
+    setSearchTerm: (searchTerm: string) => void;
 }
 
 const CalculatedRecipe = (props: Props) => {
-    const { item, depth, children, amount } = props;
+    const { item, depth, children, amount, setSearchTerm } = props;
 
     let correctedAmount = amount;
     if (depth === 0) {
@@ -20,8 +21,10 @@ const CalculatedRecipe = (props: Props) => {
         <ul style={{ marginLeft: `${depth * 10}px` }}>
             <li className="flex">
                 <img
+                    className="cursor-pointer"
                     src={`../images/32px-${item.name.replace(/ /g, '_')}.png`}
                     alt={item.name}
+                    onClick={() => setSearchTerm(item.name)}
                 />
                 <span>
                     {correctedAmount} {item.name}

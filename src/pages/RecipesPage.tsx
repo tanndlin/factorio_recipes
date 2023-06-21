@@ -11,6 +11,7 @@ interface Props {
 const RecipesPage = (props: Props) => {
     const { items } = props;
     const [currentItem, setCurrentItem] = React.useState<Item | null>(items[0]);
+    const [searchTerm, setSearchTerm] = React.useState('');
     const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
         'item'
     );
@@ -27,7 +28,9 @@ const RecipesPage = (props: Props) => {
                 <RecipeExplorer
                     {...{
                         items,
-                        setCurrentItem
+                        setCurrentItem,
+                        searchTerm,
+                        setSearchTerm
                     }}
                 />
                 {currentItem && (
@@ -35,6 +38,7 @@ const RecipesPage = (props: Props) => {
                         items={items}
                         item={currentItem}
                         mode={recipeMode}
+                        setSearchTerm={setSearchTerm}
                     />
                 )}
             </div>

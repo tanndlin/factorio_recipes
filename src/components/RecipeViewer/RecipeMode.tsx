@@ -6,12 +6,13 @@ interface Props {
     item: Item;
     items: Item[];
     quantity: number;
+    setSearchTerm: (searchTerm: string) => void;
 }
 
 const RecipeMode = (props: Props) => {
-    const { item, items, quantity } = props;
+    const { item, items, quantity, setSearchTerm } = props;
 
-    return <>{getRecipeRecurse(item, items, quantity, 0)}</>;
+    return <>{getRecipeRecurse(setSearchTerm, item, items, quantity, 0)}</>;
 };
 
 export default RecipeMode;

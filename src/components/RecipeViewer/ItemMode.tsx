@@ -6,10 +6,11 @@ interface Props {
     item: Item;
     items: Item[];
     quantity: number;
+    setSearchTerm: (searchTerm: string) => void;
 }
 
 const ItemMode = (props: Props) => {
-    const { item, items, quantity } = props;
+    const { item, items, quantity, setSearchTerm } = props;
 
     const totals = getRecipeSum(item, items, quantity);
 
@@ -22,11 +23,13 @@ const ItemMode = (props: Props) => {
                 return (
                     <div className="flex py-2" key={id}>
                         <img
+                            className="cursor-pointer"
                             src={`../images/32px-${ingredientItem.name.replace(
                                 / /g,
                                 '_'
                             )}.png`}
                             alt={ingredientItem.name}
+                            onClick={() => setSearchTerm(ingredientItem.name)}
                         />
                         <span className="ml-2">
                             {amount} units of {ingredientItem.name}
