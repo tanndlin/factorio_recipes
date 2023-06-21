@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   // Roboto
@@ -70,5 +74,41 @@ input {
     &:hover {
       @apply text-tertiary
     }
+  }
+}
+
+.searchContainer {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  transition: 0.50s;
+
+  &>* {
+    position: absolute;
+  }
+
+  &>input {
+    opacity: 0;
+    width: 100%;
+    transition: 0.50s;
+  }
+
+  &>svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  &:hover,
+  &:has(input:not(:placeholder-shown)) {
+    &>svg {
+      opacity: 0;
+    }
+
+    &>input {
+      opacity: 1;
+    }
+
+    width: 300px;
+    transition: 0.50s;
   }
 }

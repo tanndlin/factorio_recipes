@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
 import { Item } from '../common/types';
+import DisappearingSearchBar from './DisappearingSearchBar';
 
 interface Props {
     items: Item[];
@@ -14,16 +15,11 @@ const RecipesViewer = (props: Props) => {
     return (
         <div className="flex flex-col gap-2">
             <h1 className="font-bold text-4xl mb-4">Recipes</h1>
-            <div className="searchContainer">
-                <input
-                    type="text"
-                    placeholder="Search"
-                    className="border-2 border-gray-300 px-2 rounded-lg"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-            </div>
-            <div className="overflow-auto max-h-9/10screen">
+            <DisappearingSearchBar
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+            />
+            <div className="overflow-auto max-h-8/10screen">
                 {items
                     .filter((item) =>
                         item.name
