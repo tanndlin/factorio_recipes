@@ -29,12 +29,14 @@ const RecipeMode = (props: Props) => {
 
                 return (
                     <CalculatedRecipe
+                        key={`${item.id}-${depth ?? 0}`}
                         item={item}
                         amount={amount}
                         depth={depth ? depth + 1 : 0}
                     >
                         {ingredients.map((ingredient) => (
                             <RecipeModeSingle
+                                key={`${ingredient.id}-${depth ?? 0}-sub`}
                                 item={getItem(ingredient.id, items)!}
                                 items={items}
                                 quantity={amount * ingredient.amount}
@@ -61,6 +63,7 @@ const RecipeModeSingle = (props: SingleProps) => {
         >
             {ingredients.map((ingredient) => (
                 <RecipeModeSingle
+                    key={`${ingredient.id}-${depth ?? 0}-sub`}
                     item={getItem(ingredient.id, items)!}
                     items={items}
                     quantity={quantity * ingredient.amount}
