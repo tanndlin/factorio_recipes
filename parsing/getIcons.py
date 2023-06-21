@@ -3,7 +3,7 @@ import multiprocessing
 import os
 
 
-outputPath = '../../public/images'
+outputPath = '../public/images'
 
 def getIcon(url):
     print(url)
@@ -18,7 +18,7 @@ def createUrl(name):
     return f'https://wiki.factorio.com/images/thumb/{replaced}.png/48px-{replaced}.png'
 
 if __name__ == '__main__':
-    file = '../assets/recipes.json'
+    file = '../src/assets/recipes.json'
     with open(file, 'r') as f:
         data = json.load(f)
 

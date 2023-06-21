@@ -1,6 +1,6 @@
 import json
 
-path = "../assets/originalRecipes.json"
+path = "./originalRecipes.json"
 
 recipes = []
 
@@ -65,5 +65,5 @@ for i in recipes:
     print(i)
 
 
-with open('../assets/recipes.json', 'w') as f:
+with open('out.json', 'w') as f:
     json.dump(recipes, f, indent=4)
