@@ -17,3 +17,15 @@ export interface Ingredient {
     id: string;
     amount: number;
 }
+
+export interface InputItem {
+    item: Item;
+    amount: number;
+}
+
+export interface OutputItem {
+    item: Item;
+    amount: number;
+}
+
+export type OptionTabType = 'input' | 'output';

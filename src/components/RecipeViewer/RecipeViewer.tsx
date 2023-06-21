@@ -1,22 +1,22 @@
 import React from 'react';
-import { Item } from '../../common/types';
+import { InputItem, Item, OutputItem } from '../../common/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 
 interface Props {
     items: Item[];
-    item: Item;
     mode: 'item' | 'recipe';
-    quantity: number;
+    inputItems: InputItem[];
+    outputItems: OutputItem[];
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, item, mode, quantity } = props;
+    const { items, mode, inputItems, outputItems } = props;
 
     return (
         <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer">
             <header className="grid grid-cols-2 mb-4">
-                <h1 className="text-4xl">{item.name}</h1>
+                {/* <h1 className="text-4xl">{item.name}</h1> */}
                 <div className="my-auto ml-auto relative">
                     <div className="background_haze" />
                 </div>
@@ -25,17 +25,17 @@ const RecipeViewer = (props: Props) => {
             <div className="ingredientsList">
                 {mode === 'recipe' && (
                     <RecipeMode
-                        item={item}
+                        inputItems={inputItems}
+                        outputItems={outputItems}
                         items={items}
-                        quantity={quantity / (item.recipe.yield ?? 1)}
                         depth={0}
                     />
                 )}
                 {mode === 'item' && (
                     <ItemMode
-                        item={item}
+                        inputItems={inputItems}
+                        outputItems={outputItems}
                         items={items}
-                        quantity={quantity / (item.recipe.yield ?? 1)}
                     />
                 )}
             </div>

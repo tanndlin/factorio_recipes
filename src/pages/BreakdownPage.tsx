@@ -1,7 +1,8 @@
 import React from 'react';
-import { Item } from '../common/types';
+import { InputItem, Item, OutputItem } from '../common/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
-import Options from '../components/Options';
+import Options from '../components/Options/Options';
+import stars from '../assets/stars.png';
 
 interface Props {
     item: Item;
@@ -10,26 +11,37 @@ interface Props {
 
 const BreakdownPage = (props: Props) => {
     const { item, items } = props;
-    const [quantity, setQuantity] = React.useState(1);
+    const [inputItems, setInputItems] = React.useState<InputItem[]>([]);
+    const [outputItems, setOutputItems] = React.useState<OutputItem[]>([
+        { item, amount: 1 },
+        { item: items[1], amount: 1 }
+    ]);
     const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
         'item'
     );
 
     return (
         <main className="breakdown-container">
+            <img
+                src={stars}
+                alt="Starry Background"
+                className="absolute w-full h-full -z-[1]"
+            />
+            <div className="background_haze"></div>
             <RecipeViewer
                 items={items}
-                item={item}
+                inputItems={inputItems}
+                outputItems={outputItems}
                 mode={recipeMode}
-                quantity={quantity}
             />
             <Options
                 {...{
                     recipeMode,
-                    quantity,
-                    item,
+                    inputItems,
+                    outputItems,
                     setRecipeMode,
-                    setQuantity
+                    setInputItems,
+                    setOutputItems
                 }}
             />
         </main>

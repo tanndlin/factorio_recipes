@@ -1,18 +1,18 @@
 import React from 'react';
-import { Item } from '../../common/types';
-import { getItem, getRecipeSum } from '../../common/CalculatorUtils';
+import { InputItem, Item, OutputItem } from '../../common/types';
+import { getItem, getRecipeSumAll } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
 
 interface Props {
-    item: Item;
+    inputItems: InputItem[];
+    outputItems: OutputItem[];
     items: Item[];
-    quantity: number;
 }
 
 const ItemMode = (props: Props) => {
-    const { item, items, quantity } = props;
+    const { inputItems, outputItems, items } = props;
 
-    const totals = getRecipeSum(item, items, quantity);
+    const totals = getRecipeSumAll(inputItems, outputItems, items);
 
     return (
         <ul>
@@ -26,7 +26,7 @@ const ItemMode = (props: Props) => {
                             item={ingredientItem}
                             className="cursor-pointer"
                         />
-                        <span className="ml-2">
+                        <span className="ml-2 my-auto">
                             {amount} units of {ingredientItem.name}
                         </span>
                     </div>

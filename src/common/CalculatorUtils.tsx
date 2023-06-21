@@ -1,4 +1,22 @@
-import { Item } from './types';
+import { InputItem, Item, OutputItem } from './types';
+
+export function getRecipeSumAll(
+    intputItems: InputItem[],
+    outputItems: OutputItem[],
+    items: Item[]
+) {
+    const totals: { [key: string]: number } = {};
+
+    outputItems.forEach((item) => {
+        const sum = getRecipeSum(item.item, items, item.amount);
+
+        Object.keys(sum).forEach((key) => {
+            totals[key] = (totals[key] ?? 0) + sum[key];
+        });
+    });
+
+    return totals;
+}
 
 export function getRecipeSum(item: Item, items: Item[], quantity: number) {
     console.log(item);
