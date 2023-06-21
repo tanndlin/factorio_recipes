@@ -22,7 +22,15 @@ const CalculatedRecipe = (props: Props) => {
             <div className="flex">
                 <ItemImage item={item} />
                 <span className="ml-2 my-auto">
-                    {correctedAmount} {item.name}
+                    {correctedAmount}
+                    <a
+                        href={item.wiki_link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="ml-1 text-blue-500 hover:underline"
+                    >
+                        {item.name}
+                    </a>
                 </span>
             </div>
             {React.Children.toArray(children).length > 0 && <>{children}</>}

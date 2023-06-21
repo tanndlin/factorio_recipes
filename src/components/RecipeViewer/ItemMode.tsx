@@ -24,7 +24,15 @@ const ItemMode = (props: Props) => {
                     <div className="flex py-2" key={id}>
                         <ItemImage item={ingredientItem} />
                         <span className="ml-2 my-auto">
-                            {amount} units of {ingredientItem.name}
+                            {amount}
+                            <a
+                                href={ingredientItem.wiki_link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="ml-1 text-blue-500 hover:underline"
+                            >
+                                {ingredientItem.name}
+                            </a>
                         </span>
                     </div>
                 );
