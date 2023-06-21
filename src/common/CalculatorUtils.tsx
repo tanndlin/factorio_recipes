@@ -15,6 +15,11 @@ export function getRecipeSumAll(
         });
     });
 
+    intputItems.forEach((outputItem) => {
+        const { id } = outputItem.item;
+        totals[id] = (totals[id] ?? 0) - outputItem.amount;
+    });
+
     return totals;
 }
 

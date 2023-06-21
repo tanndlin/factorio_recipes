@@ -23,7 +23,7 @@ const RecipeViewer = (props: Props) => {
                         key={item.name}
                         items={items}
                         mode={mode}
-                        inputItems={inputItems}
+                        inputItems={[]}
                         outputItems={[{ item, amount }]}
                         headerName={item.name}
                     />
