@@ -4,22 +4,24 @@ import {
     OptionTabType,
     IOItem,
     Item,
-    AssemblerType
+    ManufacturingOptions,
+    AssemblerType,
+    MachineType,
+    FurnaceType
 } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
-import AssemblerChooser from './AssemblerChooser';
+import MachineChooser from './MachineChooser';
 
 interface Props {
     items: Item[];
     recipeMode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
-    assemblerType: AssemblerType;
     setRecipeMode: React.Dispatch<React.SetStateAction<'item' | 'recipe'>>;
     setInputItems: (items: IOItem[]) => void;
     setOutputItems: (items: IOItem[]) => void;
-    setAssemblerType: React.Dispatch<React.SetStateAction<AssemblerType>>;
+    manufacturingOptions: ManufacturingOptions;
 }
 
 const Options = (props: Props) => {
@@ -28,12 +30,13 @@ const Options = (props: Props) => {
         recipeMode,
         inputItems,
         outputItems,
-        assemblerType,
         setRecipeMode,
         setInputItems,
         setOutputItems,
-        setAssemblerType
+        manufacturingOptions
     } = props;
+    const { assemblerType, setAssemblerType, furnaceType, setFurnaceType } =
+        manufacturingOptions;
     const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
     const ioContainerItems: IOItem[] =
@@ -59,9 +62,19 @@ const Options = (props: Props) => {
                         1: 'Recipe'
                     }}
                 />
-                <AssemblerChooser
-                    assemblerType={assemblerType}
-                    setAssemblerType={setAssemblerType}
+                <MachineChooser
+                    machineType={assemblerType}
+                    setMachineType={(type: MachineType) =>
+                        setAssemblerType(type as AssemblerType)
+                    }
+                    type="assembler"
+                />
+                <MachineChooser
+                    machineType={furnaceType}
+                    setMachineType={(type: MachineType) =>
+                        setFurnaceType(type as FurnaceType)
+                    }
+                    type="furnace"
                 />
             </div>
 

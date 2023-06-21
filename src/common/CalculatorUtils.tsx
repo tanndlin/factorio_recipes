@@ -1,4 +1,4 @@
-import { Item, IOItem, AssemblerType } from './types/types';
+import { Item, IOItem, AssemblerType, FurnaceType } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -106,8 +106,19 @@ const getAssemblerModifier = (assemblerType: AssemblerType) => {
         case 'assembling-machine-3':
             return 1.25;
     }
-    return 1;
 };
+
+const getFurnaceModifier = (furnaceType: FurnaceType) => {
+    switch (furnaceType) {
+        case 'stone-furnace':
+            return 1;
+        case 'steel-furnace':
+            return 2;
+        case 'electric-furnace':
+            return 2;
+    }
+};
+
 export const getAssemblerCount = (
     item: Item,
     amount: number,
@@ -118,6 +129,20 @@ export const getAssemblerCount = (
 
     const unrounded =
         (time * (amount / yieldAmt)) / getAssemblerModifier(assemblerType);
+
+    return Math.ceil(unrounded * 100) / 100;
+};
+
+export const getFurnaceCount = (
+    item: Item,
+    amount: number,
+    furnaceType: FurnaceType
+) => {
+    const time = item.recipe.time ?? 0;
+    const yieldAmt = item.recipe.yield ?? 1;
+
+    const unrounded =
+        (time * (amount / yieldAmt)) / getFurnaceModifier(furnaceType);
 
     return Math.ceil(unrounded * 100) / 100;
 };

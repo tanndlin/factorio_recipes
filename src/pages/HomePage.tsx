@@ -1,5 +1,10 @@
 import React from 'react';
-import { Item, IOItem, AssemblerType } from '../common/types/types';
+import {
+    Item,
+    IOItem,
+    AssemblerType,
+    FurnaceType
+} from '../common/types/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';
@@ -22,6 +27,9 @@ const HomePage = (props: Props) => {
         (localStorage.getItem('assemblerType') as AssemblerType) ??
             'assembling-machine-3'
     );
+    const [furnaceType, setfurnaceType] = React.useState<FurnaceType>(
+        (localStorage.getItem('furnaceType') as FurnaceType) ?? 'stone-furnace'
+    );
 
     React.useEffect(() => {
         localStorage.setItem('assemblerType', assemblerType);
@@ -40,7 +48,10 @@ const HomePage = (props: Props) => {
                 inputItems={inputItems}
                 outputItems={outputItems}
                 mode={recipeMode}
-                assemblerType={assemblerType}
+                manufacturingTypes={{
+                    assemblerType,
+                    furnaceType
+                }}
             />
             <Options
                 {...{
@@ -48,11 +59,15 @@ const HomePage = (props: Props) => {
                     recipeMode,
                     inputItems,
                     outputItems,
-                    assemblerType,
                     setRecipeMode,
                     setInputItems,
                     setOutputItems,
-                    setAssemblerType
+                    manufacturingOptions: {
+                        assemblerType,
+                        setAssemblerType,
+                        furnaceType,
+                        setFurnaceType: setfurnaceType
+                    }
                 }}
             />
         </main>

@@ -27,3 +27,20 @@ export type AssemblerType =
     | 'assembling-machine-1'
     | 'assembling-machine-2'
     | 'assembling-machine-3';
+export type FurnaceType =
+    | 'stone-furnace'
+    | 'steel-furnace'
+    | 'electric-furnace';
+export type MachineType = AssemblerType | FurnaceType;
+
+export interface ManufacturingTypes {
+    assemblerType: AssemblerType;
+    furnaceType: FurnaceType;
+}
+
+export interface ManufacturingOptions {
+    assemblerType: AssemblerType;
+    furnaceType: FurnaceType;
+    setAssemblerType: (type: AssemblerType) => void;
+    setFurnaceType: (type: FurnaceType) => void;
+}
