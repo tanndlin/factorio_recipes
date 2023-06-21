@@ -24,7 +24,7 @@ const ItemMode = (props: Props) => {
                     <div className="flex py-2" key={id}>
                         <img
                             className="cursor-pointer"
-                            src={`../images/32px-${ingredientItem.name.replace(
+                            src={`../images/48px-${ingredientItem.name.replace(
                                 / /g,
                                 '_'
                             )}.png`}

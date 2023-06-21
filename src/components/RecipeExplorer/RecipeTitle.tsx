@@ -14,8 +14,8 @@ const RecipeTitle = (props: props) => {
     return (
         <span className="w-full flex gap-4">
             <img
-                className="w-8 h-8"
-                src={`../images/32px-${friendlyName}.png`}
+                className="w-12 h-12"
+                src={`../images/48px-${friendlyName}.png`}
                 alt={name}
             />
             <h1

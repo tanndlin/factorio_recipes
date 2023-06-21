@@ -22,7 +22,7 @@ const CalculatedRecipe = (props: Props) => {
             <li className="flex">
                 <img
                     className="cursor-pointer"
-                    src={`../images/32px-${item.name.replace(/ /g, '_')}.png`}
+                    src={`../images/48px-${item.name.replace(/ /g, '_')}.png`}
                     alt={item.name}
                     onClick={() => setSearchTerm(item.name)}
                 />
