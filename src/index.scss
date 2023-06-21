@@ -132,7 +132,7 @@ input {
 
   &>* {
     max-height: 85vh;
-    overflow: auto;
+    // overflow: auto;
   }
 }
 
@@ -226,4 +226,9 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   overflow: auto;
+}
+
+.ingredientsContainer {
+  overflow: auto;
+  height: 100%;
 }

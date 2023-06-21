@@ -15,7 +15,7 @@ const RecipeViewer = (props: Props) => {
     const [quantity, setQuantity] = React.useState(1);
 
     return (
-        <div className="mx-auto">
+        <div className="mx-auto h-full overflow-hidden">
             <header className="grid grid-cols-2 mb-4">
                 <h1 className="text-4xl">{item.name}</h1>
                 <div className="my-auto ml-auto relative">
@@ -30,23 +30,26 @@ const RecipeViewer = (props: Props) => {
                     ></input>
                 </div>
             </header>
-            {mode === 'recipe' && (
-                <RecipeMode
-                    item={item}
-                    items={items}
-                    quantity={quantity / (item.recipe.yield ?? 1)}
-                    depth={0}
-                    setSearchTerm={setSearchTerm}
-                />
-            )}
-            {mode === 'item' && (
-                <ItemMode
-                    item={item}
-                    items={items}
-                    quantity={quantity / (item.recipe.yield ?? 1)}
-                    setSearchTerm={setSearchTerm}
-                />
-            )}
+
+            <div className="ingredientsContainer">
+                {mode === 'recipe' && (
+                    <RecipeMode
+                        item={item}
+                        items={items}
+                        quantity={quantity / (item.recipe.yield ?? 1)}
+                        depth={0}
+                        setSearchTerm={setSearchTerm}
+                    />
+                )}
+                {mode === 'item' && (
+                    <ItemMode
+                        item={item}
+                        items={items}
+                        quantity={quantity / (item.recipe.yield ?? 1)}
+                        setSearchTerm={setSearchTerm}
+                    />
+                )}
+            </div>
         </div>
     );
 };
