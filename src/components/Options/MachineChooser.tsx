@@ -20,13 +20,13 @@ interface ChooserProps extends Props {
 }
 
 const MachineChooser = (props: WrapperProps) => {
-    const { type } = props;
+    const { type, machineType, setMachineType } = props;
 
     if (type === 'assembler') {
         return (
             <Chooser
-                machineType={props.machineType}
-                setMachineType={props.setMachineType}
+                machineType={machineType}
+                setMachineType={setMachineType}
                 options={[
                     'assembling-machine-1',
                     'assembling-machine-2',
@@ -38,8 +38,8 @@ const MachineChooser = (props: WrapperProps) => {
     }
     return (
         <Chooser
-            machineType={props.machineType}
-            setMachineType={props.setMachineType}
+            machineType={machineType}
+            setMachineType={setMachineType}
             options={['stone-furnace', 'steel-furnace', 'electric-furnace']}
             name="Furnace Type"
         />
@@ -47,29 +47,28 @@ const MachineChooser = (props: WrapperProps) => {
 };
 
 const Chooser = (props: ChooserProps) => {
-    return (
-        <form
-            className="assembler-chooser flex flex-col items-center"
-            onClick={() => {
-                props.options.forEach((option) => {
-                    const check = document.getElementById(
-                        `${option}-chooser`
-                    ) as HTMLInputElement;
+    const { setMachineType, options, name, machineType } = props;
 
-                    if (check.checked) {
-                        props.setMachineType(option);
-                    }
-                });
-            }}
-        >
-            <h1 className="text-xl">{props.name}</h1>
+    React.useEffect(() => {
+        options.forEach((option) => {
+            const container = document.getElementById(`${option}-chooser`)!;
+            const check = container.querySelector(
+                'input[type="radio"]'
+            ) as HTMLInputElement;
+
+            container.addEventListener('click', () => {
+                check.checked = true;
+                setMachineType(option);
+            });
+        });
+    }, [options, machineType, setMachineType]);
+
+    return (
+        <form className="assembler-chooser flex flex-col items-center">
+            <h1 className="text-xl">{name}</h1>
             <fieldset id="machineChooser">
-                {props.options.map((option) => (
-                    <Option
-                        key={option}
-                        type={props.machineType}
-                        name={option}
-                    />
+                {options.map((option) => (
+                    <Option key={option} type={machineType} name={option} />
                 ))}
             </fieldset>
         </form>
@@ -77,16 +76,15 @@ const Chooser = (props: ChooserProps) => {
 };
 
 const Option = (props: { type: MachineType; name: MachineType }) => {
-    const { name } = props;
+    const { name, type } = props;
 
     return (
-        <span>
+        <span id={`${name}-chooser`}>
             <input
                 type="radio"
                 name="machineChooser"
-                id={`${name}-chooser`}
                 value={name}
-                checked={props.type === name}
+                checked={type === name}
                 onChange={() => {}}
             />
             <label htmlFor={name}>
