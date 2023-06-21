@@ -14,7 +14,7 @@ const RecipeExplorer = (props: Props) => {
     const { items, setCurrentItem, searchTerm, setSearchTerm } = props;
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 h-full">
             <h1 className="text-4xl mb-4">Recipes</h1>
             <DisappearingSearchBar
                 searchTerm={searchTerm}

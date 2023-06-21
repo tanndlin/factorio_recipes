@@ -11,7 +11,7 @@ function App() {
     );
 
     return (
-        <>
+        <div className="h-full flex flex-col">
             <Header />
             <BrowserRouter>
                 <Routes>
@@ -29,7 +29,7 @@ function App() {
                     ></Route>
                 </Routes>
             </BrowserRouter>
-        </>
+        </div>
     );
 }
 

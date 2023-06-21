@@ -18,7 +18,7 @@ const RecipesPage = (props: Props) => {
     );
 
     return (
-        <div className="relative grid grid-flow-row">
+        <div className="relative grid grid-flow-row flex-auto">
             <img
                 src={stars}
                 alt="Starry Background"

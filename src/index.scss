@@ -20,6 +20,10 @@ body {
   height: 100vh;
 }
 
+#root {
+  height: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -191,4 +195,5 @@ input {
 .recipeExplorer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  overflow: auto;
 }
