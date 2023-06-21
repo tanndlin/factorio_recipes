@@ -79,22 +79,61 @@ const RecipeMode = (props: Props) => {
 
 const RecipeModeSingle = (props: SingleProps) => {
     const { item, quantity, items, depth, inputItems, assemblerType } = props;
-    const { recipe } = item;
-    const { ingredients } = recipe;
 
     let realAmount = quantity;
     const foundItem = inputItems.find(
         (inputItem) => inputItem.item.id === item.id
     );
-    if (foundItem) {
-        if (foundItem.amount < quantity) {
+    if (foundItem && foundItem.amount > 0) {
+        if (foundItem.amount <= quantity) {
+            // Return 2 CalculatedRecipes
+            const foundItemAmount = +`${foundItem.amount}`;
             realAmount = Math.max(0, quantity - foundItem.amount);
             foundItem.amount = 0;
+            return (
+                <>
+                    {/* one for the inputted items */}
+                    <CalculatedRecipe
+                        item={item}
+                        items={items}
+                        assemblerType={assemblerType}
+                        amount={foundItemAmount}
+                        depth={depth ? depth + 1 : 0}
+                    />
+                    {/* one for the remainder */}
+                    {realAmount > 0 && (
+                        <CalculatedRecipeWithIngredients
+                            item={item}
+                            items={items}
+                            assemblerType={assemblerType}
+                            quantity={realAmount}
+                            depth={depth}
+                            inputItems={inputItems}
+                        />
+                    )}
+                </>
+            );
         } else {
             realAmount = 0;
             foundItem.amount -= quantity;
         }
     }
+
+    return (
+        <CalculatedRecipeWithIngredients
+            item={item}
+            items={items}
+            assemblerType={assemblerType}
+            quantity={realAmount}
+            depth={depth}
+            inputItems={inputItems}
+        />
+    );
+};
+
+const CalculatedRecipeWithIngredients = (props: SingleProps) => {
+    const { item, quantity, items, depth, inputItems, assemblerType } = props;
+    const { ingredients } = item.recipe;
 
     return (
         <CalculatedRecipe
@@ -104,7 +143,7 @@ const RecipeModeSingle = (props: SingleProps) => {
             amount={quantity}
             depth={depth ? depth + 1 : 0}
         >
-            {realAmount > 0 &&
+            {quantity > 0 &&
                 ingredients.map((ingredient) => (
                     <RecipeModeSingle
                         key={`${ingredient.id}-${depth ?? 0}-sub`}
@@ -113,7 +152,7 @@ const RecipeModeSingle = (props: SingleProps) => {
                         items={items}
                         assemblerType={assemblerType}
                         quantity={
-                            (realAmount * ingredient.amount) /
+                            (quantity * ingredient.amount) /
                             (item.recipe.yield ?? 1)
                         }
                         depth={(depth ?? 0) + 1}
