@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem, ManufacturingTypes } from '../../common/types/types';
+import { Item, IOItem, OptionProps } from '../../common/types/types';
 import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
 import { SingleRecipeView } from './SingleRecipeView';
 
@@ -8,12 +8,11 @@ interface Props {
     mode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, mode, inputItems, outputItems, manufacturingTypes } = props;
-
+    const { items, mode, inputItems, outputItems, options } = props;
     const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
 
     const collapsedItems = React.useMemo(() => {
@@ -67,7 +66,7 @@ const RecipeViewer = (props: Props) => {
                                 inputItems={[]}
                                 outputItems={[{ item, amount }]}
                                 headerName={item.name}
-                                manufacturingTypes={manufacturingTypes}
+                                options={options}
                             />
                         );
                     })}
@@ -87,7 +86,7 @@ const RecipeViewer = (props: Props) => {
                                 inputItems={[]}
                                 outputItems={[{ item, amount }]}
                                 headerName={item.name}
-                                manufacturingTypes={manufacturingTypes}
+                                options={options}
                             />
                         );
                     })}
@@ -100,7 +99,7 @@ const RecipeViewer = (props: Props) => {
                     inputItems={inputItems}
                     outputItems={outputItems}
                     headerName="Total"
-                    manufacturingTypes={manufacturingTypes}
+                    options={options}
                 />
             </div>
         </div>

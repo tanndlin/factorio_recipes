@@ -1,22 +1,18 @@
 import React from 'react';
 import ItemImage from '../../common/ItemImage';
 import { getItem, getManufacturerCount } from '../../common/CalculatorUtils';
-import {
-    Item,
-    MachineType,
-    ManufacturingTypes
-} from '../../common/types/types';
+import { Item, MachineType, OptionProps } from '../../common/types/types';
 
 interface Props {
     item: Item;
     amount: number;
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
     items: Item[];
 }
 
 const ManufacturerCount = (props: Props) => {
-    const { item, amount, manufacturingTypes, items } = props;
-    const { assemblerType, furnaceType } = manufacturingTypes;
+    const { item, amount, options, items } = props;
+    const { assemblerType, furnaceType } = options;
     const { category } = item;
     const typeToUse: MachineType =
         category === 'smelting' ? furnaceType : assemblerType;

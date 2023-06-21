@@ -1,5 +1,5 @@
 import React from 'react';
-import { ManufacturingTypes, Item } from '../../common/types/types';
+import { Item, OptionProps } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
 
@@ -8,12 +8,12 @@ interface Props {
     items: Item[];
     amount: number;
     depth: number;
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
     children?: React.ReactNode;
 }
 
 const CalculatedRecipe = (props: Props) => {
-    const { items, item, depth, children, amount, manufacturingTypes } = props;
+    const { items, item, depth, children, amount, options } = props;
     let correctedAmount = amount;
     if (depth === 0) {
         correctedAmount = amount;
@@ -29,7 +29,7 @@ const CalculatedRecipe = (props: Props) => {
                 <ManufacturerCount
                     item={item}
                     amount={correctedAmount}
-                    manufacturingTypes={manufacturingTypes}
+                    options={options}
                     items={items}
                 />
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Item, IOItem, ManufacturingTypes } from '../../common/types/types';
+import { Item, IOItem, OptionProps } from '../../common/types/types';
 import ItemMode from './ItemMode';
-import RecipeMode from './RecipeMode';
+import RecipeModeViewer from './RecipeMode';
 
 export interface SingleRecipeViewProps {
     items: Item[];
@@ -9,18 +9,11 @@ export interface SingleRecipeViewProps {
     inputItems: IOItem[];
     outputItems: IOItem[];
     headerName: string;
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
 }
 
 export const SingleRecipeView = (props: SingleRecipeViewProps) => {
-    const {
-        items,
-        mode,
-        inputItems,
-        outputItems,
-        headerName,
-        manufacturingTypes
-    } = props;
+    const { items, mode, inputItems, outputItems, headerName, options } = props;
 
     return (
         <div className="h-full overflow-auto min-w-max pr-4">
@@ -31,11 +24,11 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
 
                 <div className="ingredientsList">
                     {mode === 'recipe' && (
-                        <RecipeMode
+                        <RecipeModeViewer
                             inputItems={inputItems}
                             outputItems={outputItems}
                             items={items}
-                            manufacturingTypes={manufacturingTypes}
+                            options={options}
                             depth={0}
                         />
                     )}
@@ -44,7 +37,7 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
                             inputItems={inputItems}
                             outputItems={outputItems}
                             items={items}
-                            manufacturingTypes={manufacturingTypes}
+                            options={options}
                         />
                     )}
                 </div>

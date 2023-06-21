@@ -1,16 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import recipes from '../assets/recipes.json';
-import { Item, ManufacturingTypes } from '../common/types/types';
-import RecipeMode from '../components/RecipeViewer/RecipeMode';
+import { Item, OptionProps, RecipeMode, TimeUnit } from '../common/types/types';
+import RecipeModeViewer from '../components/RecipeViewer/RecipeMode';
 import { getItem } from '../common/CalculatorUtils';
 import '@testing-library/jest-dom';
 
 describe('RecipeMode', () => {
     const items = recipes as Item[];
-    const manufacturingTypes: ManufacturingTypes = {
+    const options: OptionProps = {
         assemblerType: 'assembling-machine-1',
-        furnaceType: 'stone-furnace'
+        furnaceType: 'stone-furnace',
+        recipeMode: RecipeMode.Recipe,
+        setAssemblerType: jest.fn(),
+        setFurnaceType: jest.fn(),
+        setRecipeMode: jest.fn(),
+        setTimeUnit: jest.fn(),
+        timeUnit: TimeUnit.Second
     };
 
     it('should render the correct hierarchy for a simple recipe', () => {
@@ -18,11 +24,11 @@ describe('RecipeMode', () => {
             { item: getItem('iron-plate', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={[]}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 
@@ -40,11 +46,11 @@ describe('RecipeMode', () => {
             { item: getItem('iron-plate', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={inputItems}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 
@@ -61,11 +67,11 @@ describe('RecipeMode', () => {
             { item: getItem('electronic-circuit', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={inputItems}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 
@@ -88,11 +94,11 @@ describe('RecipeMode', () => {
             { item: getItem('electronic-circuit', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={inputItems}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 
@@ -115,11 +121,11 @@ describe('RecipeMode', () => {
             { item: getItem('electronic-circuit', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={inputItems}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 
@@ -143,11 +149,11 @@ describe('RecipeMode', () => {
             { item: getItem('advanced-circuit', items)!, amount: 100 }
         ];
         render(
-            <RecipeMode
+            <RecipeModeViewer
                 items={items}
                 inputItems={inputItems}
                 outputItems={outputItems}
-                manufacturingTypes={manufacturingTypes}
+                options={options}
             />
         );
 

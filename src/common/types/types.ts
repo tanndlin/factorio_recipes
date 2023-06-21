@@ -38,9 +38,23 @@ export interface ManufacturingTypes {
     furnaceType: FurnaceType;
 }
 
-export interface ManufacturingOptions {
+export enum TimeUnit {
+    Second = 'second',
+    Minute = 'minute',
+    Hour = 'hour'
+}
+export enum RecipeMode {
+    Item = 'item',
+    Recipe = 'recipe'
+}
+
+export interface OptionProps {
+    recipeMode: RecipeMode;
+    setRecipeMode: (mode: RecipeMode) => void;
     assemblerType: AssemblerType;
-    furnaceType: FurnaceType;
     setAssemblerType: (type: AssemblerType) => void;
+    furnaceType: FurnaceType;
     setFurnaceType: (type: FurnaceType) => void;
+    timeUnit: TimeUnit;
+    setTimeUnit: (unit: TimeUnit) => void;
 }

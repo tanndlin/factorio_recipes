@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem, ManufacturingTypes } from '../../common/types/types';
+import { Item, IOItem, OptionProps } from '../../common/types/types';
 import { getItem, getRecipeSumAll } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
@@ -8,11 +8,11 @@ interface Props {
     inputItems: IOItem[];
     outputItems: IOItem[];
     items: Item[];
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
 }
 
 const ItemMode = (props: Props) => {
-    const { inputItems, outputItems, items, manufacturingTypes } = props;
+    const { inputItems, outputItems, items, options } = props;
     const totals = getRecipeSumAll(inputItems, outputItems, items);
 
     return (
@@ -30,7 +30,7 @@ const ItemMode = (props: Props) => {
                         <ManufacturerCount
                             item={ingredientItem}
                             amount={amount}
-                            manufacturingTypes={manufacturingTypes}
+                            options={options}
                             items={items}
                         />
                     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { getItem } from '../../common/CalculatorUtils';
-import { Item, IOItem, ManufacturingTypes } from '../../common/types/types';
+import { Item, IOItem, OptionProps } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
 interface BaseProps {
     inputItems: IOItem[];
     items: Item[];
-    manufacturingTypes: ManufacturingTypes;
+    options: OptionProps;
     depth?: number;
 }
 
@@ -19,8 +19,8 @@ interface SingleProps extends BaseProps {
     quantity: number;
 }
 
-const RecipeMode = (props: WrapperProps) => {
-    const { inputItems, outputItems, items, depth, manufacturingTypes } = props;
+const RecipeModeViewer = (props: WrapperProps) => {
+    const { inputItems, outputItems, items, depth, options } = props;
     const inputItemsCopy: IOItem[] = JSON.parse(JSON.stringify(inputItems));
 
     return (
@@ -49,18 +49,18 @@ const RecipeMode = (props: WrapperProps) => {
                         key={`${item.id}-${depth ?? 0}`}
                         item={item}
                         items={items}
-                        manufacturingTypes={manufacturingTypes}
+                        options={options}
                         amount={realAmount}
                         depth={depth ? depth + 1 : 0}
                     >
                         {realAmount > 0 &&
                             ingredients.map((ingredient) => (
-                                <RecipeModeSingle
+                                <RecipeModeViewerSingle
                                     key={ingredient.id}
                                     item={getItem(ingredient.id, items)!}
                                     inputItems={inputItemsCopy}
                                     items={items}
-                                    manufacturingTypes={manufacturingTypes}
+                                    options={options}
                                     quantity={
                                         (realAmount * ingredient.amount) /
                                         (item.recipe.yield ?? 1)
@@ -75,9 +75,8 @@ const RecipeMode = (props: WrapperProps) => {
     );
 };
 
-const RecipeModeSingle = (props: SingleProps) => {
-    const { item, quantity, items, depth, inputItems, manufacturingTypes } =
-        props;
+const RecipeModeViewerSingle = (props: SingleProps) => {
+    const { item, quantity, items, depth, inputItems, options } = props;
 
     let realAmount = quantity;
     const foundItem = inputItems.find(
@@ -95,7 +94,7 @@ const RecipeModeSingle = (props: SingleProps) => {
                     <CalculatedRecipe
                         item={item}
                         items={items}
-                        manufacturingTypes={manufacturingTypes}
+                        options={options}
                         amount={foundItemAmount}
                         depth={depth ? depth + 1 : 0}
                     />
@@ -104,7 +103,7 @@ const RecipeModeSingle = (props: SingleProps) => {
                         <CalculatedRecipeWithIngredients
                             item={item}
                             items={items}
-                            manufacturingTypes={manufacturingTypes}
+                            options={options}
                             quantity={realAmount}
                             depth={depth}
                             inputItems={inputItems}
@@ -118,7 +117,7 @@ const RecipeModeSingle = (props: SingleProps) => {
                 <CalculatedRecipe
                     item={item}
                     items={items}
-                    manufacturingTypes={manufacturingTypes}
+                    options={options}
                     amount={realAmount}
                     depth={depth ? depth + 1 : 0}
                 />
@@ -130,7 +129,7 @@ const RecipeModeSingle = (props: SingleProps) => {
         <CalculatedRecipeWithIngredients
             item={item}
             items={items}
-            manufacturingTypes={manufacturingTypes}
+            options={options}
             quantity={realAmount}
             depth={depth}
             inputItems={inputItems}
@@ -139,26 +138,25 @@ const RecipeModeSingle = (props: SingleProps) => {
 };
 
 const CalculatedRecipeWithIngredients = (props: SingleProps) => {
-    const { item, quantity, items, depth, inputItems, manufacturingTypes } =
-        props;
+    const { item, quantity, items, depth, inputItems, options } = props;
     const { ingredients } = item.recipe;
 
     return (
         <CalculatedRecipe
             item={item}
             items={items}
-            manufacturingTypes={manufacturingTypes}
+            options={options}
             amount={quantity}
             depth={depth ? depth + 1 : 0}
         >
             {quantity > 0 &&
                 ingredients.map((ingredient) => (
-                    <RecipeModeSingle
+                    <RecipeModeViewerSingle
                         key={`${ingredient.id}-${depth ?? 0}-sub`}
                         item={getItem(ingredient.id, items)!}
                         inputItems={inputItems}
                         items={items}
-                        manufacturingTypes={manufacturingTypes}
+                        options={options}
                         quantity={
                             (quantity * ingredient.amount) /
                             (item.recipe.yield ?? 1)
@@ -170,4 +168,4 @@ const CalculatedRecipeWithIngredients = (props: SingleProps) => {
     );
 };
 
-export default RecipeMode;
+export default RecipeModeViewer;

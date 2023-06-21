@@ -3,7 +3,10 @@ import {
     Item,
     IOItem,
     AssemblerType,
-    FurnaceType
+    FurnaceType,
+    TimeUnit,
+    OptionProps,
+    RecipeMode
 } from '../common/types/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
@@ -20,20 +23,33 @@ interface Props {
 const HomePage = (props: Props) => {
     const { inputItems, outputItems, setInputItems, setOutputItems, items } =
         props;
-    const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
-        'item'
+    const [recipeMode, setRecipeMode] = React.useState<RecipeMode>(
+        RecipeMode.Item
     );
     const [assemblerType, setAssemblerType] = React.useState<AssemblerType>(
         (localStorage.getItem('assemblerType') as AssemblerType) ??
             'assembling-machine-3'
     );
-    const [furnaceType, setfurnaceType] = React.useState<FurnaceType>(
+    const [furnaceType, setFurnaceType] = React.useState<FurnaceType>(
         (localStorage.getItem('furnaceType') as FurnaceType) ?? 'stone-furnace'
     );
+
+    const [timeUnit, setTimeUnit] = React.useState<TimeUnit>(TimeUnit.Second);
 
     React.useEffect(() => {
         localStorage.setItem('assemblerType', assemblerType);
     }, [assemblerType]);
+
+    const optionProps: OptionProps = {
+        recipeMode,
+        setRecipeMode,
+        assemblerType,
+        setAssemblerType,
+        furnaceType,
+        setFurnaceType,
+        timeUnit,
+        setTimeUnit
+    };
 
     return (
         <main className="breakdown-container">
@@ -48,26 +64,16 @@ const HomePage = (props: Props) => {
                 inputItems={inputItems}
                 outputItems={outputItems}
                 mode={recipeMode}
-                manufacturingTypes={{
-                    assemblerType,
-                    furnaceType
-                }}
+                options={optionProps}
             />
             <Options
                 {...{
                     items,
-                    recipeMode,
                     inputItems,
                     outputItems,
-                    setRecipeMode,
                     setInputItems,
                     setOutputItems,
-                    manufacturingOptions: {
-                        assemblerType,
-                        setAssemblerType,
-                        furnaceType,
-                        setFurnaceType: setfurnaceType
-                    }
+                    optionProps
                 }}
             />
         </main>

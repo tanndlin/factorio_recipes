@@ -4,10 +4,11 @@ import {
     OptionTabType,
     IOItem,
     Item,
-    ManufacturingOptions,
     AssemblerType,
     MachineType,
-    FurnaceType
+    FurnaceType,
+    OptionProps,
+    RecipeMode
 } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
@@ -15,28 +16,30 @@ import MachineChooser from './MachineChooser';
 
 interface Props {
     items: Item[];
-    recipeMode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
-    setRecipeMode: React.Dispatch<React.SetStateAction<'item' | 'recipe'>>;
     setInputItems: (items: IOItem[]) => void;
     setOutputItems: (items: IOItem[]) => void;
-    manufacturingOptions: ManufacturingOptions;
+    optionProps: OptionProps;
 }
 
 const Options = (props: Props) => {
     const {
         items,
-        recipeMode,
         inputItems,
         outputItems,
-        setRecipeMode,
         setInputItems,
         setOutputItems,
-        manufacturingOptions
+        optionProps
     } = props;
-    const { assemblerType, setAssemblerType, furnaceType, setFurnaceType } =
-        manufacturingOptions;
+    const {
+        recipeMode,
+        setRecipeMode,
+        assemblerType,
+        setAssemblerType,
+        furnaceType,
+        setFurnaceType
+    } = optionProps;
     const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
     const ioContainerItems: IOItem[] =
@@ -48,12 +51,14 @@ const Options = (props: Props) => {
         <div className="optionsContainer">
             <div className="topOptionsContainer">
                 <Toggle
-                    value={recipeMode === 'recipe'}
+                    value={recipeMode === RecipeMode.Recipe}
                     setValue={(value) => {
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (document as any).startViewTransition(() => {
                             setCurrentTab('output');
-                            setRecipeMode(value ? 'recipe' : 'item');
+                            setRecipeMode(
+                                value ? RecipeMode.Recipe : RecipeMode.Item
+                            );
                         });
                     }}
                     name="Recipe Mode"
