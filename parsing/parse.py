@@ -74,9 +74,9 @@ def convert(recipe):
         ret['recipe']['yield'] = recipe['result_count']
     else: 
         ret['recipe']['yield'] = 1
-
-
-
+    
+    if 'category' in recipe:
+        ret['category'] = recipe['category']
 
     return ret
 

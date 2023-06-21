@@ -241,7 +241,8 @@
             ],
             "time": 5,
             "yield": 1
-        }
+        },
+        "category": "oil-processing"
     },
     {
         "id": "advanced-oil-processing",
@@ -259,7 +260,8 @@
             ],
             "time": 5,
             "yield": 1
-        }
+        },
+        "category": "oil-processing"
     },
     {
         "id": "coal-liquefaction",
@@ -281,7 +283,8 @@
             ],
             "time": 5,
             "yield": 1
-        }
+        },
+        "category": "oil-processing"
     },
     {
         "id": "sulfuric-acid",
@@ -303,7 +306,8 @@
             ],
             "time": 1,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "plastic-bar",
@@ -321,7 +325,8 @@
             ],
             "time": 1,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "solid-fuel-from-light-oil",
@@ -335,7 +340,8 @@
             ],
             "time": 2,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "solid-fuel-from-petroleum-gas",
@@ -349,7 +355,8 @@
             ],
             "time": 2,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "solid-fuel-from-heavy-oil",
@@ -363,7 +370,8 @@
             ],
             "time": 2,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "sulfur",
@@ -381,7 +389,8 @@
             ],
             "time": 1,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "lubricant",
@@ -395,7 +404,8 @@
             ],
             "time": 1,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "empty-barrel",
@@ -409,7 +419,8 @@
             ],
             "time": 1,
             "yield": 1
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "night-vision-equipment",
@@ -1505,7 +1516,8 @@
             ],
             "time": 10,
             "yield": 1
-        }
+        },
+        "category": "advanced-crafting"
     },
     {
         "id": "iron-chest",
@@ -1781,7 +1793,8 @@
             ],
             "time": 10,
             "yield": 10
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "hazard-concrete",
@@ -1795,7 +1808,8 @@
             ],
             "time": 0.25,
             "yield": 10
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "refined-concrete",
@@ -1821,7 +1835,8 @@
             ],
             "time": 15,
             "yield": 10
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "refined-hazard-concrete",
@@ -1835,7 +1850,8 @@
             ],
             "time": 0.25,
             "yield": 10
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "landfill",
@@ -1849,7 +1865,8 @@
             ],
             "time": 0.5,
             "yield": 1
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "fast-transport-belt",
@@ -2031,7 +2048,8 @@
             ],
             "time": 3.2,
             "yield": 1
-        }
+        },
+        "category": "smelting"
     },
     {
         "id": "iron-plate",
@@ -2045,7 +2063,8 @@
             ],
             "time": 3.2,
             "yield": 1
-        }
+        },
+        "category": "smelting"
     },
     {
         "id": "stone-brick",
@@ -2059,7 +2078,8 @@
             ],
             "time": 3.2,
             "yield": 1
-        }
+        },
+        "category": "smelting"
     },
     {
         "id": "steel-plate",
@@ -2579,7 +2599,8 @@
             ],
             "time": 6,
             "yield": 1
-        }
+        },
+        "category": "chemistry"
     },
     {
         "id": "express-transport-belt",
@@ -3025,7 +3046,8 @@
             ],
             "time": 2,
             "yield": 2
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "express-splitter",
@@ -3051,7 +3073,8 @@
             ],
             "time": 2,
             "yield": 1
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "advanced-circuit",
@@ -3459,7 +3482,8 @@
             ],
             "time": 10,
             "yield": 1
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "flying-robot-frame",
@@ -3635,7 +3659,8 @@
             ],
             "time": 30,
             "yield": 1
-        }
+        },
+        "category": "crafting-with-fluid"
     },
     {
         "id": "rocket-control-unit",
@@ -3653,7 +3678,8 @@
             ],
             "time": 30,
             "yield": 1
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "rocket-part",
@@ -3675,7 +3701,8 @@
             ],
             "time": 3,
             "yield": 1
-        }
+        },
+        "category": "rocket-building"
     },
     {
         "id": "satellite",
@@ -3709,7 +3736,8 @@
             ],
             "time": 5,
             "yield": 1
-        }
+        },
+        "category": "crafting"
     },
     {
         "id": "nuclear-reactor",
@@ -3775,7 +3803,8 @@
             ],
             "time": 12,
             "yield": 1
-        }
+        },
+        "category": "centrifuging"
     },
     {
         "id": "kovarex-enrichment-process",
@@ -3793,7 +3822,8 @@
             ],
             "time": 60,
             "yield": 1
-        }
+        },
+        "category": "centrifuging"
     },
     {
         "id": "nuclear-fuel",
@@ -3811,7 +3841,8 @@
             ],
             "time": 90,
             "yield": 1
-        }
+        },
+        "category": "centrifuging"
     },
     {
         "id": "nuclear-fuel-reprocessing",
@@ -3825,7 +3856,8 @@
             ],
             "time": 60,
             "yield": 1
-        }
+        },
+        "category": "centrifuging"
     },
     {
         "id": "uranium-fuel-cell",
