@@ -3,6 +3,7 @@ import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import { Item } from '../common/types';
 import Options from '../components/Options';
+import stars from '../assets/stars.png';
 
 interface Props {
     items: Item[];
@@ -17,7 +18,13 @@ const RecipesPage = (props: Props) => {
     );
 
     return (
-        <div className="grid grid-flow-row">
+        <div className="relative grid grid-flow-row">
+            <img
+                src={stars}
+                alt="Starry Background"
+                className="absolute w-full h-full -z-[1]"
+            />
+            <div className="background_haze"></div>
             <div className="recipesContainer p-10">
                 <Options
                     {...{

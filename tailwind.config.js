@@ -48,9 +48,9 @@ module.exports = {
                 '9/10screen': '90vh'
             },
             colors: {
-                primary: 'rgb(17 24 39)',
-                secondary: 'rgb(31 41 55)',
-                tertiary: 'rgb(12 74 110)'
+                primary: '#1a1a6c',
+                secondary: '#111213',
+                tertiary: '#432d4b'
             }
         }
     },

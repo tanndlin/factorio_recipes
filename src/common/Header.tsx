@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div className="flex border-b-4 border-tertiary font-bold text-xl px-8">
-            <ul className="header flex gap-10 ml-auto">
+        <div className="header flex border-b-[1px] border-gray-500 text-xl px-8">
+            <ul className="flex gap-10 py-4">
                 <li>
                     <a href="/">Home</a>
                 </li>

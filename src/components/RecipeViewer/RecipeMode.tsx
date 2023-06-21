@@ -16,8 +16,6 @@ const RecipeMode = (props: Props) => {
     const { recipe } = item;
     const { ingredients } = recipe;
 
-    console.log(item.name, depth);
-
     return (
         <CalculatedRecipe
             item={item}

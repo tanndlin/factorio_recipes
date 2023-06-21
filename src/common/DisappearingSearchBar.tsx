@@ -15,7 +15,7 @@ const DisappearingSearchBar = (props: props) => {
             <input
                 type="text"
                 placeholder="Search"
-                className="border-2 border-gray-300 px-2 rounded-lg"
+                className="border-2 bg-[#44474a] border-tertiary px-2 rounded-lg text-white"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />

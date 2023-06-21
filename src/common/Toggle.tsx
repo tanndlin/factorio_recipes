@@ -12,7 +12,7 @@ const Toggle = (props: Props) => {
 
     return (
         <div className="flex flex-col">
-            <label className="text-center text-xl font-bold mb-2">{name}</label>
+            <label className="text-center text-xl mb-2">{name}</label>
             {optionNames && (
                 <h2 className="mx-auto mb-4">{optionNames[value ? 1 : 0]}</h2>
             )}

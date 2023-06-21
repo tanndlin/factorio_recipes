@@ -17,10 +17,11 @@ const RecipeViewer = (props: Props) => {
     return (
         <div className="mx-auto">
             <header className="grid grid-cols-2 mb-4">
-                <h1 className="font-bold text-4xl">{item.name}</h1>
-                <div className="my-auto ml-auto">
+                <h1 className="text-4xl">{item.name}</h1>
+                <div className="my-auto ml-auto relative">
+                    <div className="background_haze" />
                     <input
-                        className="px-2 w-20"
+                        className="px-2 w-20 bg-[#44474a] border-tertiary text-white"
                         type="number"
                         value={quantity}
                         onChange={(event) => {

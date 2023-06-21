@@ -15,7 +15,7 @@ const RecipeExplorer = (props: Props) => {
 
     return (
         <div className="flex flex-col gap-2">
-            <h1 className="font-bold text-4xl mb-4">Recipes</h1>
+            <h1 className="text-4xl mb-4">Recipes</h1>
             <DisappearingSearchBar
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
