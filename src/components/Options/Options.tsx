@@ -35,7 +35,12 @@ const Options = (props: Props) => {
         <div className="optionsContainer">
             <Toggle
                 value={recipeMode === 'recipe'}
-                setValue={(value) => setRecipeMode(value ? 'recipe' : 'item')}
+                setValue={(value) => {
+                    (document as any).startViewTransition(() => {
+                        setCurrentTab('output');
+                        setRecipeMode(value ? 'recipe' : 'item');
+                    });
+                }}
                 name="Recipe Mode"
                 optionNames={{
                     0: 'Item',
@@ -46,13 +51,21 @@ const Options = (props: Props) => {
             <div>
                 <TabContainer className="justify-center">
                     <h1
-                        onClick={() => setCurrentTab('output')}
+                        onClick={() =>
+                            (document as any).startViewTransition(() => {
+                                setCurrentTab('output');
+                            })
+                        }
                         className="text-xl"
                     >
                         Output
                     </h1>
                     <h1
-                        onClick={() => setCurrentTab('input')}
+                        onClick={() =>
+                            (document as any).startViewTransition(() => {
+                                setCurrentTab('input');
+                            })
+                        }
                         className="text-xl"
                     >
                         Input
