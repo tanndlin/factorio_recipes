@@ -2,7 +2,7 @@ import React from 'react';
 import RecipesPage from './pages/RecipesPage';
 import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { InputItem, Item, OutputItem } from './common/types';
+import { Item, IOItem } from './common/types';
 import recipes from './assets/recipes.json';
 import HomePage from './pages/HomePage';
 import BreakdownPage from './pages/BreakdownPage';
@@ -11,8 +11,8 @@ function App() {
     const [items, _] = React.useState<Item[]>(
         recipes.sort((a, b) => a.name.localeCompare(b.name)) as Item[]
     );
-    const [inputItems, setInputItems] = React.useState<InputItem[]>([]);
-    const [outputItems, setOutputItems] = React.useState<OutputItem[]>([
+    const [inputItems, setInputItems] = React.useState<IOItem[]>([]);
+    const [outputItems, setOutputItems] = React.useState<IOItem[]>([
         { item: items[0], amount: 1 }
     ]);
 

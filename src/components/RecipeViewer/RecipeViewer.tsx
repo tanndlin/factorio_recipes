@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputItem, Item, OutputItem } from '../../common/types';
+import { Item, IOItem } from '../../common/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 import SingleRecipeView from './SingleRecipeView';
@@ -7,15 +7,15 @@ import SingleRecipeView from './SingleRecipeView';
 interface Props {
     items: Item[];
     mode: 'item' | 'recipe';
-    inputItems: InputItem[];
-    outputItems: OutputItem[];
+    inputItems: IOItem[];
+    outputItems: IOItem[];
 }
 
 const RecipeViewer = (props: Props) => {
     const { items, mode, inputItems, outputItems } = props;
 
     return (
-        <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer flex">
+        <div className="ingredientsContainer flex gap-16">
             {outputItems.map((outputItem) => {
                 const { item, amount } = outputItem;
                 return (

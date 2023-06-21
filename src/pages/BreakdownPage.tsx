@@ -1,14 +1,14 @@
 import React from 'react';
-import { InputItem, Item, OutputItem } from '../common/types';
+import { Item, IOItem } from '../common/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';
 
 interface Props {
-    inputItems: InputItem[];
-    outputItems: OutputItem[];
-    setInputItems: React.Dispatch<React.SetStateAction<InputItem[]>>;
-    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
+    inputItems: IOItem[];
+    outputItems: IOItem[];
+    setInputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
+    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
     items: Item[];
 }
 

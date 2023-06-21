@@ -1,8 +1,8 @@
-import { InputItem, Item, OutputItem } from './types';
+import { Item, IOItem } from './types';
 
 export function getRecipeSumAll(
-    intputItems: InputItem[],
-    outputItems: OutputItem[],
+    intputItems: IOItem[],
+    outputItems: IOItem[],
     items: Item[]
 ) {
     const totals: { [key: string]: number } = {};

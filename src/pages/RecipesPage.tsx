@@ -1,12 +1,12 @@
 import React from 'react';
 import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
-import { Item, OutputItem } from '../common/types';
+import { Item, IOItem } from '../common/types';
 import stars from '../assets/stars.png';
 import { useNavigate } from 'react-router';
 
 interface Props {
-    outputItems: OutputItem[];
-    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
+    outputItems: IOItem[];
+    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
     items: Item[];
 }
 

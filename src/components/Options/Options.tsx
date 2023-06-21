@@ -1,16 +1,16 @@
 import React from 'react';
 import Toggle from '../../common/Toggle';
-import { InputItem, Item, OptionTabType, OutputItem } from '../../common/types';
+import { OptionTabType, IOItem } from '../../common/types';
 import TabContainer from '../../common/TabContainer';
-import OutputContainer from './OutputContainer';
+import IOContainer from './IOContainer';
 
 interface Props {
     recipeMode: 'item' | 'recipe';
-    inputItems: InputItem[];
-    outputItems: OutputItem[];
+    inputItems: IOItem[];
+    outputItems: IOItem[];
     setRecipeMode: React.Dispatch<React.SetStateAction<'item' | 'recipe'>>;
-    setInputItems: React.Dispatch<React.SetStateAction<InputItem[]>>;
-    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
+    setInputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
+    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
 }
 
 const Options = (props: Props) => {
@@ -23,6 +23,11 @@ const Options = (props: Props) => {
         setOutputItems
     } = props;
     const [currentTab, setCurrentTab] = React.useState<OptionTabType>('output');
+
+    const ioContainerItems: IOItem[] =
+        currentTab === 'output' ? outputItems : inputItems;
+    const setIoContainerItems =
+        currentTab === 'output' ? setOutputItems : setInputItems;
 
     return (
         <div className="optionsContainer">
@@ -52,12 +57,10 @@ const Options = (props: Props) => {
                     </h1>
                 </TabContainer>
 
-                {currentTab === 'output' && (
-                    <OutputContainer
-                        outputItems={outputItems}
-                        setOutputItems={setOutputItems}
-                    />
-                )}
+                <IOContainer
+                    items={ioContainerItems}
+                    setItems={setIoContainerItems}
+                />
             </div>
         </div>
     );

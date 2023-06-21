@@ -1,19 +1,19 @@
 import React from 'react';
-import { OutputItem } from '../../common/types';
+import { IOItem } from '../../common/types';
 import ItemImage from '../../common/ItemImage';
 import CancelButton from '../../common/CancelButton';
 
 interface Props {
-    outputItems: OutputItem[];
-    setOutputItems: React.Dispatch<React.SetStateAction<OutputItem[]>>;
+    items: IOItem[];
+    setItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
 }
 
-const OutputContainer = (props: Props) => {
-    const { outputItems, setOutputItems } = props;
+const IOContainer = (props: Props) => {
+    const { items, setItems } = props;
 
     return (
         <ul className="output-container">
-            {outputItems.map((outputItem, index) => {
+            {items.map((outputItem, index) => {
                 const { item, amount } = outputItem;
 
                 return (
@@ -21,9 +21,9 @@ const OutputContainer = (props: Props) => {
                         <div className="flex py-2 relative" key={index}>
                             <CancelButton
                                 onClick={() => {
-                                    const newOutputItems = [...outputItems];
-                                    newOutputItems.splice(index, 1);
-                                    setOutputItems(newOutputItems);
+                                    const newItems = [...items];
+                                    newItems.splice(index, 1);
+                                    setItems(newItems);
                                 }}
                             />
 
@@ -35,10 +35,10 @@ const OutputContainer = (props: Props) => {
                                     value={amount}
                                     className="px-2"
                                     onChange={(event) => {
-                                        const newOutputItems = [...outputItems];
-                                        newOutputItems[index].amount =
+                                        const newItems = [...items];
+                                        newItems[index].amount =
                                             +event.target.value;
-                                        setOutputItems(newOutputItems);
+                                        setItems(newItems);
                                     }}
                                 />
                             </div>
@@ -50,4 +50,4 @@ const OutputContainer = (props: Props) => {
     );
 };
 
-export default OutputContainer;
+export default IOContainer;

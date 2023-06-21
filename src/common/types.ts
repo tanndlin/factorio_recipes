@@ -18,12 +18,7 @@ export interface Ingredient {
     amount: number;
 }
 
-export interface InputItem {
-    item: Item;
-    amount: number;
-}
-
-export interface OutputItem {
+export interface IOItem {
     item: Item;
     amount: number;
 }

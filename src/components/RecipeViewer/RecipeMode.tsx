@@ -1,11 +1,11 @@
 import React from 'react';
 import { getItem } from '../../common/CalculatorUtils';
-import { InputItem, Item, OutputItem } from '../../common/types';
+import { Item, IOItem } from '../../common/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
 interface Props {
-    inputItems: InputItem[];
-    outputItems: OutputItem[];
+    inputItems: IOItem[];
+    outputItems: IOItem[];
     items: Item[];
     depth?: number;
 }
