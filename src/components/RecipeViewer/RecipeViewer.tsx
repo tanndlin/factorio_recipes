@@ -28,8 +28,20 @@ const RecipeViewer = (props: Props) => {
                     ></input>
                 </div>
             </header>
-            {mode === 'recipe' && <RecipeMode {...{ item, items, quantity }} />}
-            {mode === 'item' && <ItemMode {...{ item, items, quantity }} />}
+            {mode === 'recipe' && (
+                <RecipeMode
+                    item={item}
+                    items={items}
+                    quantity={quantity / (item.recipe.yield ?? 1)}
+                />
+            )}
+            {mode === 'item' && (
+                <ItemMode
+                    item={item}
+                    items={items}
+                    quantity={quantity / (item.recipe.yield ?? 1)}
+                />
+            )}
         </div>
     );
 };

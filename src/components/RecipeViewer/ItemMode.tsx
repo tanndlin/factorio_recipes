@@ -20,7 +20,7 @@ const ItemMode = (props: Props) => {
                 const amount = totals[id];
 
                 return (
-                    <div className="flex py-2">
+                    <div className="flex py-2" key={id}>
                         <img
                             src={`../images/32px-${ingredientItem.name.replace(
                                 / /g,

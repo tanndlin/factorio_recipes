@@ -134,3 +134,12 @@ input {
   // Rounded on right, square on left
   border-radius: 0 50% 50% 0;
 }
+
+.recipeCard {
+  transition: .5s;
+
+  &:hover {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

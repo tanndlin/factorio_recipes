@@ -13,7 +13,7 @@ const RecipeCard = (props: Props) => {
     const { items, item, setCurrentItem } = props;
 
     return (
-        <div className="border-2 rounded-md p-2" id={item.id}>
+        <div className="border-2 rounded-md p-2 recipeCard" id={item.id}>
             <RecipeTitle
                 item={item}
                 onClick={() => setCurrentItem(item)}

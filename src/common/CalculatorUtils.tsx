@@ -36,7 +36,7 @@ export function getRecipeSum(item: Item, items: Item[], quantity: number) {
     const { ingredients } = recipe;
 
     const totals: { [key: string]: number } = {};
-    totals[item.id] = (totals[item.id] ?? 0) + quantity;
+    totals[item.id] = (totals[item.id] ?? 0) + quantity * (recipe.yield ?? 1);
 
     ingredients.forEach((ingredient) => {
         totals[ingredient.id] =

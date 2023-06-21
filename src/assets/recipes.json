@@ -325,48 +325,6 @@
         }
     },
     {
-        "id": "battery-mk1",
-        "name": "Battery MK1",
-        "type": "Item",
-        "wiki_link": "https://wiki.factorio.com/Battery_MK1",
-        "category": "Combat",
-        "recipe": {
-            "time": 10,
-            "yield": 1,
-            "ingredients": [
-                {
-                    "id": "battery",
-                    "amount": 5
-                },
-                {
-                    "id": "steel-plate",
-                    "amount": 10
-                }
-            ]
-        }
-    },
-    {
-        "id": "battery-mk2",
-        "name": "Battery MK2",
-        "type": "Item",
-        "wiki_link": "https://wiki.factorio.com/Battery_MK2",
-        "category": "Combat",
-        "recipe": {
-            "time": 10,
-            "yield": 1,
-            "ingredients": [
-                {
-                    "id": "battery-mk1",
-                    "amount": 10
-                },
-                {
-                    "id": "processing-unit",
-                    "amount": 20
-                }
-            ]
-        }
-    },
-    {
         "id": "beacon",
         "name": "Beacon",
         "type": "Machinery",
@@ -414,30 +372,6 @@
                     "amount": 5
                 }
             ]
-        }
-    },
-    {
-        "id": "blueprint",
-        "name": "Blueprint",
-        "type": "Tool",
-        "wiki_link": "https://wiki.factorio.com/Blueprint",
-        "category": "Production",
-        "recipe": {
-            "time": null,
-            "yield": null,
-            "ingredients": []
-        }
-    },
-    {
-        "id": "blueprint-book",
-        "name": "Blueprint book",
-        "type": "Tool",
-        "wiki_link": "https://wiki.factorio.com/Blueprint_book",
-        "category": "Production",
-        "recipe": {
-            "time": null,
-            "yield": null,
-            "ingredients": []
         }
     },
     {
@@ -1946,30 +1880,26 @@
         }
     },
     {
-        "id": "high-tech-science-pack",
-        "name": "High tech science pack",
+        "id": "Utility-science-pack",
+        "name": "Utility science pack",
         "type": "Science pack",
-        "wiki_link": "https://wiki.factorio.com/High_tech_science_pack",
+        "wiki_link": "https://wiki.factorio.com/Utility_science_pack",
         "category": "Intermediate product",
         "recipe": {
-            "time": 14,
-            "yield": 2,
+            "time": 21,
+            "yield": 3,
             "ingredients": [
                 {
-                    "id": "battery",
+                    "id": "flying-robot-frame",
                     "amount": 1
-                },
-                {
-                    "id": "copper-cable",
-                    "amount": 30
                 },
                 {
                     "id": "processing-unit",
-                    "amount": 3
+                    "amount": 2
                 },
                 {
-                    "id": "speed-module",
-                    "amount": 1
+                    "id": "low-density-structure",
+                    "amount": 3
                 }
             ]
         }
@@ -2323,9 +2253,9 @@
     },
     {
         "id": "long-handed-inserter",
-        "name": "Long handed inserter",
+        "name": "Long-handed inserter",
         "type": "Machinery",
-        "wiki_link": "https://wiki.factorio.com/Long_handed_inserter",
+        "wiki_link": "https://wiki.factorio.com/Long-handed_inserter",
         "category": "Logistics",
         "recipe": {
             "time": 0.5,
@@ -2440,8 +2370,8 @@
                     "amount": 1
                 },
                 {
-                    "id": "piercing-rounds-magazine",
-                    "amount": 1
+                    "id": "stone-wall",
+                    "amount": 2
                 }
             ]
         }
@@ -3049,16 +2979,20 @@
         "wiki_link": "https://wiki.factorio.com/Production_science_pack",
         "category": "Intermediate product",
         "recipe": {
-            "time": 14,
-            "yield": 2,
+            "time": 21,
+            "yield": 3,
             "ingredients": [
                 {
-                    "id": "electric-engine-unit",
+                    "id": "productivity-module",
                     "amount": 1
                 },
                 {
                     "id": "electric-furnace",
                     "amount": 1
+                },
+                {
+                    "id": "rail",
+                    "amount": 30
                 }
             ]
         }
@@ -3651,10 +3585,10 @@
         }
     },
     {
-        "id": "science-pack-1",
-        "name": "Science pack 1",
-        "type": "Science pack",
-        "wiki_link": "https://wiki.factorio.com/Science_pack_1",
+        "id": "automation-science-pack",
+        "name": "Automation science pack",
+        "type": "Automation science pack",
+        "wiki_link": "https://wiki.factorio.com/Automation_science_pack",
         "category": "Intermediate product",
         "recipe": {
             "time": 5,
@@ -3672,10 +3606,10 @@
         }
     },
     {
-        "id": "science-pack-2",
-        "name": "Science pack 2",
+        "id": "Logistic-science-pack",
+        "name": "Logistic science pack",
         "type": "Science pack",
-        "wiki_link": "https://wiki.factorio.com/Science_pack_2",
+        "wiki_link": "https://wiki.factorio.com/Logistic_science_pack",
         "category": "Intermediate product",
         "recipe": {
             "time": 6,
@@ -3693,26 +3627,26 @@
         }
     },
     {
-        "id": "science-pack-3",
-        "name": "Science pack 3",
+        "id": "Chemical-science-pack",
+        "name": "Chemical science pack",
         "type": "Science pack",
-        "wiki_link": "https://wiki.factorio.com/Science_pack_3",
+        "wiki_link": "https://wiki.factorio.com/Chemical_science_pack",
         "category": "Intermediate product",
         "recipe": {
-            "time": 12,
-            "yield": 1,
+            "time": 24,
+            "yield": 2,
             "ingredients": [
                 {
                     "id": "advanced-circuit",
-                    "amount": 1
+                    "amount": 3
                 },
                 {
-                    "id": "electric-mining-drill",
+                    "id": "sulfur",
                     "amount": 1
                 },
                 {
                     "id": "engine-unit",
-                    "amount": 1
+                    "amount": 2
                 }
             ]
         }
