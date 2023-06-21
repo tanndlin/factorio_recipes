@@ -1,4 +1,4 @@
-import { Item, IOItem, AssemblerType, FurnaceType } from './types/types';
+import { Item, IOItem, MachineType } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -98,19 +98,14 @@ export function removeDuplicates(items: IOItem[]) {
     );
 }
 
-const getAssemblerModifier = (assemblerType: AssemblerType) => {
-    switch (assemblerType) {
+const getModifier = (machineType: MachineType) => {
+    switch (machineType) {
         case 'assembling-machine-1':
             return 0.5;
         case 'assembling-machine-2':
             return 0.75;
         case 'assembling-machine-3':
             return 1.25;
-    }
-};
-
-const getFurnaceModifier = (furnaceType: FurnaceType) => {
-    switch (furnaceType) {
         case 'stone-furnace':
             return 1;
         case 'steel-furnace':
@@ -120,30 +115,14 @@ const getFurnaceModifier = (furnaceType: FurnaceType) => {
     }
 };
 
-export const getAssemblerCount = (
+export const getManufacturerCount = (
     item: Item,
     amount: number,
-    assemblerType: AssemblerType
+    machineType: MachineType
 ) => {
     const time = item.recipe.time ?? 0;
     const yieldAmt = item.recipe.yield ?? 1;
 
-    const unrounded =
-        (time * (amount / yieldAmt)) / getAssemblerModifier(assemblerType);
-
-    return Math.ceil(unrounded * 100) / 100;
-};
-
-export const getFurnaceCount = (
-    item: Item,
-    amount: number,
-    furnaceType: FurnaceType
-) => {
-    const time = item.recipe.time ?? 0;
-    const yieldAmt = item.recipe.yield ?? 1;
-
-    const unrounded =
-        (time * (amount / yieldAmt)) / getFurnaceModifier(furnaceType);
-
+    const unrounded = (time * (amount / yieldAmt)) / getModifier(machineType);
     return Math.ceil(unrounded * 100) / 100;
 };

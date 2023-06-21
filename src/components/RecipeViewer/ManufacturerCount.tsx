@@ -1,11 +1,11 @@
 import React from 'react';
 import ItemImage from '../../common/ItemImage';
+import { getItem, getManufacturerCount } from '../../common/CalculatorUtils';
 import {
-    getAssemblerCount,
-    getFurnaceCount,
-    getItem
-} from '../../common/CalculatorUtils';
-import { Item, ManufacturingTypes } from '../../common/types/types';
+    Item,
+    MachineType,
+    ManufacturingTypes
+} from '../../common/types/types';
 
 interface Props {
     item: Item;
@@ -17,36 +17,23 @@ interface Props {
 const ManufacturerCount = (props: Props) => {
     const { item, amount, manufacturingTypes, items } = props;
     const { assemblerType, furnaceType } = manufacturingTypes;
+    const { category } = item;
+    const typeToUse: MachineType =
+        category === 'smelting' ? furnaceType : assemblerType;
 
-    const category = item.category;
-
-    if (!category) {
+    if (!category || category === 'smelting') {
         return (
             <span className="ml-4 my-auto flex">
                 <ItemImage
                     className="h-6 w-6"
-                    item={getItem(assemblerType, items)!}
+                    item={getItem(typeToUse, items)!}
                 />
-                x{getAssemblerCount(item, amount, assemblerType)}
+                x{getManufacturerCount(item, amount, typeToUse)}
             </span>
         );
     }
 
-    switch (category) {
-        case 'smelting':
-            return (
-                <span className="ml-4 my-auto flex">
-                    <ItemImage
-                        className="h-6 w-6"
-                        item={getItem(furnaceType, items)!}
-                    />
-                    x{getFurnaceCount(item, amount, furnaceType)}
-                </span>
-            );
-
-        default:
-            return <> </>;
-    }
+    return <></>;
 };
 
 export default ManufacturerCount;
