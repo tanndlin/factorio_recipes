@@ -180,6 +180,18 @@
         }
     },
     {
+        "id": "used-up-uranium-fuel-cell",
+        "name": "Used up uranium fuel cell",
+        "type": "Resource",
+        "wiki_link": "https://wiki.factorio.com/Used_up_uranium_fuel_cell",
+        "category": "Intermediate product",
+        "recipe": {
+            "time": null,
+            "yield": null,
+            "ingredients": []
+        }
+    },
+    {
         "id": "water",
         "name": "Water",
         "type": "Liquid",
