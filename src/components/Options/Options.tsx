@@ -22,7 +22,7 @@ const Options = (props: Props) => {
         setInputItems,
         setOutputItems
     } = props;
-    const currentTab: OptionTabType = 'output';
+    const [currentTab, setCurrentTab] = React.useState<OptionTabType>('output');
 
     return (
         <div className="optionsContainer">
@@ -38,8 +38,18 @@ const Options = (props: Props) => {
 
             <div>
                 <TabContainer className="justify-center">
-                    <h1 className="text-xl">Output</h1>
-                    <h1 className="text-xl">Input</h1>
+                    <h1
+                        onClick={() => setCurrentTab('output')}
+                        className="text-xl"
+                    >
+                        Output
+                    </h1>
+                    <h1
+                        onClick={() => setCurrentTab('input')}
+                        className="text-xl"
+                    >
+                        Input
+                    </h1>
                 </TabContainer>
 
                 {currentTab === 'output' && (

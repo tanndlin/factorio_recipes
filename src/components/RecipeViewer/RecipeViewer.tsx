@@ -20,6 +20,7 @@ const RecipeViewer = (props: Props) => {
                 const { item, amount } = outputItem;
                 return (
                     <SingleRecipeView
+                        key={item.name}
                         items={items}
                         mode={mode}
                         inputItems={inputItems}
