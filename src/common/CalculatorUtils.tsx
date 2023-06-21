@@ -83,7 +83,7 @@ export function getRecipeSum(
         const sum = getRecipeSum(
             ingredientItem,
             items,
-            realNeed - reducedAmount,
+            (realNeed - reducedAmount) / (ingredientItem.recipe.yield ?? 1),
             inputItems
         );
 

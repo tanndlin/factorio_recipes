@@ -40,6 +40,9 @@ const RecipeCard = (props: Props) => {
                             </div>
                         );
                     })}
+                    <footer className="border-gray-500 border-t-[1px] pt-1 mt-2">
+                        Time: {item.recipe.time ?? 0} seconds
+                    </footer>
                 </div>
             }
         >

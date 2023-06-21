@@ -14,6 +14,14 @@ const ItemMode = (props: Props) => {
 
     const totals = getRecipeSumAll(inputItems, outputItems, items);
 
+    const getAssemblerCount = (item: Item, amount: number) => {
+        const time = item.recipe.time ?? 0;
+        const yieldAmt = item.recipe.yield ?? 1;
+
+        const unrounded = (time * (amount / yieldAmt)) / 1.25;
+
+        return Math.ceil(unrounded * 100) / 100;
+    };
     return (
         <ul>
             {Object.keys(totals).map((id) => {
@@ -33,6 +41,13 @@ const ItemMode = (props: Props) => {
                             >
                                 {ingredientItem.name}
                             </a>
+                        </span>
+                        <span className="ml-4 my-auto flex">
+                            <ItemImage
+                                className="h-6 w-6"
+                                item={getItem('assembling-machine-3', items)!}
+                            />
+                            x{getAssemblerCount(ingredientItem, amount)}
                         </span>
                     </div>
                 );
