@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { useNavigate } from 'react-router';
 
@@ -16,7 +15,7 @@ const AnimatedLink = (props: Props) => {
         event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
     ) => {
         event.preventDefault();
-        document.startViewTransition(() => {
+        (document as any).startViewTransition(() => {
             if (onClick) onClick(to);
             navigate(to);
         });

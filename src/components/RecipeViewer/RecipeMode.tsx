@@ -8,11 +8,10 @@ interface Props {
     items: Item[];
     quantity: number;
     depth: number;
-    setSearchTerm: (searchTerm: string) => void;
 }
 
 const RecipeMode = (props: Props) => {
-    const { item, items, quantity, setSearchTerm, depth } = props;
+    const { item, items, quantity, depth } = props;
     const { recipe } = item;
     const { ingredients } = recipe;
 
@@ -21,11 +20,9 @@ const RecipeMode = (props: Props) => {
             item={item}
             amount={quantity}
             depth={depth ? depth + 1 : 0}
-            setSearchTerm={setSearchTerm}
         >
             {ingredients.map((ingredient) => (
                 <RecipeMode
-                    setSearchTerm={setSearchTerm}
                     item={getItem(ingredient.id, items)!}
                     items={items}
                     quantity={quantity * ingredient.amount}

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Item } from '../../common/types';
+import ItemImage from '../../common/ItemImage';
 
 interface Props {
     item: Item;
     amount: number;
     depth: number;
     children: React.ReactNode;
-    setSearchTerm: (searchTerm: string) => void;
 }
 
 const CalculatedRecipe = (props: Props) => {
-    const { item, depth, children, amount, setSearchTerm } = props;
+    const { item, depth, children, amount } = props;
 
     let correctedAmount = amount;
     if (depth === 0) {
@@ -20,12 +20,7 @@ const CalculatedRecipe = (props: Props) => {
     return (
         <ul style={{ marginLeft: `${depth * 10}px` }}>
             <li className="flex">
-                <img
-                    className="cursor-pointer"
-                    src={`../images/48px-${item.name.replace(/ /g, '_')}.png`}
-                    alt={item.name}
-                    onClick={() => setSearchTerm(item.name)}
-                />
+                <ItemImage item={item} className="cursor-pointer" />
                 <span>
                     {correctedAmount} {item.name}
                 </span>

@@ -1,6 +1,8 @@
 import { Item } from './types';
 
 export function getRecipeSum(item: Item, items: Item[], quantity: number) {
+    console.log(item);
+
     const { recipe } = item;
     const { ingredients } = recipe;
 

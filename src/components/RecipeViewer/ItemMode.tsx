@@ -1,16 +1,16 @@
 import React from 'react';
 import { Item } from '../../common/types';
 import { getItem, getRecipeSum } from '../../common/CalculatorUtils';
+import ItemImage from '../../common/ItemImage';
 
 interface Props {
     item: Item;
     items: Item[];
     quantity: number;
-    setSearchTerm: (searchTerm: string) => void;
 }
 
 const ItemMode = (props: Props) => {
-    const { item, items, quantity, setSearchTerm } = props;
+    const { item, items, quantity } = props;
 
     const totals = getRecipeSum(item, items, quantity);
 
@@ -22,14 +22,9 @@ const ItemMode = (props: Props) => {
 
                 return (
                     <div className="flex py-2" key={id}>
-                        <img
+                        <ItemImage
+                            item={ingredientItem}
                             className="cursor-pointer"
-                            src={`../images/48px-${ingredientItem.name.replace(
-                                / /g,
-                                '_'
-                            )}.png`}
-                            alt={ingredientItem.name}
-                            onClick={() => setSearchTerm(ingredientItem.name)}
                         />
                         <span className="ml-2">
                             {amount} units of {ingredientItem.name}

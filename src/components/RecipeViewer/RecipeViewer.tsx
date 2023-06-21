@@ -7,38 +7,28 @@ interface Props {
     items: Item[];
     item: Item;
     mode: 'item' | 'recipe';
-    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+    quantity: number;
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, item, mode, setSearchTerm } = props;
-    const [quantity, setQuantity] = React.useState(1);
+    const { items, item, mode, quantity } = props;
 
     return (
-        <div className="mx-auto h-full overflow-hidden">
+        <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer">
             <header className="grid grid-cols-2 mb-4">
                 <h1 className="text-4xl">{item.name}</h1>
                 <div className="my-auto ml-auto relative">
                     <div className="background_haze" />
-                    <input
-                        className="px-2 w-20 bg-[#44474a] border-tertiary text-white"
-                        type="number"
-                        value={quantity}
-                        onChange={(event) => {
-                            setQuantity(+event.target.value);
-                        }}
-                    ></input>
                 </div>
             </header>
 
-            <div className="ingredientsContainer">
+            <div className="ingredientsList">
                 {mode === 'recipe' && (
                     <RecipeMode
                         item={item}
                         items={items}
                         quantity={quantity / (item.recipe.yield ?? 1)}
                         depth={0}
-                        setSearchTerm={setSearchTerm}
                     />
                 )}
                 {mode === 'item' && (
@@ -46,7 +36,6 @@ const RecipeViewer = (props: Props) => {
                         item={item}
                         items={items}
                         quantity={quantity / (item.recipe.yield ?? 1)}
-                        setSearchTerm={setSearchTerm}
                     />
                 )}
             </div>
