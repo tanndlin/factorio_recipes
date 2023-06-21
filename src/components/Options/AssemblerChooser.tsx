@@ -38,6 +38,8 @@ const AssemblerChooser = (props: Props) => {
                         name="assemblerChooser"
                         id="assembler1Chooser"
                         value="assembling-machine-1"
+                        checked={props.assemblerType === 'assembling-machine-1'}
+                        onChange={() => {}}
                     />
                     <label htmlFor="assembler 1">Assembling Machine 1</label>
                 </span>
@@ -47,6 +49,8 @@ const AssemblerChooser = (props: Props) => {
                         name="assemblerChooser"
                         id="assembler2Chooser"
                         value="assembling-machine-2"
+                        checked={props.assemblerType === 'assembling-machine-2'}
+                        onChange={() => {}}
                     />
                     <label htmlFor="assembler 2">Assembling Machine 2</label>
                 </span>
@@ -56,6 +60,8 @@ const AssemblerChooser = (props: Props) => {
                         name="assemblerChooser"
                         id="assembler3Chooser"
                         value="assembling-machine-3"
+                        checked={props.assemblerType === 'assembling-machine-3'}
+                        onChange={() => {}}
                     />
                     <label htmlFor="assembler 3">Assembling Machine 3</label>
                 </span>
