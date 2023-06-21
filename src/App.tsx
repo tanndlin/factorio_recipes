@@ -4,6 +4,7 @@ import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Item } from './common/types';
 import recipes from './assets/recipes.json';
+import HomePage from './pages/HomePage';
 
 function App() {
     const [items, _] = React.useState<Item[]>(
@@ -15,7 +16,7 @@ function App() {
             <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path="/" element={<h1>Home</h1>}></Route>
+                    <Route path="/" element={<HomePage />}></Route>
                     <Route
                         path="/recipes"
                         element={
