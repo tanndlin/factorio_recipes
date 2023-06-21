@@ -12,8 +12,16 @@ export function getRecipeSumAll(
 
     const totals: { [key: string]: number } = {};
 
-    outputItems.forEach((item) => {
-        const sum = getRecipeSum(item.item, items, item.amount, inputItemsCopy);
+    outputItems.forEach((outputItem) => {
+        const { item, amount } = outputItem;
+        const { recipe } = item;
+
+        const sum = getRecipeSum(
+            item,
+            items,
+            amount / (recipe.yield ?? 1),
+            inputItemsCopy
+        );
 
         Object.keys(sum).forEach((key) => {
             totals[key] = (totals[key] ?? 0) + sum[key];

@@ -30,7 +30,7 @@ const RecipeMode = (props: Props) => {
                 const { recipe } = item;
                 const { ingredients } = recipe;
 
-                let realAmount = amount;
+                let realAmount = amount / (recipe.yield ?? 1);
                 const foundItem = inputItemsCopy.find(
                     (inputItem) => inputItem.item.id === item.id
                 );
@@ -48,7 +48,7 @@ const RecipeMode = (props: Props) => {
                     <CalculatedRecipe
                         key={`${item.id}-${depth ?? 0}`}
                         item={item}
-                        amount={amount}
+                        amount={realAmount}
                         depth={depth ? depth + 1 : 0}
                     >
                         {realAmount > 0 &&
