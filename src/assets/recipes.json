@@ -322,9 +322,9 @@
         }
     },
     {
-        "id": "effectivity-module",
-        "name": "Effectivity module",
-        "wiki_link": "https://wiki.factorio.com/effectivity_module",
+        "id": "efficiency -module",
+        "name": "Efficiency  module",
+        "wiki_link": "https://wiki.factorio.com/Efficiency _module",
         "recipe": {
             "ingredients": [
                 {
@@ -341,13 +341,13 @@
         }
     },
     {
-        "id": "effectivity-module-2",
-        "name": "Effectivity module 2",
-        "wiki_link": "https://wiki.factorio.com/effectivity_module_2",
+        "id": "efficiency-module-2",
+        "name": "Efficiency module 2",
+        "wiki_link": "https://wiki.factorio.com/Efficiency_module_2",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "effectivity-module",
+                    "id": "efficiency-module",
                     "amount": 4
                 },
                 {
@@ -364,13 +364,13 @@
         }
     },
     {
-        "id": "effectivity-module-3",
-        "name": "Effectivity module 3",
-        "wiki_link": "https://wiki.factorio.com/effectivity_module_3",
+        "id": "efficiency-module-3",
+        "name": "Efficiency module 3",
+        "wiki_link": "https://wiki.factorio.com/Efficiency_module_3",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "effectivity-module-2",
+                    "id": "efficiency-module-2",
                     "amount": 5
                 },
                 {
@@ -666,9 +666,9 @@
         }
     },
     {
-        "id": "night-vision-equipment",
-        "name": "Night vision equipment",
-        "wiki_link": "https://wiki.factorio.com/night_vision_equipment",
+        "id": "night-vision",
+        "name": "Night vision",
+        "wiki_link": "https://wiki.factorio.com/night_vision",
         "recipe": {
             "ingredients": [
                 {
@@ -704,9 +704,9 @@
         }
     },
     {
-        "id": "energy-shield-equipment",
-        "name": "Energy shield equipment",
-        "wiki_link": "https://wiki.factorio.com/energy_shield_equipment",
+        "id": "energy-shield",
+        "name": "Energy shield",
+        "wiki_link": "https://wiki.factorio.com/energy_shield",
         "recipe": {
             "ingredients": [
                 {
@@ -723,13 +723,13 @@
         }
     },
     {
-        "id": "energy-shield-mk2-equipment",
-        "name": "Energy shield mk2 equipment",
-        "wiki_link": "https://wiki.factorio.com/energy_shield_mk2_equipment",
+        "id": "energy-shield-mk2",
+        "name": "Energy shield mk2",
+        "wiki_link": "https://wiki.factorio.com/energy_shield_mk2",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "energy-shield-equipment",
+                    "id": "energy-shield",
                     "amount": 10
                 },
                 {
@@ -746,9 +746,9 @@
         }
     },
     {
-        "id": "battery-equipment",
-        "name": "Battery equipment",
-        "wiki_link": "https://wiki.factorio.com/battery_equipment",
+        "id": "personal-battery",
+        "name": "Personal battery",
+        "wiki_link": "https://wiki.factorio.com/personal_battery",
         "recipe": {
             "ingredients": [
                 {
@@ -765,13 +765,13 @@
         }
     },
     {
-        "id": "battery-mk2-equipment",
-        "name": "Battery mk2 equipment",
-        "wiki_link": "https://wiki.factorio.com/battery_mk2_equipment",
+        "id": "personal-battery-mk2",
+        "name": "Personal battery MK2",
+        "wiki_link": "https://wiki.factorio.com/Personal_battery_MK2",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "battery-equipment",
+                    "id": "battery",
                     "amount": 10
                 },
                 {
@@ -788,9 +788,9 @@
         }
     },
     {
-        "id": "solar-panel-equipment",
-        "name": "Solar panel equipment",
-        "wiki_link": "https://wiki.factorio.com/solar_panel_equipment",
+        "id": "portable-solar-panel",
+        "name": "Portable solar panel",
+        "wiki_link": "https://wiki.factorio.com/portable_solar_panel",
         "recipe": {
             "ingredients": [
                 {
@@ -811,9 +811,9 @@
         }
     },
     {
-        "id": "fusion-reactor-equipment",
-        "name": "Fusion reactor equipment",
-        "wiki_link": "https://wiki.factorio.com/fusion_reactor_equipment",
+        "id": "fusion-reactor",
+        "name": "Fusion reactor",
+        "wiki_link": "https://wiki.factorio.com/fusion_reactor",
         "recipe": {
             "ingredients": [
                 {
@@ -830,9 +830,9 @@
         }
     },
     {
-        "id": "personal-laser-defense-equipment",
-        "name": "Personal laser defense equipment",
-        "wiki_link": "https://wiki.factorio.com/personal_laser_defense_equipment",
+        "id": "personal-laser-defense",
+        "name": "Personal laser defense",
+        "wiki_link": "https://wiki.factorio.com/personal_laser_defense",
         "recipe": {
             "ingredients": [
                 {
@@ -853,9 +853,9 @@
         }
     },
     {
-        "id": "discharge-defense-equipment",
-        "name": "Discharge defense equipment",
-        "wiki_link": "https://wiki.factorio.com/discharge_defense_equipment",
+        "id": "discharge-defense",
+        "name": "Discharge defense",
+        "wiki_link": "https://wiki.factorio.com/discharge_defense",
         "recipe": {
             "ingredients": [
                 {
@@ -890,9 +890,9 @@
         }
     },
     {
-        "id": "exoskeleton-equipment",
-        "name": "Exoskeleton equipment",
-        "wiki_link": "https://wiki.factorio.com/exoskeleton_equipment",
+        "id": "exoskeleton",
+        "name": "Exoskeleton",
+        "wiki_link": "https://wiki.factorio.com/exoskeleton",
         "recipe": {
             "ingredients": [
                 {
@@ -913,9 +913,9 @@
         }
     },
     {
-        "id": "personal-roboport-equipment",
-        "name": "Personal roboport equipment",
-        "wiki_link": "https://wiki.factorio.com/personal_roboport_equipment",
+        "id": "personal-roboport",
+        "name": "Personal roboport",
+        "wiki_link": "https://wiki.factorio.com/personal_roboport",
         "recipe": {
             "ingredients": [
                 {
@@ -940,13 +940,13 @@
         }
     },
     {
-        "id": "personal-roboport-mk2-equipment",
-        "name": "Personal roboport mk2 equipment",
-        "wiki_link": "https://wiki.factorio.com/personal_roboport_mk2_equipment",
+        "id": "personal-roboport-mk2",
+        "name": "Personal roboport mk2",
+        "wiki_link": "https://wiki.factorio.com/personal_roboport_mk2",
         "recipe": {
             "ingredients": [
                 {
-                    "id": "personal-roboport-equipment",
+                    "id": "personal-roboport",
                     "amount": 5
                 },
                 {
@@ -3010,11 +3010,11 @@
         "recipe": {
             "ingredients": [
                 {
-                    "id": "exoskeleton-equipment",
+                    "id": "exoskeleton",
                     "amount": 4
                 },
                 {
-                    "id": "fusion-reactor-equipment",
+                    "id": "fusion-reactor",
                     "amount": 2
                 },
                 {
@@ -3034,7 +3034,7 @@
                     "amount": 2
                 },
                 {
-                    "id": "effectivity-module-3",
+                    "id": "efficiency-module-3",
                     "amount": 2
                 },
                 {
@@ -3171,7 +3171,7 @@
         "recipe": {
             "ingredients": [
                 {
-                    "id": "effectivity-module-2",
+                    "id": "efficiency-module-2",
                     "amount": 25
                 },
                 {
@@ -4139,25 +4139,6 @@
                 }
             ],
             "time": 5,
-            "yield": 1
-        }
-    },
-    {
-        "id": "electric-energy-interface",
-        "name": "Electric energy interface",
-        "wiki_link": "https://wiki.factorio.com/electric_energy_interface",
-        "recipe": {
-            "ingredients": [
-                {
-                    "id": "iron-plate",
-                    "amount": 2
-                },
-                {
-                    "id": "electronic-circuit",
-                    "amount": 5
-                }
-            ],
-            "time": 0.5,
             "yield": 1
         }
     },
