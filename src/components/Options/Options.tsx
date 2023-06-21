@@ -5,14 +5,14 @@ import {
     IOItem,
     Item,
     AssemblerType,
-    MachineType,
     FurnaceType,
     OptionProps,
-    RecipeMode
+    RecipeMode,
+    TimeUnit
 } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
-import MachineChooser from './MachineChooser';
+import { Chooser } from './Chooser';
 
 interface Props {
     items: Item[];
@@ -38,7 +38,9 @@ const Options = (props: Props) => {
         assemblerType,
         setAssemblerType,
         furnaceType,
-        setFurnaceType
+        setFurnaceType,
+        timeUnit,
+        setTimeUnit
     } = optionProps;
     const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
@@ -67,19 +69,34 @@ const Options = (props: Props) => {
                         1: 'Recipe'
                     }}
                 />
-                <MachineChooser
+                <Chooser<AssemblerType>
                     value={assemblerType}
-                    callback={(type: MachineType) =>
-                        setAssemblerType(type as AssemblerType)
-                    }
-                    machineType="assembler"
+                    callback={setAssemblerType}
+                    options={[
+                        'assembling-machine-1',
+                        'assembling-machine-2',
+                        'assembling-machine-3'
+                    ]}
+                    name="Assembler Type"
+                    images={true}
                 />
-                <MachineChooser
+                <Chooser<FurnaceType>
                     value={furnaceType}
-                    callback={(type: MachineType) =>
-                        setFurnaceType(type as FurnaceType)
-                    }
-                    machineType="furnace"
+                    callback={setFurnaceType}
+                    options={[
+                        'stone-furnace',
+                        'steel-furnace',
+                        'electric-furnace'
+                    ]}
+                    name="Furnace Type"
+                    images={true}
+                />
+                <Chooser<TimeUnit>
+                    value={timeUnit}
+                    callback={setTimeUnit}
+                    options={['s', 'm', 'h']}
+                    name="Time Unit"
+                    images={false}
                 />
             </div>
 

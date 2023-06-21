@@ -34,7 +34,7 @@ const HomePage = (props: Props) => {
         (localStorage.getItem('furnaceType') as FurnaceType) ?? 'stone-furnace'
     );
 
-    const [timeUnit, setTimeUnit] = React.useState<TimeUnit>(TimeUnit.Second);
+    const [timeUnit, setTimeUnit] = React.useState<TimeUnit>('s');
 
     React.useEffect(() => {
         localStorage.setItem('assemblerType', assemblerType);
