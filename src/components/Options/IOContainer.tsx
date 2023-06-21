@@ -4,6 +4,7 @@ import ItemImage from '../../common/ItemImage';
 import CancelButton from '../../common/CancelButton';
 import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
 import CloseButton from '../../common/CancelButton';
+import IOItemViewer from './IOItemViewer';
 
 interface Props {
     mode: 'input' | 'output';
@@ -41,39 +42,14 @@ const IOContainer = (props: Props) => {
                 {mode === 'input' ? 'Add Input Item' : 'Add Output Item'}
             </button>
             <ul className="output-container">
-                {ioItems.map((outputItem, index) => {
-                    const { item, amount } = outputItem;
-
-                    return (
-                        <li key={index}>
-                            <div className="flex py-2 relative" key={index}>
-                                <CancelButton
-                                    onClick={() => {
-                                        const newItems = [...ioItems];
-                                        newItems.splice(index, 1);
-                                        setIOItems(newItems);
-                                    }}
-                                />
-
-                                <ItemImage item={item} />
-                                <div className="flex flex-col my-auto ml-2">
-                                    <span className="text-xl">{item.name}</span>
-                                    <input
-                                        type="number"
-                                        value={amount}
-                                        className="px-2"
-                                        onChange={(event) => {
-                                            const newItems = [...ioItems];
-                                            newItems[index].amount =
-                                                +event.target.value;
-                                            setIOItems(newItems);
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        </li>
-                    );
-                })}
+                {ioItems.map((outputItem, index) => (
+                    <IOItemViewer
+                        ioItem={outputItem}
+                        index={index}
+                        ioItems={ioItems}
+                        setIOItems={setIOItems}
+                    />
+                ))}
             </ul>
         </div>
     );
