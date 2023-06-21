@@ -32,10 +32,11 @@ export function getRecipeRecurse(
 }
 
 export function getRecipeSum(item: Item, items: Item[], quantity: number) {
-    const totals: { [key: string]: number } = {};
-
     const { recipe } = item;
     const { ingredients } = recipe;
+
+    const totals: { [key: string]: number } = {};
+    totals[item.id] = (totals[item.id] ?? 0) + quantity;
 
     ingredients.forEach((ingredient) => {
         totals[ingredient.id] =
@@ -49,7 +50,8 @@ export function getRecipeSum(item: Item, items: Item[], quantity: number) {
         );
 
         Object.keys(sum).forEach((key) => {
-            totals[key] = (totals[key] ?? 0) + sum[key];
+            if (key !== ingredient.id)
+                totals[key] = (totals[key] ?? 0) + sum[key];
         });
     });
 
