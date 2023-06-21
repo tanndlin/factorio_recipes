@@ -1,0 +1,36 @@
+{
+    "restoreTerminals.runOnStartup": false,
+    "restoreTerminals.terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "Git",
+                    "commands": [
+                        "git pull",
+                        "npm i",
+                        "git branch"
+                    ]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "Start",
+                    "commands": [
+                        "npm start"
+                    ]
+                },
+                {
+                    "name": "Test",
+                    "commands": [
+                        "npm test"
+                    ]
+                }
+            ]
+        }
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+}
