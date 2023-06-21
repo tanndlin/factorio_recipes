@@ -1,7 +1,5 @@
 import React from 'react';
-import IngredientsViewer from './IngredientsViewer';
 import { Item } from '../../common/types';
-import RecipeTitle from './RecipeTitle';
 
 interface Props {
     item: Item;
