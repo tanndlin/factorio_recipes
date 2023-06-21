@@ -13,6 +13,7 @@ import {
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
 import { Chooser } from './Chooser';
+import { calculateTimeRatio } from '../../common/CalculatorUtils';
 
 interface Props {
     items: Item[];
@@ -48,6 +49,23 @@ const Options = (props: Props) => {
         ioMode === 'output' ? outputItems : inputItems;
     const setIoContainerItems =
         ioMode === 'output' ? setOutputItems : setInputItems;
+
+    const handleTimeUnitChange = (value: TimeUnit) => {
+        const ratio = calculateTimeRatio(timeUnit, value);
+        setTimeUnit(value);
+        setInputItems(
+            inputItems.map((item) => ({
+                ...item,
+                amount: item.amount * ratio
+            }))
+        );
+        setOutputItems(
+            outputItems.map((item) => ({
+                ...item,
+                amount: item.amount * ratio
+            }))
+        );
+    };
 
     return (
         <div className="optionsContainer">
@@ -93,7 +111,7 @@ const Options = (props: Props) => {
                 />
                 <Chooser<TimeUnit>
                     value={timeUnit}
-                    callback={setTimeUnit}
+                    callback={handleTimeUnitChange}
                     options={['s', 'm', 'h']}
                     name="Time Unit"
                     images={false}

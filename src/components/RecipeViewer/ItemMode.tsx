@@ -25,7 +25,7 @@ const ItemMode = (props: Props) => {
                     <div className="flex py-2" key={id}>
                         <ItemImage item={ingredientItem} />
                         <span className="ml-2 my-auto">
-                            {amount} {ingredientItem.name}
+                            {`${amount} ${ingredientItem.name}`}
                         </span>
                         <ManufacturerCount
                             item={ingredientItem}

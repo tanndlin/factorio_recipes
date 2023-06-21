@@ -4,26 +4,12 @@ interface ChooserProps<T> {
     options: T[];
     name: string;
     value: T;
-    callback: (type: T) => void;
+    callback: (...args: T[]) => void;
     images: boolean;
 }
 
 export function Chooser<T>(props: ChooserProps<T>) {
     const { callback, options, name, value } = props;
-
-    React.useEffect(() => {
-        options.forEach((option) => {
-            const container = document.getElementById(`${option}-chooser`)!;
-            const check = container.querySelector(
-                'input[type="radio"]'
-            ) as HTMLInputElement;
-
-            container.addEventListener('click', () => {
-                check.checked = true;
-                callback(option);
-            });
-        });
-    }, [options, value, callback]);
 
     return (
         <form className="assembler-chooser flex flex-col items-center">
@@ -31,10 +17,13 @@ export function Chooser<T>(props: ChooserProps<T>) {
             <fieldset id="machineChooser">
                 {options.map((option) => (
                     <Option
+                        onClick={() => {
+                            callback(option);
+                        }}
                         key={option as string}
                         type={value}
                         name={option}
-                        images={props.images}
+                        showImages={props.images}
                     />
                 ))}
             </fieldset>
@@ -42,11 +31,18 @@ export function Chooser<T>(props: ChooserProps<T>) {
     );
 }
 
-function Option<T>(props: { type: T; name: T; images: boolean }) {
-    const { name, type, images } = props;
+interface OptionProps<T> {
+    type: T;
+    name: T;
+    showImages: boolean;
+    onClick: () => void;
+}
+
+function Option<T>(props: OptionProps<T>) {
+    const { name, type, showImages } = props;
 
     return (
-        <span id={`${name}-chooser`}>
+        <span onClick={props.onClick}>
             <input
                 type="radio"
                 name="machineChooser"
@@ -55,7 +51,7 @@ function Option<T>(props: { type: T; name: T; images: boolean }) {
                 onChange={() => {}}
             />
             <label htmlFor={name as string}>
-                {images && (
+                {showImages && (
                     <img
                         className="w-10 h-10"
                         src={`../images/48px-${(name as string).replace(
@@ -65,7 +61,7 @@ function Option<T>(props: { type: T; name: T; images: boolean }) {
                         alt={name as string}
                     />
                 )}
-                {!images && (name as string)}
+                {!showImages && (name as string)}
             </label>
         </span>
     );

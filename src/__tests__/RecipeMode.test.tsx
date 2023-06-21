@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import recipes from '../assets/recipes.json';
-import { Item, OptionProps, RecipeMode, TimeUnit } from '../common/types/types';
+import { Item, OptionProps, RecipeMode } from '../common/types/types';
 import RecipeModeViewer from '../components/RecipeViewer/RecipeMode';
 import { getItem } from '../common/CalculatorUtils';
 import '@testing-library/jest-dom';
@@ -16,7 +16,7 @@ describe('RecipeMode', () => {
         setFurnaceType: jest.fn(),
         setRecipeMode: jest.fn(),
         setTimeUnit: jest.fn(),
-        timeUnit: TimeUnit.Second
+        timeUnit: 's'
     };
 
     it('should render the correct hierarchy for a simple recipe', () => {

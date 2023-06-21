@@ -1,4 +1,4 @@
-import { Item, IOItem, MachineType } from './types/types';
+import { Item, IOItem, MachineType, TimeUnit } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -125,4 +125,22 @@ export const getManufacturerCount = (
 
     const unrounded = (time * (amount / yieldAmt)) / getModifier(machineType);
     return Math.ceil(unrounded * 100) / 100;
+};
+
+export const calculateTimeRatio = (before: TimeUnit, after: TimeUnit) => {
+    const berforeRatio = timeUnitToRatio(before);
+    const afterRatio = timeUnitToRatio(after);
+
+    return afterRatio / berforeRatio;
+};
+
+export const timeUnitToRatio = (timeUnit: TimeUnit) => {
+    switch (timeUnit) {
+        case 's':
+            return 1;
+        case 'm':
+            return 60;
+        case 'h':
+            return 3600;
+    }
 };
