@@ -37,11 +37,9 @@ const IOContainer = (props: Props) => {
                     }}
                 />
             </dialog>
-            {mode === 'input' && (
-                <button className="mx-auto my-4" onClick={() => showModal()}>
-                    Add Input Item
-                </button>
-            )}
+            <button className="mx-auto my-4" onClick={() => showModal()}>
+                {mode === 'input' ? 'Add Input Item' : 'Add Output Item'}
+            </button>
             <ul className="output-container">
                 {ioItems.map((outputItem, index) => {
                     const { item, amount } = outputItem;
