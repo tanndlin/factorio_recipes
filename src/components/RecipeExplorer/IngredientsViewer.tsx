@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from '../common/types';
+import { Item } from '../../common/types';
 
 interface props {
     items: Item[];

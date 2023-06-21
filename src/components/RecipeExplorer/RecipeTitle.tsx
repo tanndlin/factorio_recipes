@@ -1,6 +1,6 @@
 import React from 'react';
-import { Item } from '../common/types';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { Item } from '../../common/types';
 
 interface props {
     item: Item;

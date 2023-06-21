@@ -1,7 +1,8 @@
 import React from 'react';
-import RecipesViewer from '../components/RecipesViewer';
-import RecipeViewer from '../components/RecipeViewer';
+import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
+import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import { Item } from '../common/types';
+import Options from '../components/Options';
 
 interface Props {
     items: Item[];
@@ -10,19 +11,31 @@ interface Props {
 const RecipesPage = (props: Props) => {
     const { items } = props;
     const [currentItem, setCurrentItem] = React.useState<Item | null>(items[0]);
+    const [recipeMode, setRecipeMode] = React.useState<'item' | 'recipe'>(
+        'item'
+    );
 
     return (
         <div className="grid grid-flow-row">
             <div className="recipesContainer p-10">
-                <div></div>
-                <RecipesViewer
+                <Options
+                    {...{
+                        recipeMode,
+                        setRecipeMode
+                    }}
+                />
+                <RecipeExplorer
                     {...{
                         items,
                         setCurrentItem
                     }}
                 />
                 {currentItem && (
-                    <RecipeViewer items={items} item={currentItem} />
+                    <RecipeViewer
+                        items={items}
+                        item={currentItem}
+                        mode={recipeMode}
+                    />
                 )}
             </div>
         </div>

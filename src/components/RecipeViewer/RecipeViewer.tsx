@@ -1,19 +1,29 @@
 import React from 'react';
-import { Item } from '../common/types';
+import { Item } from '../../common/types';
+import {
+    getItem,
+    getRecipeRecurse,
+    getRecipeSum
+} from '../../common/CalculatorUtils';
+import ItemMode from './ItemMode';
+import RecipeMode from './RecipeMode';
 
 interface Props {
     items: Item[];
     item: Item;
+    mode: 'item' | 'recipe';
 }
 
 const RecipeViewer = (props: Props) => {
-    const { items, item } = props;
+    const { items, item, mode } = props;
     const { recipe } = item;
 
     const [quantity, setQuantity] = React.useState(1);
 
+    const totals = getRecipeSum(item, items, quantity);
+
     return (
-        <div className="mx-auto w-1/2">
+        <div className="mx-auto">
             <header className="grid grid-cols-2 mb-4">
                 <h1 className="font-bold text-4xl">{item.name}</h1>
                 <div className="my-auto ml-auto">
@@ -27,24 +37,8 @@ const RecipeViewer = (props: Props) => {
                     ></input>
                 </div>
             </header>
-
-            {recipe.ingredients.map((ingredient, index) => {
-                const foundItem = items.find(
-                    (item) => item.id === ingredient.id
-                )!;
-
-                return (
-                    <div
-                        key={index}
-                        className="grid grid-cols-2 gap-2 border-b-2"
-                    >
-                        <span className="my-auto">{foundItem.name}</span>
-                        <span className="my-auto ml-auto">
-                            {ingredient.amount * quantity}
-                        </span>
-                    </div>
-                );
-            })}
+            {mode === 'recipe' && <RecipeMode {...{ item, items, quantity }} />}
+            {mode === 'item' && <ItemMode {...{ item, items, quantity }} />}
         </div>
     );
 };

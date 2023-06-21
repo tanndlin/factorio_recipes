@@ -1,7 +1,7 @@
 import React from 'react';
-import { Item } from '../common/types';
-import RecipeTitle from './RecipeTitle';
 import IngredientsViewer from './IngredientsViewer';
+import { Item } from '../../common/types';
+import RecipeTitle from './RecipeTitle';
 
 interface Props {
     items: Item[];
@@ -12,7 +12,6 @@ interface Props {
 const RecipeCard = (props: Props) => {
     const { items, item, setCurrentItem } = props;
     const { recipe } = item;
-    const { ingredients } = recipe;
 
     return (
         <div className="border-2 rounded-md p-2" id={item.id}>

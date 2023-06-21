@@ -1,14 +1,14 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
-import { Item } from '../common/types';
-import DisappearingSearchBar from './DisappearingSearchBar';
+import { Item } from '../../common/types';
+import DisappearingSearchBar from '../../common/DisappearingSearchBar';
 
 interface Props {
     items: Item[];
     setCurrentItem: React.Dispatch<React.SetStateAction<Item | null>>;
 }
 
-const RecipesViewer = (props: Props) => {
+const RecipeExplorer = (props: Props) => {
     const { items, setCurrentItem } = props;
     const [searchTerm, setSearchTerm] = React.useState('');
 
@@ -19,7 +19,7 @@ const RecipesViewer = (props: Props) => {
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
             />
-            <div className="overflow-auto max-h-8/10screen">
+            <div>
                 {items
                     .filter((item) =>
                         item.name
@@ -39,4 +39,4 @@ const RecipesViewer = (props: Props) => {
     );
 };
 
-export default RecipesViewer;
+export default RecipeExplorer;
