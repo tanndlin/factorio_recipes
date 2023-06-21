@@ -11,7 +11,6 @@ interface Props {
 
 const RecipeCard = (props: Props) => {
     const { items, item, setCurrentItem } = props;
-    const { recipe } = item;
 
     return (
         <div className="border-2 rounded-md p-2" id={item.id}>

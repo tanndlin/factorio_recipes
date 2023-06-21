@@ -1,10 +1,5 @@
 import React from 'react';
 import { Item } from '../../common/types';
-import {
-    getItem,
-    getRecipeRecurse,
-    getRecipeSum
-} from '../../common/CalculatorUtils';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 
@@ -16,11 +11,7 @@ interface Props {
 
 const RecipeViewer = (props: Props) => {
     const { items, item, mode } = props;
-    const { recipe } = item;
-
     const [quantity, setQuantity] = React.useState(1);
-
-    const totals = getRecipeSum(item, items, quantity);
 
     return (
         <div className="mx-auto">
