@@ -1,6 +1,7 @@
 import React from 'react';
 import { OutputItem } from '../../common/types';
 import ItemImage from '../../common/ItemImage';
+import CancelButton from '../../common/CancelButton';
 
 interface Props {
     outputItems: OutputItem[];
@@ -17,7 +18,15 @@ const OutputContainer = (props: Props) => {
 
                 return (
                     <li key={index}>
-                        <div className="flex py-2" key={index}>
+                        <div className="flex py-2 relative" key={index}>
+                            <CancelButton
+                                onClick={() => {
+                                    const newOutputItems = [...outputItems];
+                                    newOutputItems.splice(index, 1);
+                                    setOutputItems(newOutputItems);
+                                }}
+                            />
+
                             <ItemImage item={item} />
                             <div className="flex flex-col my-auto ml-2">
                                 <span className="text-xl">{item.name}</span>

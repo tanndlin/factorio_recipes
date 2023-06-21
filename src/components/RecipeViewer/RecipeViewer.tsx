@@ -14,8 +14,6 @@ interface Props {
 const RecipeViewer = (props: Props) => {
     const { items, mode, inputItems, outputItems } = props;
 
-    console.log(outputItems);
-
     return (
         <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer flex">
             {outputItems.map((outputItem) => {

@@ -257,3 +257,25 @@ input {
     }
   }
 }
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: 300ms;
+
+  &:hover {
+    color: #ff0000;
+  }
+}
+
+*:hover>.close {
+  visibility: visible;
+  opacity: 1;
+}
