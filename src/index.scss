@@ -293,3 +293,39 @@ input {
   border-radius: .375rem;
   overflow: hidden;
 }
+
+.hierarchy>.recipeChild {
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+}
+
+.recipeChild {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -16px;
+    width: 16px;
+    height: 2px;
+    background: #fff;
+    z-index: 100;
+  }
+
+  &::after {
+    top: 0;
+    left: -16px;
+    width: 2px;
+    height: 100%;
+  }
+
+  &:last-child::after {
+    height: 24px;
+  }
+}

@@ -24,7 +24,7 @@ const RecipeMode = (props: Props) => {
     const inputItemsCopy: IOItem[] = JSON.parse(JSON.stringify(inputItems));
 
     return (
-        <>
+        <div className="hierarchy">
             {outputItems.map((outputItem) => {
                 const { item, amount } = outputItem;
                 const { recipe } = item;
@@ -65,7 +65,7 @@ const RecipeMode = (props: Props) => {
                     </CalculatedRecipe>
                 );
             })}
-        </>
+        </div>
     );
 };
 

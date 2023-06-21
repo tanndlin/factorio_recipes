@@ -6,7 +6,7 @@ interface Props {
     item: Item;
     amount: number;
     depth: number;
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 const CalculatedRecipe = (props: Props) => {
@@ -18,15 +18,15 @@ const CalculatedRecipe = (props: Props) => {
     }
 
     return (
-        <ul style={{ marginLeft: `${depth * 10}px` }}>
-            <li className="flex">
-                <ItemImage item={item} className="cursor-pointer" />
+        <div className="ml-10 recipeChild">
+            <div className="flex">
+                <ItemImage item={item} />
                 <span className="ml-2 my-auto">
                     {correctedAmount} {item.name}
                 </span>
-            </li>
-            <li>{children}</li>
-        </ul>
+            </div>
+            {React.Children.toArray(children).length > 0 && <>{children}</>}
+        </div>
     );
 };
 
