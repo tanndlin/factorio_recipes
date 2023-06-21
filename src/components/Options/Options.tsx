@@ -1,10 +1,11 @@
 import React from 'react';
 import Toggle from '../../common/Toggle';
-import { OptionTabType, IOItem } from '../../common/types';
+import { OptionTabType, IOItem, Item } from '../../common/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
 
 interface Props {
+    items: Item[];
     recipeMode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
@@ -15,6 +16,7 @@ interface Props {
 
 const Options = (props: Props) => {
     const {
+        items,
         recipeMode,
         inputItems,
         outputItems,
@@ -22,12 +24,12 @@ const Options = (props: Props) => {
         setInputItems,
         setOutputItems
     } = props;
-    const [currentTab, setCurrentTab] = React.useState<OptionTabType>('output');
+    const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
     const ioContainerItems: IOItem[] =
-        currentTab === 'output' ? outputItems : inputItems;
+        ioMode === 'output' ? outputItems : inputItems;
     const setIoContainerItems =
-        currentTab === 'output' ? setOutputItems : setInputItems;
+        ioMode === 'output' ? setOutputItems : setInputItems;
 
     return (
         <div className="optionsContainer">
@@ -58,8 +60,10 @@ const Options = (props: Props) => {
                 </TabContainer>
 
                 <IOContainer
-                    items={ioContainerItems}
-                    setItems={setIoContainerItems}
+                    mode={ioMode}
+                    ioItems={ioContainerItems}
+                    allItems={items}
+                    setIOItems={setIoContainerItems}
                 />
             </div>
         </div>

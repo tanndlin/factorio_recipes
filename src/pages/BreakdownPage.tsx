@@ -35,6 +35,7 @@ const BreakdownPage = (props: Props) => {
             />
             <Options
                 {...{
+                    items,
                     recipeMode,
                     inputItems,
                     outputItems,
