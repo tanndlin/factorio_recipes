@@ -7,8 +7,8 @@ import stars from '../assets/stars.png';
 interface Props {
     inputItems: IOItem[];
     outputItems: IOItem[];
-    setInputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
-    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
+    setInputItems: (items: IOItem[]) => void;
+    setOutputItems: (items: IOItem[]) => void;
     items: Item[];
 }
 

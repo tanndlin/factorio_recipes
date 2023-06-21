@@ -74,3 +74,11 @@ export function getRecipeSum(
 export function getItem(id: string, items: Item[]) {
     return items.find((item) => item.id === id);
 }
+
+export function removeDuplicates(items: IOItem[]) {
+    return items.filter(
+        (item, index, self) =>
+            self.findIndex((curItem) => curItem.item.id === item.item.id) ===
+            index
+    );
+}

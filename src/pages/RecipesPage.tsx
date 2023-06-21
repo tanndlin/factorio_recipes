@@ -5,9 +5,9 @@ import stars from '../assets/stars.png';
 import { useNavigate } from 'react-router';
 
 interface Props {
-    outputItems: IOItem[];
-    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
     items: Item[];
+    outputItems: IOItem[];
+    setOutputItems: (items: IOItem[]) => void;
 }
 
 const RecipesPage = (props: Props) => {

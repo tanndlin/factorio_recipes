@@ -8,7 +8,7 @@ interface Props {
     mode: 'input' | 'output';
     ioItems: IOItem[];
     allItems: Item[];
-    setIOItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
+    setIOItems: (items: IOItem[]) => void;
 }
 
 const IOContainer = (props: Props) => {

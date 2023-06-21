@@ -10,8 +10,8 @@ interface Props {
     inputItems: IOItem[];
     outputItems: IOItem[];
     setRecipeMode: React.Dispatch<React.SetStateAction<'item' | 'recipe'>>;
-    setInputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
-    setOutputItems: React.Dispatch<React.SetStateAction<IOItem[]>>;
+    setInputItems: (items: IOItem[]) => void;
+    setOutputItems: (items: IOItem[]) => void;
 }
 
 const Options = (props: Props) => {

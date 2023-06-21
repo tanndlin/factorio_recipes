@@ -6,6 +6,7 @@ import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
 import HomePage from './pages/HomePage';
 import BreakdownPage from './pages/BreakdownPage';
+import { removeDuplicates } from './common/CalculatorUtils';
 
 function App() {
     const items = recipes.sort((a, b) =>
@@ -36,11 +37,10 @@ function App() {
                         path="/recipes"
                         element={
                             <RecipesPage
-                                {...{
-                                    items,
-                                    recipes,
-                                    outputItems,
-                                    setOutputItems
+                                items={items}
+                                outputItems={outputItems}
+                                setOutputItems={(items: IOItem[]) => {
+                                    setOutputItems(removeDuplicates(items));
                                 }}
                             ></RecipesPage>
                         }
@@ -51,8 +51,12 @@ function App() {
                             <BreakdownPage
                                 inputItems={inputItems}
                                 outputItems={outputItems}
-                                setInputItems={setInputItems}
-                                setOutputItems={setOutputItems}
+                                setInputItems={(items: IOItem[]) => {
+                                    setInputItems(removeDuplicates(items));
+                                }}
+                                setOutputItems={(items: IOItem[]) => {
+                                    setOutputItems(removeDuplicates(items));
+                                }}
                                 items={items}
                             />
                         }
