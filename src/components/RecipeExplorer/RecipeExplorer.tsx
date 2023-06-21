@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
-import { Item } from '../../common/types';
+import { Item } from '../../common/types/types';
 import DisappearingSearchBar from '../../common/DisappearingSearchBar';
 
 interface Props {

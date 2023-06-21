@@ -1,6 +1,6 @@
 import React from 'react';
 import Toggle from '../../common/Toggle';
-import { OptionTabType, IOItem, Item } from '../../common/types';
+import { OptionTabType, IOItem, Item } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
 
@@ -36,6 +36,7 @@ const Options = (props: Props) => {
             <Toggle
                 value={recipeMode === 'recipe'}
                 setValue={(value) => {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     (document as any).startViewTransition(() => {
                         setCurrentTab('output');
                         setRecipeMode(value ? 'recipe' : 'item');
@@ -52,6 +53,7 @@ const Options = (props: Props) => {
                 <TabContainer className="justify-center">
                     <h1
                         onClick={() =>
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             (document as any).startViewTransition(() => {
                                 setCurrentTab('output');
                             })
@@ -62,6 +64,7 @@ const Options = (props: Props) => {
                     </h1>
                     <h1
                         onClick={() =>
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             (document as any).startViewTransition(() => {
                                 setCurrentTab('input');
                             })

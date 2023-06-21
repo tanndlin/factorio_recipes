@@ -1,6 +1,6 @@
 import React from 'react';
 import { getItem } from '../../common/CalculatorUtils';
-import { Item, IOItem } from '../../common/types';
+import { Item, IOItem } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
 interface Props {

@@ -1,4 +1,4 @@
-import { Item, IOItem } from './types';
+import { Item, IOItem } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -62,8 +62,9 @@ export function getRecipeSum(
         );
 
         Object.keys(sum).forEach((key) => {
-            if (key !== ingredient.id)
+            if (key !== ingredient.id) {
                 totals[key] = (totals[key] ?? 0) + sum[key];
+            }
         });
     });
 

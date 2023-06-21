@@ -1,5 +1,5 @@
 import React from 'react';
-import { IOItem, Item } from '../../common/types';
+import { IOItem } from '../../common/types/types';
 import CancelButton from '../../common/CancelButton';
 import ItemImage from '../../common/ItemImage';
 

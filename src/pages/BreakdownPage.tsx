@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../common/types';
+import { Item, IOItem } from '../common/types/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';

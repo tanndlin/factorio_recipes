@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../../common/types';
+import { Item, IOItem } from '../../common/types/types';
 import { getItem, getRecipeSumAll } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
 

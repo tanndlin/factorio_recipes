@@ -1,7 +1,5 @@
 import React from 'react';
-import { IOItem, Item } from '../../common/types';
-import ItemImage from '../../common/ItemImage';
-import CancelButton from '../../common/CancelButton';
+import { IOItem, Item } from '../../common/types/types';
 import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
 import CloseButton from '../../common/CancelButton';
 import IOItemViewer from './IOItemViewer';
@@ -17,11 +15,13 @@ const IOContainer = (props: Props) => {
     const { mode, ioItems, allItems, setIOItems } = props;
     const showModal = () => {
         const modal = document.getElementById('recipeExplorerModal');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (modal as any)?.showModal();
     };
 
     const closeModal = () => {
         const modal = document.getElementById('recipeExplorerModal');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (modal as any)?.close();
     };
 

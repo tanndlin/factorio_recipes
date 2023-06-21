@@ -2,15 +2,15 @@ import React from 'react';
 import RecipesPage from './pages/RecipesPage';
 import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Item, IOItem } from './common/types';
+import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
 import HomePage from './pages/HomePage';
 import BreakdownPage from './pages/BreakdownPage';
 
 function App() {
-    const [items, _] = React.useState<Item[]>(
-        recipes.sort((a, b) => a.name.localeCompare(b.name)) as Item[]
-    );
+    const items = recipes.sort((a, b) =>
+        a.name.localeCompare(b.name)
+    ) as Item[];
     const [inputItems, setInputItems] = React.useState<IOItem[]>(
         JSON.parse(localStorage.getItem('inputItems') || '[]')
     );

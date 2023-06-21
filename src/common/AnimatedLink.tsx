@@ -15,8 +15,11 @@ const AnimatedLink = (props: Props) => {
         event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
     ) => {
         event.preventDefault();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (document as any).startViewTransition(() => {
-            if (onClick) onClick(to);
+            if (onClick) {
+                onClick(to);
+            }
             navigate(to);
         });
     };

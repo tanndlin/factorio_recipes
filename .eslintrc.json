@@ -7,19 +7,26 @@
         "browser": true
     },
     "extends": [
+        "react-app",
         "eslint-config-prettier",
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:@typescript-eslint/recommended"
     ],
     "plugins": [
         "prettier",
-        "react"
+        "react",
+        "@typescript-eslint"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "rules": {
+        "import/no-unresolved": 0,
         "eqeqeq": [
             "error",
             "smart"
@@ -47,19 +54,20 @@
                 "avoidEscape": true
             }
         ],
-        "no-unused-vars": [
-            "warn",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn", // or "error"
             {
-                "caughtErrors": "none",
                 "argsIgnorePattern": "^_",
                 "varsIgnorePattern": "^_",
                 "caughtErrorsIgnorePattern": "^_"
             }
         ],
+        "@typescript-eslint/no-non-null-assertion": 0,
         "react/prop-types": 0,
-        "react/jsx-key": 0
+        "no-console": 1
     },
-    "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module",
@@ -67,28 +75,26 @@
         "babelOptions": {
             "parserOpts": {
                 "plugins": [
-                    "jsx"
+                    "tsx"
                 ]
             }
         },
         "ecmaFeatures": {
-            "jsx": true
+            "tsx": true
         }
     },
     "root": true,
     "settings": {
         "react": {
             "version": "detect"
-        }
-    },
-    "overrides": [
-        {
-            "files": [
-                "*.tsx"
-            ],
-            "rules": {
-                "no-undef": "off"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".ts",
+                    ".tsx"
+                ]
             }
         }
-    ]
+    }
 }

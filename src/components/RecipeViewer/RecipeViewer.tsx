@@ -1,7 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../../common/types';
-import ItemMode from './ItemMode';
-import RecipeMode from './RecipeMode';
+import { Item, IOItem } from '../../common/types/types';
 import SingleRecipeView from './SingleRecipeView';
 
 interface Props {

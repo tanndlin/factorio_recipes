@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IOItem } from '../../common/types';
+import { Item, IOItem } from '../../common/types/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
 

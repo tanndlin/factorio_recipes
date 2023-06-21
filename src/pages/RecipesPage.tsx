@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
-import { Item, IOItem } from '../common/types';
+import { Item, IOItem } from '../common/types/types';
 import stars from '../assets/stars.png';
 import { useNavigate } from 'react-router';
 
@@ -26,6 +26,7 @@ const RecipesPage = (props: Props) => {
                 {...{
                     items,
                     onClick: (item: Item) => {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (document as any).startViewTransition(() => {
                             setOutputItems([
                                 ...outputItems,
