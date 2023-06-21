@@ -12,27 +12,28 @@ const RecipeTitle = (props: props) => {
     const { name } = item;
     const friendlyName = name.replace(/ /g, '_');
     return (
-        <span className="w-full flex gap-4">
+        <div className="w-full relative">
             <img
-                className="w-12 h-12"
+                className="w-12 h-12 mx-auto"
                 src={`../images/48px-${friendlyName}.png`}
                 alt={name}
             />
-            <h1
-                className="font-bold text-2xl mb-4 border-b-2 cursor-pointer"
+
+            <p
+                className="text-lg mb-4 cursor-pointer text-center"
                 onClick={() => onClick()}
             >
                 {name}
-            </h1>
-            <a
-                className="ml-auto"
+            </p>
+            {/* <a
+                className="absolute top-0 right-0"
                 href={item.wiki_link}
                 target="_blank"
                 rel="noreferrer"
             >
                 <MagnifyingGlassIcon className="cursor-pointer w-6 h-6" />
-            </a>
-        </span>
+            </a> */}
+        </div>
     );
 };
 

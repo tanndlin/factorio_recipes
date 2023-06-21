@@ -20,7 +20,7 @@ const RecipeExplorer = (props: Props) => {
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
             />
-            <div>
+            <div className="recipeExplorer">
                 {items
                     .filter((item) =>
                         item.name
