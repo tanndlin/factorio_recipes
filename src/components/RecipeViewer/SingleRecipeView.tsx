@@ -15,7 +15,7 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
     const { items, mode, inputItems, outputItems, headerName } = props;
 
     return (
-        <div className="h-full overflow-auto min-w-max">
+        <div className="h-full overflow-auto min-w-max pr-4">
             <div>
                 <header className="mb-4">
                     <h1 className="text-4xl">{headerName}</h1>
