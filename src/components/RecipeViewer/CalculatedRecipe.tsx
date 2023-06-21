@@ -21,7 +21,7 @@ const CalculatedRecipe = (props: Props) => {
         <ul style={{ marginLeft: `${depth * 10}px` }}>
             <li className="flex">
                 <ItemImage item={item} className="cursor-pointer" />
-                <span>
+                <span className="ml-2 my-auto">
                     {correctedAmount} {item.name}
                 </span>
             </li>

@@ -10,9 +10,6 @@ export function getRecipeSumAll(
         inputItemsCopy.push({ ...inputItem });
     });
 
-    console.log('Original', inputItems);
-    console.log('Copy', inputItemsCopy);
-
     const totals: { [key: string]: number } = {};
 
     outputItems.forEach((item) => {
@@ -45,8 +42,6 @@ export function getRecipeSum(
             (inputItem) => inputItem.item.id === ingredient.id
         );
         if (foundInput) {
-            console.log('Found input', foundInput);
-
             if (foundInput.amount >= ingredient.amount) {
                 inputItems[inputItems.indexOf(foundInput)].amount -=
                     ingredient.amount;

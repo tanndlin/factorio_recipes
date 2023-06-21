@@ -12,6 +12,7 @@ interface Props {
 
 interface SingleProps {
     item: Item;
+    inputItems: IOItem[];
     items: Item[];
     quantity: number;
     depth?: number;
@@ -20,12 +21,28 @@ interface SingleProps {
 const RecipeMode = (props: Props) => {
     const { inputItems, outputItems, items, depth } = props;
 
+    const inputItemsCopy: IOItem[] = JSON.parse(JSON.stringify(inputItems));
+
     return (
         <>
             {outputItems.map((outputItem) => {
                 const { item, amount } = outputItem;
                 const { recipe } = item;
                 const { ingredients } = recipe;
+
+                let realAmount = amount;
+                const foundItem = inputItemsCopy.find(
+                    (inputItem) => inputItem.item.id === item.id
+                );
+                if (foundItem) {
+                    if (foundItem.amount < amount) {
+                        realAmount = Math.max(0, amount - foundItem.amount);
+                        foundItem.amount = 0;
+                    } else {
+                        realAmount = 0;
+                        foundItem.amount -= amount;
+                    }
+                }
 
                 return (
                     <CalculatedRecipe
@@ -34,15 +51,17 @@ const RecipeMode = (props: Props) => {
                         amount={amount}
                         depth={depth ? depth + 1 : 0}
                     >
-                        {ingredients.map((ingredient) => (
-                            <RecipeModeSingle
-                                key={`${ingredient.id}-${depth ?? 0}-sub`}
-                                item={getItem(ingredient.id, items)!}
-                                items={items}
-                                quantity={amount * ingredient.amount}
-                                depth={(depth ?? 0) + 1}
-                            />
-                        ))}
+                        {realAmount > 0 &&
+                            ingredients.map((ingredient) => (
+                                <RecipeModeSingle
+                                    key={`${ingredient.id}-${depth ?? 0}-sub`}
+                                    item={getItem(ingredient.id, items)!}
+                                    inputItems={inputItemsCopy}
+                                    items={items}
+                                    quantity={realAmount * ingredient.amount}
+                                    depth={(depth ?? 0) + 1}
+                                />
+                            ))}
                     </CalculatedRecipe>
                 );
             })}
@@ -51,9 +70,23 @@ const RecipeMode = (props: Props) => {
 };
 
 const RecipeModeSingle = (props: SingleProps) => {
-    const { item, quantity, items, depth } = props;
+    const { item, quantity, items, depth, inputItems } = props;
     const { recipe } = item;
     const { ingredients } = recipe;
+
+    let realAmount = quantity;
+    const foundItem = inputItems.find(
+        (inputItem) => inputItem.item.id === item.id
+    );
+    if (foundItem) {
+        if (foundItem.amount < quantity) {
+            realAmount = Math.max(0, quantity - foundItem.amount);
+            foundItem.amount = 0;
+        } else {
+            realAmount = 0;
+            foundItem.amount -= quantity;
+        }
+    }
 
     return (
         <CalculatedRecipe
@@ -61,15 +94,17 @@ const RecipeModeSingle = (props: SingleProps) => {
             amount={quantity}
             depth={depth ? depth + 1 : 0}
         >
-            {ingredients.map((ingredient) => (
-                <RecipeModeSingle
-                    key={`${ingredient.id}-${depth ?? 0}-sub`}
-                    item={getItem(ingredient.id, items)!}
-                    items={items}
-                    quantity={quantity * ingredient.amount}
-                    depth={(depth ?? 0) + 1}
-                />
-            ))}
+            {realAmount > 0 &&
+                ingredients.map((ingredient) => (
+                    <RecipeModeSingle
+                        key={`${ingredient.id}-${depth ?? 0}-sub`}
+                        item={getItem(ingredient.id, items)!}
+                        inputItems={inputItems}
+                        items={items}
+                        quantity={realAmount * ingredient.amount}
+                        depth={(depth ?? 0) + 1}
+                    />
+                ))}
         </CalculatedRecipe>
     );
 };

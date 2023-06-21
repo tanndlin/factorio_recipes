@@ -17,7 +17,6 @@ const IOContainer = (props: Props) => {
     const { mode, ioItems, allItems, setIOItems } = props;
     const showModal = () => {
         const modal = document.getElementById('recipeExplorerModal');
-        console.log(modal);
         (modal as any)?.showModal();
     };
 
@@ -44,6 +43,7 @@ const IOContainer = (props: Props) => {
             <ul className="output-container">
                 {ioItems.map((outputItem, index) => (
                     <IOItemViewer
+                        key={index}
                         ioItem={outputItem}
                         index={index}
                         ioItems={ioItems}

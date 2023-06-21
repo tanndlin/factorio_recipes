@@ -15,7 +15,7 @@ const IOItemViewer = (props: Props) => {
     const { item, amount } = ioItem;
 
     return (
-        <li key={index}>
+        <li>
             <div className="flex py-2 relative">
                 <CancelButton
                     onClick={() => {
