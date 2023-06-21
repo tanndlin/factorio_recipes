@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item, IOItem } from '../../common/types/types';
 import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
+import { SingleRecipeView } from './SingleRecipeView';
 
 interface Props {
     items: Item[];
@@ -54,7 +55,6 @@ const RecipeViewer = (props: Props) => {
                         const { item, amount } = outputItem;
                         return (
                             <SingleRecipeViewWrapper
-                                expandable={true}
                                 expanded={expanded[item.id]}
                                 toggleExpanded={() =>
                                     toggleExpanded(outputItem.item)
@@ -74,7 +74,6 @@ const RecipeViewer = (props: Props) => {
                         const { item, amount } = outputItem;
                         return (
                             <SingleRecipeViewWrapper
-                                expandable={true}
                                 expanded={expanded[item.id]}
                                 toggleExpanded={() =>
                                     toggleExpanded(outputItem.item)
@@ -91,8 +90,7 @@ const RecipeViewer = (props: Props) => {
                 </div>
             </div>
             <div className="ml-auto flex-initial">
-                <SingleRecipeViewWrapper
-                    expandable={false}
+                <SingleRecipeView
                     items={items}
                     mode={mode}
                     inputItems={inputItems}
