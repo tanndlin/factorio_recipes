@@ -22,10 +22,7 @@ const ItemMode = (props: Props) => {
 
                 return (
                     <div className="flex py-2" key={id}>
-                        <ItemImage
-                            item={ingredientItem}
-                            className="cursor-pointer"
-                        />
+                        <ItemImage item={ingredientItem} />
                         <span className="ml-2 my-auto">
                             {amount} units of {ingredientItem.name}
                         </span>

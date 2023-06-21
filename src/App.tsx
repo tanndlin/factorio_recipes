@@ -4,7 +4,6 @@ import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
-import HomePage from './pages/HomePage';
 import BreakdownPage from './pages/BreakdownPage';
 import { removeDuplicates } from './common/CalculatorUtils';
 
@@ -32,7 +31,6 @@ function App() {
             <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path="/" element={<HomePage />}></Route>
                     <Route
                         path="/recipes"
                         element={
