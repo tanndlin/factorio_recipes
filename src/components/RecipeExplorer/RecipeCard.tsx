@@ -12,9 +12,9 @@ const RecipeCard = (props: Props) => {
     const friendlyName = name.replace(/ /g, '_');
 
     return (
-        <div className="border-2 rounded-md p-2 recipeCard" id={item.id}>
+        <div className="rounded-md p-2 recipeCard" id={item.id}>
             <div
-                className="w-full relative recipeCard-content"
+                className="relative recipeCard-content"
                 onClick={() => setCurrentItem(item)}
             >
                 <img

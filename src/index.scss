@@ -138,12 +138,14 @@ input {
 .recipeCard {
   transition: .5s;
   position: relative;
-  min-height: 150px;
+  display: flex;
+  // min-height: 150px;
 
   &:hover {
     &::before {
       content: "";
       position: absolute;
+      @apply rounded-md;
 
       top: 0;
       left: 0;
@@ -153,9 +155,13 @@ input {
       background: rgba(0, 0, 0, 0.5);
     }
 
-    padding: 20px;
-    min-height: 190px;
+    // padding: 20px;
+    // min-height: 190px;
   }
+}
+
+.recipeCard-content {
+  margin: auto;
 }
 
 .recipeExplorer {
