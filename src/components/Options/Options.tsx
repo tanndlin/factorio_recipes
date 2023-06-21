@@ -68,18 +68,18 @@ const Options = (props: Props) => {
                     }}
                 />
                 <MachineChooser
-                    machineType={assemblerType}
-                    setMachineType={(type: MachineType) =>
+                    value={assemblerType}
+                    callback={(type: MachineType) =>
                         setAssemblerType(type as AssemblerType)
                     }
-                    type="assembler"
+                    machineType="assembler"
                 />
                 <MachineChooser
-                    machineType={furnaceType}
-                    setMachineType={(type: MachineType) =>
+                    value={furnaceType}
+                    callback={(type: MachineType) =>
                         setFurnaceType(type as FurnaceType)
                     }
-                    type="furnace"
+                    machineType="furnace"
                 />
             </div>
 

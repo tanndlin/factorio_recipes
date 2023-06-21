@@ -1,32 +1,28 @@
 import React from 'react';
-import {
-    AssemblerType,
-    FurnaceType,
-    MachineType
-} from '../../common/types/types';
+import { MachineType } from '../../common/types/types';
 
-interface Props {
-    machineType: MachineType;
-    setMachineType: (type: MachineType) => void;
+interface MachineChooserProps<T> extends Props<T> {
+    machineType: 'assembler' | 'furnace';
 }
 
-interface WrapperProps extends Props {
-    type: 'assembler' | 'furnace';
-}
-
-interface ChooserProps extends Props {
-    options: AssemblerType[] | FurnaceType[];
+interface ChooserProps<T> extends Props<T> {
+    options: T[];
     name: string;
 }
 
-const MachineChooser = (props: WrapperProps) => {
-    const { type, machineType, setMachineType } = props;
+interface Props<T> {
+    value: T;
+    callback: (type: T) => void;
+}
 
-    if (type === 'assembler') {
+const MachineChooser = (props: MachineChooserProps<MachineType>) => {
+    const { machineType, value, callback } = props;
+
+    if (machineType === 'assembler') {
         return (
-            <Chooser
-                machineType={machineType}
-                setMachineType={setMachineType}
+            <Chooser<MachineType>
+                value={value}
+                callback={callback}
                 options={[
                     'assembling-machine-1',
                     'assembling-machine-2',
@@ -37,17 +33,17 @@ const MachineChooser = (props: WrapperProps) => {
         );
     }
     return (
-        <Chooser
-            machineType={machineType}
-            setMachineType={setMachineType}
+        <Chooser<MachineType>
+            value={value}
+            callback={callback}
             options={['stone-furnace', 'steel-furnace', 'electric-furnace']}
             name="Furnace Type"
         />
     );
 };
 
-const Chooser = (props: ChooserProps) => {
-    const { setMachineType, options, name, machineType } = props;
+function Chooser<T>(props: ChooserProps<T>) {
+    const { callback, options, name, value } = props;
 
     React.useEffect(() => {
         options.forEach((option) => {
@@ -58,24 +54,24 @@ const Chooser = (props: ChooserProps) => {
 
             container.addEventListener('click', () => {
                 check.checked = true;
-                setMachineType(option);
+                callback(option);
             });
         });
-    }, [options, machineType, setMachineType]);
+    }, [options, value, callback]);
 
     return (
         <form className="assembler-chooser flex flex-col items-center">
             <h1 className="text-xl">{name}</h1>
             <fieldset id="machineChooser">
                 {options.map((option) => (
-                    <Option key={option} type={machineType} name={option} />
+                    <Option key={option as string} type={value} name={option} />
                 ))}
             </fieldset>
         </form>
     );
-};
+}
 
-const Option = (props: { type: MachineType; name: MachineType }) => {
+function Option<T>(props: { type: T; name: T }) {
     const { name, type } = props;
 
     return (
@@ -83,19 +79,22 @@ const Option = (props: { type: MachineType; name: MachineType }) => {
             <input
                 type="radio"
                 name="machineChooser"
-                value={name}
+                value={name as string}
                 checked={type === name}
                 onChange={() => {}}
             />
-            <label htmlFor={name}>
+            <label htmlFor={name as string}>
                 <img
                     className="w-10 h-10"
-                    src={`../images/48px-${name.replace(/-/g, '_')}.png`}
-                    alt={name}
+                    src={`../images/48px-${(name as string).replace(
+                        /-/g,
+                        '_'
+                    )}.png`}
+                    alt={name as string}
                 />
             </label>
         </span>
     );
-};
+}
 
 export default MachineChooser;
