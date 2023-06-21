@@ -3,24 +3,23 @@ import { getItem } from '../../common/CalculatorUtils';
 import { Item, IOItem, ManufacturingTypes } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
-interface Props {
+interface BaseProps {
     inputItems: IOItem[];
+    items: Item[];
+    manufacturingTypes: ManufacturingTypes;
+    depth?: number;
+}
+
+interface WrapperProps extends BaseProps {
     outputItems: IOItem[];
-    items: Item[];
-    manufacturingTypes: ManufacturingTypes;
-    depth?: number;
 }
 
-interface SingleProps {
+interface SingleProps extends BaseProps {
     item: Item;
-    inputItems: IOItem[];
-    items: Item[];
-    manufacturingTypes: ManufacturingTypes;
     quantity: number;
-    depth?: number;
 }
 
-const RecipeMode = (props: Props) => {
+const RecipeMode = (props: WrapperProps) => {
     const { inputItems, outputItems, items, depth, manufacturingTypes } = props;
     const inputItemsCopy: IOItem[] = JSON.parse(JSON.stringify(inputItems));
 
@@ -114,8 +113,16 @@ const RecipeModeSingle = (props: SingleProps) => {
                 </>
             );
         } else {
-            realAmount = 0;
             foundItem.amount -= quantity;
+            return (
+                <CalculatedRecipe
+                    item={item}
+                    items={items}
+                    manufacturingTypes={manufacturingTypes}
+                    amount={realAmount}
+                    depth={depth ? depth + 1 : 0}
+                />
+            );
         }
     }
 

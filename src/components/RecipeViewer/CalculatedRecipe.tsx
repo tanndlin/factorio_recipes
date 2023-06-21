@@ -24,7 +24,7 @@ const CalculatedRecipe = (props: Props) => {
             <div className="flex">
                 <ItemImage item={item} />
                 <span className="ml-2 my-auto">
-                    {correctedAmount} {item.name}
+                    {`${correctedAmount} ${item.name}`}
                 </span>
                 <ManufacturerCount
                     item={item}
