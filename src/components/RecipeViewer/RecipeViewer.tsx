@@ -2,6 +2,7 @@ import React from 'react';
 import { InputItem, Item, OutputItem } from '../../common/types';
 import ItemMode from './ItemMode';
 import RecipeMode from './RecipeMode';
+import SingleRecipeView from './SingleRecipeView';
 
 interface Props {
     items: Item[];
@@ -14,30 +15,27 @@ const RecipeViewer = (props: Props) => {
     const { items, mode, inputItems, outputItems } = props;
 
     return (
-        <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer">
-            <header className="grid grid-cols-2 mb-4">
-                {/* <h1 className="text-4xl">{item.name}</h1> */}
-                <div className="my-auto ml-auto relative">
-                    <div className="background_haze" />
-                </div>
-            </header>
-
-            <div className="ingredientsList">
-                {mode === 'recipe' && (
-                    <RecipeMode
-                        inputItems={inputItems}
-                        outputItems={outputItems}
+        <div className="mx-auto h-full overflow-hidden w-full px-16 ingredientsContainer flex">
+            {outputItems.map((outputItem) => {
+                const { item, amount } = outputItem;
+                return (
+                    <SingleRecipeView
                         items={items}
-                        depth={0}
-                    />
-                )}
-                {mode === 'item' && (
-                    <ItemMode
+                        mode={mode}
                         inputItems={inputItems}
-                        outputItems={outputItems}
-                        items={items}
+                        outputItems={[{ item, amount }]}
+                        headerName={item.name}
                     />
-                )}
+                );
+            })}
+            <div className="ml-auto">
+                <SingleRecipeView
+                    items={items}
+                    mode={mode}
+                    inputItems={inputItems}
+                    outputItems={outputItems}
+                    headerName="Total"
+                />
             </div>
         </div>
     );
