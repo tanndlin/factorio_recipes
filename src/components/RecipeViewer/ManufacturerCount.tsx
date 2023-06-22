@@ -24,7 +24,13 @@ const ManufacturerCount = (props: Props) => {
                     className="h-6 w-6"
                     item={getItem(typeToUse, items)!}
                 />
-                x{getManufacturerCount(item, amount, typeToUse)}
+                x
+                {getManufacturerCount(
+                    item,
+                    amount,
+                    typeToUse,
+                    options.timeUnit
+                )}
             </span>
         );
     }

@@ -118,12 +118,16 @@ const getModifier = (machineType: MachineType) => {
 export const getManufacturerCount = (
     item: Item,
     amount: number,
-    machineType: MachineType
+    machineType: MachineType,
+    timeUnit: TimeUnit
 ) => {
     const time = item.recipe.time ?? 0;
     const yieldAmt = item.recipe.yield ?? 1;
 
-    const unrounded = (time * (amount / yieldAmt)) / getModifier(machineType);
+    const unrounded =
+        (time * (amount / yieldAmt)) /
+        getModifier(machineType) /
+        timeUnitToRatio(timeUnit);
     return Math.ceil(unrounded * 100) / 100;
 };
 
