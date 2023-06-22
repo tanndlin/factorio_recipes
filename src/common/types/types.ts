@@ -44,6 +44,11 @@ export enum RecipeMode {
     Recipe = 'recipe'
 }
 
+export type BeltType =
+    | 'transport-belt'
+    | 'fast-transport-belt'
+    | 'express-transport-belt';
+
 export interface OptionProps {
     recipeMode: RecipeMode;
     setRecipeMode: (mode: RecipeMode) => void;
@@ -53,4 +58,6 @@ export interface OptionProps {
     setFurnaceType: (type: FurnaceType) => void;
     timeUnit: TimeUnit;
     setTimeUnit: (unit: TimeUnit) => void;
+    beltType: BeltType;
+    setBeltType: (type: BeltType) => void;
 }

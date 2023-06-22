@@ -8,7 +8,8 @@ import {
     FurnaceType,
     OptionProps,
     RecipeMode,
-    TimeUnit
+    TimeUnit,
+    BeltType
 } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
@@ -33,16 +34,7 @@ const Options = (props: Props) => {
         setOutputItems,
         optionProps
     } = props;
-    const {
-        recipeMode,
-        setRecipeMode,
-        assemblerType,
-        setAssemblerType,
-        furnaceType,
-        setFurnaceType,
-        timeUnit,
-        setTimeUnit
-    } = optionProps;
+
     const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
 
     const ioContainerItems: IOItem[] =
@@ -51,8 +43,8 @@ const Options = (props: Props) => {
         ioMode === 'output' ? setOutputItems : setInputItems;
 
     const handleTimeUnitChange = (value: TimeUnit) => {
-        const ratio = calculateTimeRatio(timeUnit, value);
-        setTimeUnit(value);
+        const ratio = calculateTimeRatio(optionProps.timeUnit, value);
+        optionProps.setTimeUnit(value);
         setInputItems(
             inputItems.map((item) => ({
                 ...item,
@@ -71,12 +63,12 @@ const Options = (props: Props) => {
         <div className="optionsContainer">
             <div className="topOptionsContainer">
                 <Toggle
-                    value={recipeMode === RecipeMode.Recipe}
+                    value={optionProps.recipeMode === RecipeMode.Recipe}
                     setValue={(value) => {
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (document as any).startViewTransition(() => {
                             setCurrentTab('output');
-                            setRecipeMode(
+                            optionProps.setRecipeMode(
                                 value ? RecipeMode.Recipe : RecipeMode.Item
                             );
                         });
@@ -88,8 +80,8 @@ const Options = (props: Props) => {
                     }}
                 />
                 <Chooser<AssemblerType>
-                    value={assemblerType}
-                    callback={setAssemblerType}
+                    value={optionProps.assemblerType}
+                    callback={optionProps.setAssemblerType}
                     options={[
                         'assembling-machine-1',
                         'assembling-machine-2',
@@ -99,8 +91,8 @@ const Options = (props: Props) => {
                     images={true}
                 />
                 <Chooser<FurnaceType>
-                    value={furnaceType}
-                    callback={setFurnaceType}
+                    value={optionProps.furnaceType}
+                    callback={optionProps.setFurnaceType}
                     options={[
                         'stone-furnace',
                         'steel-furnace',
@@ -110,11 +102,22 @@ const Options = (props: Props) => {
                     images={true}
                 />
                 <Chooser<TimeUnit>
-                    value={timeUnit}
+                    value={optionProps.timeUnit}
                     callback={handleTimeUnitChange}
                     options={['sec', 'min', 'hr']}
                     name="Time Unit"
                     images={false}
+                />
+                <Chooser<BeltType>
+                    value={optionProps.beltType}
+                    callback={optionProps.setBeltType}
+                    options={[
+                        'transport-belt',
+                        'fast-transport-belt',
+                        'express-transport-belt'
+                    ]}
+                    name="Belt Type"
+                    images={true}
                 />
             </div>
 

@@ -3,6 +3,7 @@ import { Item, IOItem, OptionProps } from '../../common/types/types';
 import { getItem, getRecipeSumAll } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
+import BeltCount from './BeltCount';
 
 interface Props {
     inputItems: IOItem[];
@@ -29,6 +30,11 @@ const ItemMode = (props: Props) => {
                         </span>
                         <ManufacturerCount
                             item={ingredientItem}
+                            amount={amount}
+                            options={options}
+                            items={items}
+                        />
+                        <BeltCount
                             amount={amount}
                             options={options}
                             items={items}

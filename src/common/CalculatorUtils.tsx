@@ -1,4 +1,4 @@
-import { Item, IOItem, MachineType, TimeUnit } from './types/types';
+import { Item, IOItem, MachineType, TimeUnit, BeltType } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],
@@ -128,6 +128,27 @@ export const getManufacturerCount = (
         (time * (amount / yieldAmt)) /
         getModifier(machineType) /
         timeUnitToRatio(timeUnit);
+    return Math.ceil(unrounded * 100) / 100;
+};
+
+const getBeltSpeed = (beltType: BeltType) => {
+    switch (beltType) {
+        case 'transport-belt':
+            return 15;
+        case 'fast-transport-belt':
+            return 30;
+        case 'express-transport-belt':
+            return 45;
+    }
+};
+
+export const getBeltCount = (
+    amount: number,
+    beltType: BeltType,
+    timeUnit: TimeUnit
+) => {
+    const unrounded =
+        amount / getBeltSpeed(beltType) / timeUnitToRatio(timeUnit);
     return Math.ceil(unrounded * 100) / 100;
 };
 

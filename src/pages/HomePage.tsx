@@ -6,7 +6,8 @@ import {
     FurnaceType,
     TimeUnit,
     OptionProps,
-    RecipeMode
+    RecipeMode,
+    BeltType
 } from '../common/types/types';
 import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
@@ -21,7 +22,6 @@ interface Props {
 }
 
 // TODO: MOVE OPTIONS TO ITS OWN PAGE OR MODAL
-// TODO: SHOW HOW MANY BELTS ARE NEEDED FOR INPUTS AND OUTPUTS
 // TODO: SHOW HOW MANY MINERS ARE NEEDED FOR INPUTS AND OUTPUTS
 
 const HomePage = (props: Props) => {
@@ -40,9 +40,19 @@ const HomePage = (props: Props) => {
 
     const [timeUnit, setTimeUnit] = React.useState<TimeUnit>('sec');
 
+    const [beltType, setBeltType] = React.useState(
+        (localStorage.getItem('beltType') as BeltType) ?? 'transport-belt'
+    );
+
     React.useEffect(() => {
         localStorage.setItem('assemblerType', assemblerType);
     }, [assemblerType]);
+    React.useEffect(() => {
+        localStorage.setItem('furnaceType', furnaceType);
+    }, [furnaceType]);
+    React.useEffect(() => {
+        localStorage.setItem('beltType', beltType);
+    }, [beltType]);
 
     const optionProps: OptionProps = {
         recipeMode,
@@ -52,7 +62,9 @@ const HomePage = (props: Props) => {
         furnaceType,
         setFurnaceType,
         timeUnit,
-        setTimeUnit
+        setTimeUnit,
+        beltType,
+        setBeltType
     };
 
     return (
