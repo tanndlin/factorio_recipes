@@ -4,11 +4,10 @@ import { useNavigate } from 'react-router';
 type Props = {
     to: string;
     children: React.ReactNode;
-    onClick?: (to: string) => void;
 };
 
 const AnimatedLink = (props: Props) => {
-    const { to, children, onClick } = props;
+    const { to, children } = props;
     const navigate = useNavigate();
 
     const handleClick = (
@@ -17,9 +16,6 @@ const AnimatedLink = (props: Props) => {
         event.preventDefault();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (document as any).startViewTransition(() => {
-            if (onClick) {
-                onClick(to);
-            }
             navigate(to);
         });
     };
