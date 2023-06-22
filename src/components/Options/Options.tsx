@@ -124,7 +124,13 @@ const Options = (props: Props) => {
             </div>
 
             <div>
-                <TabContainer className="justify-center">
+                <TabContainer
+                    className="justify-center"
+                    activeTab={ioMode === 'output' ? 0 : 1}
+                    setActiveTab={(index: number) => {
+                        setCurrentTab(index === 0 ? 'output' : 'input');
+                    }}
+                >
                     <h1
                         onClick={() =>
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any

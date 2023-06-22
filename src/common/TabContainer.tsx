@@ -3,11 +3,12 @@ import React from 'react';
 type Props = {
     children: React.ReactNode[];
     className?: string;
+    activeTab: number;
+    setActiveTab: (index: number) => void;
 };
 
 const TabContainer = (props: Props) => {
-    const { children } = props;
-    const [activeTab, setActiveTab] = React.useState(0);
+    const { children, activeTab, setActiveTab } = props;
 
     return (
         <ul className={'tab-container ' + props.className ?? ''}>
