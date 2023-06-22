@@ -12,7 +12,7 @@ export function Chooser<T>(props: ChooserProps<T>) {
     const { callback, options, name, value } = props;
 
     return (
-        <form className="assembler-chooser flex flex-col items-center">
+        <form className="chooser flex flex-col items-center">
             <h1 className="text-xl">{name}</h1>
             <fieldset id="machineChooser">
                 {options.map((option) => (

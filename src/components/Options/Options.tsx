@@ -79,46 +79,48 @@ const Options = (props: Props) => {
                         1: 'Recipe'
                     }}
                 />
-                <Chooser<AssemblerType>
-                    value={optionProps.assemblerType}
-                    callback={optionProps.setAssemblerType}
-                    options={[
-                        'assembling-machine-1',
-                        'assembling-machine-2',
-                        'assembling-machine-3'
-                    ]}
-                    name="Assembler Type"
-                    images={true}
-                />
-                <Chooser<FurnaceType>
-                    value={optionProps.furnaceType}
-                    callback={optionProps.setFurnaceType}
-                    options={[
-                        'stone-furnace',
-                        'steel-furnace',
-                        'electric-furnace'
-                    ]}
-                    name="Furnace Type"
-                    images={true}
-                />
-                <Chooser<TimeUnit>
-                    value={optionProps.timeUnit}
-                    callback={handleTimeUnitChange}
-                    options={['sec', 'min', 'hr']}
-                    name="Time Unit"
-                    images={false}
-                />
-                <Chooser<BeltType>
-                    value={optionProps.beltType}
-                    callback={optionProps.setBeltType}
-                    options={[
-                        'transport-belt',
-                        'fast-transport-belt',
-                        'express-transport-belt'
-                    ]}
-                    name="Belt Type"
-                    images={true}
-                />
+                <div className="chooser-container">
+                    <Chooser<AssemblerType>
+                        value={optionProps.assemblerType}
+                        callback={optionProps.setAssemblerType}
+                        options={[
+                            'assembling-machine-1',
+                            'assembling-machine-2',
+                            'assembling-machine-3'
+                        ]}
+                        name="Assembler Type"
+                        images={true}
+                    />
+                    <Chooser<FurnaceType>
+                        value={optionProps.furnaceType}
+                        callback={optionProps.setFurnaceType}
+                        options={[
+                            'stone-furnace',
+                            'steel-furnace',
+                            'electric-furnace'
+                        ]}
+                        name="Furnace Type"
+                        images={true}
+                    />
+                    <Chooser<BeltType>
+                        value={optionProps.beltType}
+                        callback={optionProps.setBeltType}
+                        options={[
+                            'transport-belt',
+                            'fast-transport-belt',
+                            'express-transport-belt'
+                        ]}
+                        name="Belt Type"
+                        images={true}
+                    />
+                    <Chooser<TimeUnit>
+                        value={optionProps.timeUnit}
+                        callback={handleTimeUnitChange}
+                        options={['sec', 'min', 'hr']}
+                        name="Time Unit"
+                        images={false}
+                    />
+                </div>
             </div>
 
             <div>

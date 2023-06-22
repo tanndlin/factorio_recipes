@@ -385,6 +385,7 @@ input {
 
 .topOptionsContainer {
   display: flex;
+  flex-direction: column;
   gap: 16px;
   padding: 16px;
   overflow: auto;
@@ -392,9 +393,23 @@ input {
   margin-right: auto;
 }
 
-.assembler-chooser {
+.chooser {
   & span {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 4px;
   }
+
+  &>fieldset {
+    display: flex;
+    gap: 16px;
+
+  }
+}
+
+.chooser-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
