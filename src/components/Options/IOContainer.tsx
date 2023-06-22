@@ -1,11 +1,11 @@
 import React from 'react';
-import { IOItem, Item, OptionProps } from '../../common/types/types';
+import { IOItem, IOMode, Item, OptionProps } from '../../common/types/types';
 import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
 import CloseButton from '../../common/CancelButton';
 import IOItemViewer from './IOItemViewer';
 
 type Props = {
-    mode: 'input' | 'output';
+    mode: IOMode;
     ioItems: IOItem[];
     allItems: Item[];
     setIOItems: (items: IOItem[]) => void;
@@ -39,7 +39,7 @@ const IOContainer = (props: Props) => {
                 />
             </dialog>
             <button className="mx-auto my-4" onClick={() => showModal()}>
-                {mode === 'input' ? 'Add Input Item' : 'Add Output Item'}
+                {mode === IOMode.Input ? 'Add Input Item' : 'Add Output Item'}
             </button>
             <ul className="output-container">
                 {ioItems.map((outputItem, index) => (

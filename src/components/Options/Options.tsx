@@ -1,7 +1,6 @@
 import React from 'react';
 import Toggle from '../../common/Toggle';
 import {
-    OptionTabType,
     IOItem,
     Item,
     AssemblerType,
@@ -9,7 +8,8 @@ import {
     OptionProps,
     RecipeMode,
     TimeUnit,
-    BeltType
+    BeltType,
+    IOMode
 } from '../../common/types/types';
 import TabContainer from '../../common/TabContainer';
 import IOContainer from './IOContainer';
@@ -35,12 +35,12 @@ const Options = (props: Props) => {
         optionProps
     } = props;
 
-    const [ioMode, setCurrentTab] = React.useState<OptionTabType>('output');
+    const [ioMode, setCurrentTab] = React.useState<IOMode>(IOMode.Output);
 
     const ioContainerItems: IOItem[] =
-        ioMode === 'output' ? outputItems : inputItems;
+        ioMode === IOMode.Output ? outputItems : inputItems;
     const setIoContainerItems =
-        ioMode === 'output' ? setOutputItems : setInputItems;
+        ioMode === IOMode.Output ? setOutputItems : setInputItems;
 
     const handleTimeUnitChange = (value: TimeUnit) => {
         const ratio = calculateTimeRatio(optionProps.timeUnit, value);
@@ -67,7 +67,6 @@ const Options = (props: Props) => {
                     setValue={(value) => {
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (document as any).startViewTransition(() => {
-                            setCurrentTab('output');
                             optionProps.setRecipeMode(
                                 value ? RecipeMode.Recipe : RecipeMode.Item
                             );
@@ -126,16 +125,16 @@ const Options = (props: Props) => {
             <div>
                 <TabContainer
                     className="justify-center"
-                    activeTab={ioMode === 'output' ? 0 : 1}
+                    activeTab={ioMode}
                     setActiveTab={(index: number) => {
-                        setCurrentTab(index === 0 ? 'output' : 'input');
+                        setCurrentTab(index);
                     }}
                 >
                     <h1
                         onClick={() =>
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             (document as any).startViewTransition(() => {
-                                setCurrentTab('output');
+                                setCurrentTab(IOMode.Output);
                             })
                         }
                         className="text-xl"
@@ -146,7 +145,7 @@ const Options = (props: Props) => {
                         onClick={() =>
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             (document as any).startViewTransition(() => {
-                                setCurrentTab('input');
+                                setCurrentTab(IOMode.Input);
                             })
                         }
                         className="text-xl"

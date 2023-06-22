@@ -12,11 +12,13 @@ describe('RecipeMode', () => {
         assemblerType: 'assembling-machine-1',
         furnaceType: 'stone-furnace',
         recipeMode: RecipeMode.Recipe,
+        timeUnit: 'sec',
+        beltType: 'transport-belt',
         setAssemblerType: jest.fn(),
         setFurnaceType: jest.fn(),
         setRecipeMode: jest.fn(),
         setTimeUnit: jest.fn(),
-        timeUnit: 's'
+        setBeltType: jest.fn()
     };
 
     it('should render the correct hierarchy for a simple recipe', () => {

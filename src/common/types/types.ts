@@ -22,7 +22,6 @@ export type IOItem = {
     amount: number;
 };
 
-export type OptionTabType = 'input' | 'output';
 export type AssemblerType =
     | 'assembling-machine-1'
     | 'assembling-machine-2'
@@ -61,3 +60,8 @@ export type OptionProps = {
     beltType: BeltType;
     setBeltType: (type: BeltType) => void;
 };
+
+export enum IOMode {
+    Output = 0,
+    Input = 1
+}
