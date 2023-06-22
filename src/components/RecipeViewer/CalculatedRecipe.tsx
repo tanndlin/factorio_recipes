@@ -2,6 +2,7 @@ import React from 'react';
 import { Item, OptionProps } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
+import BeltCount from './BeltCount';
 
 type Props = {
     item: Item;
@@ -28,6 +29,11 @@ const CalculatedRecipe = (props: Props) => {
                 </span>
                 <ManufacturerCount
                     item={item}
+                    amount={correctedAmount}
+                    options={options}
+                    items={items}
+                />
+                <BeltCount
                     amount={correctedAmount}
                     options={options}
                     items={items}
