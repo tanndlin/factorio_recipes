@@ -3,14 +3,14 @@ import { Item, IOItem, OptionProps } from '../../common/types/types';
 import ItemMode from './ItemMode';
 import RecipeModeViewer from './RecipeMode';
 
-export interface SingleRecipeViewProps {
+export type SingleRecipeViewProps = {
     items: Item[];
     mode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
     headerName: string;
     options: OptionProps;
-}
+};
 
 export const SingleRecipeView = (props: SingleRecipeViewProps) => {
     const { items, mode, inputItems, outputItems, headerName, options } = props;

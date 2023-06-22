@@ -1,9 +1,9 @@
 import React from 'react';
 
-interface Props {
+type Props = {
     children: React.ReactNode[];
     className?: string;
-}
+};
 
 const TabContainer = (props: Props) => {
     const { children } = props;

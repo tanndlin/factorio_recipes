@@ -3,14 +3,14 @@ import { Item, OptionProps } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
 
-interface Props {
+type Props = {
     item: Item;
     items: Item[];
     amount: number;
     depth: number;
     options: OptionProps;
     children?: React.ReactNode;
-}
+};
 
 const CalculatedRecipe = (props: Props) => {
     const { items, item, depth, children, amount, options } = props;

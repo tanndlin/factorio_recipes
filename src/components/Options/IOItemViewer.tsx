@@ -3,13 +3,13 @@ import { IOItem, OptionProps } from '../../common/types/types';
 import CancelButton from '../../common/CancelButton';
 import ItemImage from '../../common/ItemImage';
 
-interface Props {
+type Props = {
     ioItem: IOItem;
     index: number;
     ioItems: IOItem[];
     setIOItems: (ioItems: IOItem[]) => void;
     options: OptionProps;
-}
+};
 
 const IOItemViewer = (props: Props) => {
     const { ioItem, index, ioItems, setIOItems, options } = props;

@@ -1,12 +1,12 @@
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
-interface props {
+type Props = {
     searchTerm: string;
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-}
+};
 
-const DisappearingSearchBar = (props: props) => {
+const DisappearingSearchBar = (props: Props) => {
     const { searchTerm, setSearchTerm } = props;
 
     return (

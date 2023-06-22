@@ -1,10 +1,10 @@
 import React from 'react';
 import { Item } from './types/types';
 
-interface Props {
+type Props = {
     item: Item;
     className?: string;
-}
+};
 
 const ItemImage = (props: Props) => {
     const { item, className } = props;

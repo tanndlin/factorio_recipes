@@ -3,10 +3,10 @@ import RecipeCard from './RecipeCard';
 import { Item } from '../../common/types/types';
 import DisappearingSearchBar from '../../common/DisappearingSearchBar';
 
-interface Props {
+type Props = {
     items: Item[];
     onClick: (item: Item) => void;
-}
+};
 
 const RecipeExplorer = (props: Props) => {
     const { items, onClick } = props;

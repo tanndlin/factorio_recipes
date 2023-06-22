@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface Props {
+type Props = {
     id: string;
     className?: string;
     tooltip: React.ReactNode;
     children: React.ReactNode;
-}
+};
 
 const Tippable = (props: Props) => {
     React.useEffect(() => {

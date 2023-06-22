@@ -3,12 +3,12 @@ import ItemImage from '../../common/ItemImage';
 import { getItem, getManufacturerCount } from '../../common/CalculatorUtils';
 import { Item, MachineType, OptionProps } from '../../common/types/types';
 
-interface Props {
+type Props = {
     item: Item;
     amount: number;
     options: OptionProps;
     items: Item[];
-}
+};
 
 const ManufacturerCount = (props: Props) => {
     const { item, amount, options, items } = props;

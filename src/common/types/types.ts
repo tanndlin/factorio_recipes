@@ -1,26 +1,26 @@
-export interface Item {
+export type Item = {
     id: string;
     name: string;
     type?: string;
     category?: string;
     recipe: Recipe;
-}
+};
 
-export interface Recipe {
+export type Recipe = {
     time: number;
     yield?: number;
     ingredients: Ingredient[];
-}
+};
 
-export interface Ingredient {
+export type Ingredient = {
     id: string;
     amount: number;
-}
+};
 
-export interface IOItem {
+export type IOItem = {
     item: Item;
     amount: number;
-}
+};
 
 export type OptionTabType = 'input' | 'output';
 export type AssemblerType =
@@ -33,10 +33,10 @@ export type FurnaceType =
     | 'electric-furnace';
 export type MachineType = AssemblerType | FurnaceType;
 
-export interface ManufacturingTypes {
+export type ManufacturingTypes = {
     assemblerType: AssemblerType;
     furnaceType: FurnaceType;
-}
+};
 
 export type TimeUnit = 'sec' | 'min' | 'hr';
 export enum RecipeMode {
@@ -49,7 +49,7 @@ export type BeltType =
     | 'fast-transport-belt'
     | 'express-transport-belt';
 
-export interface OptionProps {
+export type OptionProps = {
     recipeMode: RecipeMode;
     setRecipeMode: (mode: RecipeMode) => void;
     assemblerType: AssemblerType;
@@ -60,4 +60,4 @@ export interface OptionProps {
     setTimeUnit: (unit: TimeUnit) => void;
     beltType: BeltType;
     setBeltType: (type: BeltType) => void;
-}
+};

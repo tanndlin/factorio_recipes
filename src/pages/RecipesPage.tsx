@@ -4,11 +4,11 @@ import { Item, IOItem } from '../common/types/types';
 import stars from '../assets/stars.png';
 import { useNavigate } from 'react-router';
 
-interface Props {
+type Props = {
     items: Item[];
     outputItems: IOItem[];
     setOutputItems: (items: IOItem[]) => void;
-}
+};
 
 const RecipesPage = (props: Props) => {
     const { outputItems, setOutputItems, items } = props;

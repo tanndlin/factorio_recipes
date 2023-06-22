@@ -16,14 +16,14 @@ import IOContainer from './IOContainer';
 import { Chooser } from './Chooser';
 import { calculateTimeRatio } from '../../common/CalculatorUtils';
 
-interface Props {
+type Props = {
     items: Item[];
     inputItems: IOItem[];
     outputItems: IOItem[];
     setInputItems: (items: IOItem[]) => void;
     setOutputItems: (items: IOItem[]) => void;
     optionProps: OptionProps;
-}
+};
 
 const Options = (props: Props) => {
     const {

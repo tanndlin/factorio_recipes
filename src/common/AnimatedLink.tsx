@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-interface Props {
+type Props = {
     to: string;
     children: React.ReactNode;
     onClick?: (to: string) => void;
-}
+};
 
 const AnimatedLink = (props: Props) => {
     const { to, children, onClick } = props;

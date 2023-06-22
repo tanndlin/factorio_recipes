@@ -3,13 +3,13 @@ import { Item, IOItem, OptionProps } from '../../common/types/types';
 import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
 import { SingleRecipeView } from './SingleRecipeView';
 
-interface Props {
+type Props = {
     items: Item[];
     mode: 'item' | 'recipe';
     inputItems: IOItem[];
     outputItems: IOItem[];
     options: OptionProps;
-}
+};
 
 const RecipeViewer = (props: Props) => {
     const { items, mode, inputItems, outputItems, options } = props;

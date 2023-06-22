@@ -1,10 +1,10 @@
 import React from 'react';
 import { SingleRecipeView, SingleRecipeViewProps } from './SingleRecipeView';
 
-interface Props extends SingleRecipeViewProps {
+type Props = SingleRecipeViewProps & {
     expanded: boolean;
     toggleExpanded?: () => void;
-}
+};
 
 const SingleRecipeViewWrapper = (props: Props) => {
     const { expanded, toggleExpanded } = props;

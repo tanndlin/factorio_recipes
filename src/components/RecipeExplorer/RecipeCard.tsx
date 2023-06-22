@@ -4,11 +4,11 @@ import ItemImage from '../../common/ItemImage';
 import Tippable from '../../common/Tippable';
 import { getItem } from '../../common/CalculatorUtils';
 
-interface Props {
+type Props = {
     item: Item;
     items: Item[];
     onClick: React.Dispatch<React.SetStateAction<Item>>;
-}
+};
 
 const RecipeCard = (props: Props) => {
     const { item, items, onClick } = props;

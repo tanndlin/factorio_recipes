@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface ChooserProps<T> {
+type ChooserProps<T> = {
     options: T[];
     name: string;
     value: T;
     callback: (...args: T[]) => void;
     images: boolean;
-}
+};
 
 export function Chooser<T>(props: ChooserProps<T>) {
     const { callback, options, name, value } = props;
@@ -31,12 +31,12 @@ export function Chooser<T>(props: ChooserProps<T>) {
     );
 }
 
-interface OptionProps<T> {
+type OptionProps<T> = {
     type: T;
     name: T;
     showImages: boolean;
     onClick: () => void;
-}
+};
 
 function Option<T>(props: OptionProps<T>) {
     const { name, type, showImages } = props;

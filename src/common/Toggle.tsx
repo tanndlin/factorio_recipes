@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface Props {
+type Props = {
     value: boolean;
     setValue: React.Dispatch<React.SetStateAction<boolean>>;
     name: string;
     optionNames: { [key: number]: string };
-}
+};
 
 const Toggle = (props: Props) => {
     const { value, setValue, name, optionNames } = props;

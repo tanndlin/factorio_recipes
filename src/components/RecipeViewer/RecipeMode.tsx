@@ -3,21 +3,21 @@ import { getItem } from '../../common/CalculatorUtils';
 import { Item, IOItem, OptionProps } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
-interface BaseProps {
+type BaseProps = {
     inputItems: IOItem[];
     items: Item[];
     options: OptionProps;
     depth?: number;
-}
+};
 
-interface WrapperProps extends BaseProps {
+type WrapperProps = BaseProps & {
     outputItems: IOItem[];
-}
+};
 
-interface SingleProps extends BaseProps {
+type SingleProps = BaseProps & {
     item: Item;
     quantity: number;
-}
+};
 
 const RecipeModeViewer = (props: WrapperProps) => {
     const { inputItems, outputItems, items, depth, options } = props;

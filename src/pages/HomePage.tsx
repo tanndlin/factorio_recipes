@@ -13,13 +13,13 @@ import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
 import stars from '../assets/stars.png';
 
-interface Props {
+type Props = {
     inputItems: IOItem[];
     outputItems: IOItem[];
     setInputItems: (items: IOItem[]) => void;
     setOutputItems: (items: IOItem[]) => void;
     items: Item[];
-}
+};
 
 // TODO: MOVE OPTIONS TO ITS OWN PAGE OR MODAL
 // TODO: SHOW HOW MANY MINERS ARE NEEDED FOR INPUTS AND OUTPUTS

@@ -5,12 +5,12 @@ import ItemImage from '../../common/ItemImage';
 import ManufacturerCount from './ManufacturerCount';
 import BeltCount from './BeltCount';
 
-interface Props {
+type Props = {
     inputItems: IOItem[];
     outputItems: IOItem[];
     items: Item[];
     options: OptionProps;
-}
+};
 
 const ItemMode = (props: Props) => {
     const { inputItems, outputItems, items, options } = props;

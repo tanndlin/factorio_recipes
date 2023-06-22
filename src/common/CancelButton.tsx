@@ -1,9 +1,9 @@
 import React from 'react';
 
-interface Props {
+type Props = {
     className?: string;
     onClick: () => void;
-}
+};
 
 const CloseButton = (props: Props) => {
     return (

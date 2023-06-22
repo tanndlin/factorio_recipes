@@ -4,13 +4,13 @@ import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
 import CloseButton from '../../common/CancelButton';
 import IOItemViewer from './IOItemViewer';
 
-interface Props {
+type Props = {
     mode: 'input' | 'output';
     ioItems: IOItem[];
     allItems: Item[];
     setIOItems: (items: IOItem[]) => void;
     options: OptionProps;
-}
+};
 
 const IOContainer = (props: Props) => {
     const { mode, ioItems, allItems, setIOItems, options } = props;
