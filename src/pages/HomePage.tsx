@@ -21,6 +21,8 @@ interface Props {
 }
 
 // TODO: MOVE OPTIONS TO ITS OWN PAGE OR MODAL
+// TODO: SHOW HOW MANY BELTS ARE NEEDED FOR INPUTS AND OUTPUTS
+// TODO: SHOW HOW MANY MINERS ARE NEEDED FOR INPUTS AND OUTPUTS
 
 const HomePage = (props: Props) => {
     const { inputItems, outputItems, setInputItems, setOutputItems, items } =
