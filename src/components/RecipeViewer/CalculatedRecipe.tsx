@@ -39,7 +39,7 @@ const CalculatedRecipe = (props: Props) => {
                     items={items}
                 />
             </div>
-            {React.Children.toArray(children).length > 0 && <>{children}</>}
+            {children}
         </div>
     );
 };
