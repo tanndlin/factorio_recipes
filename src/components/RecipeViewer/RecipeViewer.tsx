@@ -49,7 +49,7 @@ const RecipeViewer = (props: Props) => {
     };
 
     return (
-        <div className="ingredientsContainer flex">
+        <div className="ingredients-container flex">
             <div className="overflow-hidden flex gap-16 flex-grow">
                 <div className="collapsed-wrappers">
                     {collapsedItems.map((outputItem) => {

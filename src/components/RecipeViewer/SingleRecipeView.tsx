@@ -22,7 +22,7 @@ export const SingleRecipeView = (props: SingleRecipeViewProps) => {
                     <h1 className="text-4xl">{headerName}</h1>
                 </header>
 
-                <div className="ingredientsList">
+                <div className="ingredients-list">
                     {mode === 'recipe' && (
                         <RecipeModeViewer
                             inputItems={inputItems}

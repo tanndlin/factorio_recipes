@@ -21,7 +21,7 @@ const RecipesPage = (props: Props) => {
                 alt="Starry Background"
                 className="absolute w-full h-full -z-[1]"
             />
-            <div className="background_haze"></div>
+            <div className="background-haze"></div>
             <RecipeExplorer
                 {...{
                     items,

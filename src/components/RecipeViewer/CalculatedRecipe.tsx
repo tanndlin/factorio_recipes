@@ -20,7 +20,7 @@ const CalculatedRecipe = (props: Props) => {
     }
 
     return (
-        <div className="ml-10 recipeChild">
+        <div className="ml-10 recipe-child">
             <div className="flex">
                 <ItemImage item={item} />
                 <span className="ml-2 my-auto">

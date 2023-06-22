@@ -16,7 +16,7 @@ const RecipeCard = (props: Props) => {
 
     return (
         <Tippable
-            className="rounded-md p-2 recipeCard tippable cursor-pointer"
+            className="rounded-md p-2 recipe-card tippable cursor-pointer"
             id={item.id}
             tooltip={
                 <div>
@@ -47,7 +47,7 @@ const RecipeCard = (props: Props) => {
             }
         >
             <div
-                className="relative recipeCard-content"
+                className="relative recipe-card-content"
                 onClick={() => onClick(item)}
             >
                 <ItemImage item={item} className="mx-auto" />

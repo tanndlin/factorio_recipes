@@ -60,8 +60,8 @@ const Options = (props: Props) => {
     };
 
     return (
-        <div className="optionsContainer">
-            <div className="topOptionsContainer">
+        <div className="options-container">
+            <div className="top-options-container">
                 <Toggle
                     value={optionProps.recipeMode === RecipeMode.Recipe}
                     setValue={(value) => {

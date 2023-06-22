@@ -13,13 +13,13 @@ const RecipeExplorer = (props: Props) => {
     const [searchTerm, setSearchTerm] = React.useState('');
 
     return (
-        <div className="flex flex-col gap-2 max-h-full recipesContainer p-10">
+        <div className="flex flex-col gap-2 max-h-full recipes-container p-10">
             <h1 className="text-4xl mb-4">Recipes</h1>
             <DisappearingSearchBar
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
             />
-            <div className="recipeExplorer">
+            <div className="recipe-explorer">
                 {items
                     .filter((item) =>
                         item.name

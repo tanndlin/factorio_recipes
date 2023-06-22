@@ -70,7 +70,7 @@ input {
   background: #555;
 }
 
-.background_haze {
+.background-haze {
   background: radial-gradient(37.28% 42.79% at 37.05% 40.5%, rgba(17, 18, 19, 0) 0, #111213 100%),
     radial-gradient(22.93% 22.93% at 36.42% 43.93%, #331d3b 0, rgba(51, 29, 59, 0) 100%),
     conic-gradient(from 180deg at 34.37% 42.14%, #331c30 0deg, #2f1b3f 84.38deg, #1a1a6c 247.5deg, #351b2f 1turn),
@@ -103,7 +103,7 @@ input {
   }
 }
 
-.searchContainer {
+.search-container {
   width: 28px;
   height: 28px;
   position: relative;
@@ -160,7 +160,7 @@ input {
   border-radius: 0 50% 50% 0;
 }
 
-.recipeCard {
+.recipe-card {
   transition: .5s;
   position: relative;
   display: flex;
@@ -185,27 +185,27 @@ input {
   }
 }
 
-.recipeCard-content {
+.recipe-card-content {
   margin: auto;
 }
 
-.recipeExplorer {
+.recipe-explorer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   overflow: auto;
   height: 100%
 }
 
-.ingredientsList {
+.ingredients-list {
   overflow: auto;
   height: 100%;
 }
 
-.recipesContainer {
+.recipes-container {
   height: 85vh;
 }
 
-.optionsContainer {
+.options-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -213,7 +213,7 @@ input {
   overflow: auto;
 }
 
-.ingredientsContainer {
+.ingredients-container {
   border-right: 1px solid rgb(107 114 128);
   padding-left: 4rem;
   padding-right: 4rem;
@@ -295,7 +295,7 @@ input {
   overflow: hidden;
 }
 
-.hierarchy>.recipeChild {
+.hierarchy>.recipe-child {
 
   &::before,
   &::after {
@@ -304,7 +304,7 @@ input {
 
 }
 
-.recipeChild {
+.recipe-child {
   position: relative;
 
   &::before,
@@ -383,7 +383,7 @@ input {
   overflow-x: auto;
 }
 
-.topOptionsContainer {
+.top-options-container {
   display: flex;
   flex-direction: column;
   gap: 16px;

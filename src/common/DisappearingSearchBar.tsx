@@ -10,7 +10,7 @@ const DisappearingSearchBar = (props: Props) => {
     const { searchTerm, setSearchTerm } = props;
 
     return (
-        <div className="searchContainer">
+        <div className="search-container">
             <MagnifyingGlassCircleIcon />
             <input
                 type="text"
