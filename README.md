@@ -1,4 +1,3 @@
-# Note Taker
+# Calculatorio
 
-Note Taker is a web app created in React for taking interactive notes in
-Markdown.
+A web app for calculating recipes for the factory building game Factorio.
