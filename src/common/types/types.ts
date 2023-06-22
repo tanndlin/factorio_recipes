@@ -1,14 +1,14 @@
 export type Item = {
     id: string;
     name: string;
-    type?: string;
-    category?: string;
+    type?: ItemType;
+    category?: ItemCategory;
     recipe: Recipe;
 };
 
 export type Recipe = {
-    time: number;
-    yield?: number;
+    time: number | null;
+    yield: number | null;
     ingredients: Ingredient[];
 };
 
@@ -16,6 +16,18 @@ export type Ingredient = {
     id: string;
     amount: number;
 };
+
+export type ItemType = 'Liquid' | 'Resource';
+
+export type ItemCategory =
+    | 'advanced-crafting'
+    | 'smelting'
+    | 'chemistry'
+    | 'centrifuging'
+    | 'crafting-with-fluid'
+    | 'rocket-building'
+    | 'crafting'
+    | 'oil-processing';
 
 export type IOItem = {
     item: Item;

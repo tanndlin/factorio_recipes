@@ -35,6 +35,7 @@ const ItemMode = (props: Props) => {
                             items={items}
                         />
                         <BeltCount
+                            item={ingredientItem}
                             amount={amount}
                             options={options}
                             items={items}

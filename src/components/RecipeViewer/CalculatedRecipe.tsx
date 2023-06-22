@@ -34,6 +34,7 @@ const CalculatedRecipe = (props: Props) => {
                     items={items}
                 />
                 <BeltCount
+                    item={item}
                     amount={correctedAmount}
                     options={options}
                     items={items}

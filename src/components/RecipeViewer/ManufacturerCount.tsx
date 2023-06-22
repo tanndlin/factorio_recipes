@@ -17,6 +17,10 @@ const ManufacturerCount = (props: Props) => {
     const typeToUse: MachineType =
         category === 'smelting' ? furnaceType : assemblerType;
 
+    if (item.type === 'Resource' || item.type === 'Liquid') {
+        return <></>;
+    }
+
     if (!category || category === 'smelting') {
         return (
             <span className="ml-4 my-auto flex">
