@@ -74,13 +74,6 @@
         "ecmaVersion": 12,
         "sourceType": "module",
         "requireConfigFile": false,
-        "babelOptions": {
-            "parserOpts": {
-                "plugins": [
-                    "tsx"
-                ]
-            }
-        },
         "ecmaFeatures": {
             "tsx": true
         }
