@@ -24,7 +24,7 @@ const Toggle = (props: Props) => {
             >
                 <button
                     className={`indicator indicator-${value} bg-tertiary rounded-full`}
-                ></button>
+                />
             </div>
         </div>
     );

@@ -46,7 +46,7 @@ function App() {
                                 items={items}
                             />
                         }
-                    ></Route>
+                    />
                     <Route
                         path="/recipes"
                         element={
@@ -56,9 +56,9 @@ function App() {
                                 setOutputItems={(items: IOItem[]) => {
                                     setOutputItems(removeDuplicates(items));
                                 }}
-                            ></RecipesPage>
+                            />
                         }
-                    ></Route>
+                    />
                 </Routes>
             </BrowserRouter>
         </div>

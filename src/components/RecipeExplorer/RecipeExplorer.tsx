@@ -35,7 +35,7 @@ const RecipeExplorer = (props: Props) => {
                                 onClick={() => {
                                     onClick(item);
                                 }}
-                            ></RecipeCard>
+                            />
                         );
                     })}
             </div>
