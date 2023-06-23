@@ -1,4 +1,3 @@
-import React from 'react';
 import { SingleRecipeView, SingleRecipeViewProps } from './SingleRecipeView';
 
 type Props = SingleRecipeViewProps & {

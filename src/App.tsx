@@ -1,11 +1,11 @@
 import React from 'react';
-import RecipesPage from './pages/RecipesPage';
-import Header from './common/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Item, IOItem } from './common/types/types';
 import recipes from './assets/recipes.json';
-import HomePage from './pages/HomePage';
 import { removeDuplicates } from './common/CalculatorUtils';
+import Header from './common/Header';
+import { IOItem, Item } from './common/types/types';
+import HomePage from './pages/HomePage';
+import RecipesPage from './pages/RecipesPage';
 
 function App() {
     const items = recipes.sort((a, b) =>

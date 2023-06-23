@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ChooserProps<T> = {
     options: T[];
     name: string;

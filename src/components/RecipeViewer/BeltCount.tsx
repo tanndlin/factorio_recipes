@@ -1,7 +1,6 @@
-import React from 'react';
-import { Item, OptionProps } from '../../common/types/types';
-import ItemImage from '../../common/ItemImage';
 import { getBeltCount, getItem } from '../../common/CalculatorUtils';
+import ItemImage from '../../common/ItemImage';
+import { Item, OptionProps } from '../../common/types/types';
 
 type Props = {
     item: Item;

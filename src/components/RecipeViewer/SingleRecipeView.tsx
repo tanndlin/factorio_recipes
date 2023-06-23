@@ -1,5 +1,4 @@
-import React from 'react';
-import { Item, IOItem, OptionProps } from '../../common/types/types';
+import { IOItem, Item, OptionProps } from '../../common/types/types';
 import ItemMode from './ItemMode';
 import RecipeModeViewer from './RecipeMode';
 

@@ -1,8 +1,7 @@
-import React from 'react';
-import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
-import { Item, IOItem } from '../common/types/types';
-import stars from '../assets/stars.png';
 import { useNavigate } from 'react-router';
+import stars from '../assets/stars.png';
+import { IOItem, Item } from '../common/types/types';
+import RecipeExplorer from '../components/RecipeExplorer/RecipeExplorer';
 
 type Props = {
     items: Item[];

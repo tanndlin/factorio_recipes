@@ -1,4 +1,4 @@
-import { Item, IOItem, MachineType, TimeUnit, BeltType } from './types/types';
+import { BeltType, IOItem, Item, MachineType, TimeUnit } from './types/types';
 
 export function getRecipeSumAll(
     inputItems: IOItem[],

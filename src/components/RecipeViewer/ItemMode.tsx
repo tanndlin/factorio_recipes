@@ -1,9 +1,8 @@
-import React from 'react';
-import { Item, IOItem, OptionProps } from '../../common/types/types';
 import { getItem, getRecipeSumAll } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
-import ManufacturerCount from './ManufacturerCount';
+import { IOItem, Item, OptionProps } from '../../common/types/types';
 import BeltCount from './BeltCount';
+import ManufacturerCount from './ManufacturerCount';
 
 type Props = {
     inputItems: IOItem[];

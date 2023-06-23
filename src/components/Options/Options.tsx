@@ -1,20 +1,20 @@
 import React from 'react';
+import { calculateTimeRatio } from '../../common/CalculatorUtils';
+import TabContainer from '../../common/TabContainer';
 import Toggle from '../../common/Toggle';
 import {
-    IOItem,
-    Item,
     AssemblerType,
+    BeltType,
     FurnaceType,
+    IOItem,
+    IOMode,
+    Item,
     OptionProps,
     RecipeMode,
-    TimeUnit,
-    BeltType,
-    IOMode
+    TimeUnit
 } from '../../common/types/types';
-import TabContainer from '../../common/TabContainer';
-import IOContainer from './IOContainer';
 import { Chooser } from './Chooser';
-import { calculateTimeRatio } from '../../common/CalculatorUtils';
+import IOContainer from './IOContainer';
 
 type Props = {
     items: Item[];

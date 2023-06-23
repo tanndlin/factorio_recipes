@@ -1,7 +1,7 @@
 import React from 'react';
-import { Item, IOItem, OptionProps } from '../../common/types/types';
-import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
+import { IOItem, Item, OptionProps } from '../../common/types/types';
 import { SingleRecipeView } from './SingleRecipeView';
+import SingleRecipeViewWrapper from './SingleRecipeViewWrapper';
 
 type Props = {
     items: Item[];

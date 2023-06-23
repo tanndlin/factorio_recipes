@@ -1,7 +1,7 @@
 import React from 'react';
-import RecipeCard from './RecipeCard';
-import { Item } from '../../common/types/types';
 import DisappearingSearchBar from '../../common/DisappearingSearchBar';
+import { Item } from '../../common/types/types';
+import RecipeCard from './RecipeCard';
 
 type Props = {
     items: Item[];

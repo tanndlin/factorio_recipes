@@ -1,7 +1,6 @@
-import React from 'react';
+import CloseButton from '../../common/CancelButton';
 import { IOItem, IOMode, Item, OptionProps } from '../../common/types/types';
 import RecipeExplorer from '../RecipeExplorer/RecipeExplorer';
-import CloseButton from '../../common/CancelButton';
 import IOItemViewer from './IOItemViewer';
 
 type Props = {

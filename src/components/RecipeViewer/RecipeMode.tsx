@@ -1,6 +1,5 @@
-import React from 'react';
 import { getItem } from '../../common/CalculatorUtils';
-import { Item, IOItem, OptionProps } from '../../common/types/types';
+import { IOItem, Item, OptionProps } from '../../common/types/types';
 import CalculatedRecipe from './CalculatedRecipe';
 
 type BaseProps = {

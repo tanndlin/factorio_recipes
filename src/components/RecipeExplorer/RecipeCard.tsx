@@ -1,8 +1,8 @@
 import React from 'react';
-import { Item } from '../../common/types/types';
+import { getItem } from '../../common/CalculatorUtils';
 import ItemImage from '../../common/ItemImage';
 import Tippable from '../../common/Tippable';
-import { getItem } from '../../common/CalculatorUtils';
+import { Item } from '../../common/types/types';
 
 type Props = {
     item: Item;

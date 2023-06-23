@@ -1,7 +1,6 @@
-import React from 'react';
-import { IOItem, OptionProps } from '../../common/types/types';
 import CancelButton from '../../common/CancelButton';
 import ItemImage from '../../common/ItemImage';
+import { IOItem, OptionProps } from '../../common/types/types';
 
 type Props = {
     ioItem: IOItem;

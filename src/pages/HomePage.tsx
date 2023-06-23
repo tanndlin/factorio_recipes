@@ -1,17 +1,17 @@
 import React from 'react';
+import stars from '../assets/stars.png';
 import {
-    Item,
-    IOItem,
     AssemblerType,
+    BeltType,
     FurnaceType,
-    TimeUnit,
+    IOItem,
+    Item,
     OptionProps,
     RecipeMode,
-    BeltType
+    TimeUnit
 } from '../common/types/types';
-import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 import Options from '../components/Options/Options';
-import stars from '../assets/stars.png';
+import RecipeViewer from '../components/RecipeViewer/RecipeViewer';
 
 type Props = {
     inputItems: IOItem[];

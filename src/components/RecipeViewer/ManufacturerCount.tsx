@@ -1,6 +1,5 @@
-import React from 'react';
-import ItemImage from '../../common/ItemImage';
 import { getItem, getManufacturerCount } from '../../common/CalculatorUtils';
+import ItemImage from '../../common/ItemImage';
 import { Item, MachineType, OptionProps } from '../../common/types/types';
 
 type Props = {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Item, OptionProps } from '../../common/types/types';
 import ItemImage from '../../common/ItemImage';
-import ManufacturerCount from './ManufacturerCount';
+import { Item, OptionProps } from '../../common/types/types';
 import BeltCount from './BeltCount';
+import ManufacturerCount from './ManufacturerCount';
 
 type Props = {
     item: Item;
