@@ -22,7 +22,7 @@ const ItemMode = (props: Props) => {
                 const amount = totals[id];
 
                 return (
-                    <div className="flex py-2" key={id}>
+                    <li className="flex py-2" key={id}>
                         <ItemImage item={ingredientItem} />
                         <span className="ml-2 my-auto">
                             {`${amount} ${ingredientItem.name}`}
@@ -39,7 +39,7 @@ const ItemMode = (props: Props) => {
                             options={options}
                             items={items}
                         />
-                    </div>
+                    </li>
                 );
             })}
         </ul>

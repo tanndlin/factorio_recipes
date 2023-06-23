@@ -19,8 +19,8 @@ const BeltCount = (props: Props) => {
 
     return (
         <span className="ml-4 my-auto flex">
-            <ItemImage className="h-6 w-6" item={getItem(beltType, items)!} />x
-            {getBeltCount(amount, beltType, options.timeUnit)}
+            <ItemImage className="h-6 w-6" item={getItem(beltType, items)!} />
+            {`x${getBeltCount(amount, beltType, options.timeUnit)}`}
         </span>
     );
 };
